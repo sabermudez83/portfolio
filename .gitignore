@@ -1,0 +1,18 @@
+# OS & system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Node / Vercel build output (if any)
+.vercel
+node_modules/
+
+# Ignore inactive project subfolders (only keep the 4 active cases used by index.html)
+Proyectos/*
+!Proyectos/Adidas Euka/
+!Proyectos/Colgate Expert Voices/
+!Proyectos/Fabuloso/
+!Proyectos/Koleston Trailer/
