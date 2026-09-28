@@ -6,6 +6,69 @@
   <title>Santiago Bermúdez — Director Creativo & Estratega de Marca</title>
   <meta name="description" content="Portfolio y dirección de arte de Santiago Bermúdez. Dirección Creativa × Estrategia de Marca. Articulando marcas de consumo masivo, cultura pop y experiencias transformadoras." />
   
+  <!-- Canonical & Advanced SEO Metadata -->
+  <link rel="canonical" href="https://portfolio-sabermudez.vercel.app/" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="Santiago Bermúdez" />
+  <meta name="keywords" content="Santiago Bermúdez, Director Creativo, Estratega de Marca, Brand Strategy, Creative Direction, Buenos Aires, Publicidad, Dirección de Arte, Consumo Masivo, JOY Agency" />
+
+  <!-- OpenGraph / Social Metadata -->
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Santiago Bermúdez — Director Creativo & Estratega de Marca" />
+  <meta property="og:url" content="https://portfolio-sabermudez.vercel.app/" />
+  <meta property="og:title" content="Santiago Bermúdez — Director Creativo & Estratega de Marca" />
+  <meta property="og:description" content="Portfolio y dirección de arte de Santiago Bermúdez. Dirección Creativa × Estrategia de Marca. Articulando marcas de consumo masivo, cultura pop y experiencias transformadoras." />
+  <meta property="og:image" content="https://portfolio-sabermudez.vercel.app/Proyectos/Adidas%20Euka/Portada.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Santiago Bermúdez — Director Creativo & Estratega de Marca" />
+  <meta name="twitter:description" content="Portfolio y dirección de arte de Santiago Bermúdez. Dirección Creativa × Estrategia de Marca." />
+  <meta name="twitter:image" content="https://portfolio-sabermudez.vercel.app/Proyectos/Adidas%20Euka/Portada.png" />
+
+  <!-- JSON-LD Structured Data (Schema.org Person & WebSite) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://portfolio-sabermudez.vercel.app/#person",
+        "name": "Santiago Bermúdez",
+        "jobTitle": "Director Creativo & Estratega de Marca",
+        "description": "Director Creativo y Estratega de Marca con más de 10 años articulando marcas de consumo masivo, cultura pop y experiencias transformadoras.",
+        "url": "https://portfolio-sabermudez.vercel.app/",
+        "sameAs": [
+          "https://www.linkedin.com/in/santiagobermudez/",
+          "https://www.behance.net/sabermudez"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "JOY Agency"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Buenos Aires",
+          "addressCountry": "AR"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://portfolio-sabermudez.vercel.app/#website",
+        "url": "https://portfolio-sabermudez.vercel.app/",
+        "name": "Santiago Bermúdez — Portfolio",
+        "publisher": {
+          "@id": "https://portfolio-sabermudez.vercel.app/#person"
+        },
+        "inLanguage": "es-AR"
+      }
+    ]
+  }
+  </script>
+
   <!-- Open Graph / Meta -->
   <meta property="og:title" content="Santiago Bermúdez — Director Creativo & Estratega de Marca" />
   <meta property="og:description" content="Dirección Creativa × Estrategia de Marca. Articulando marcas de consumo masivo, cultura pop y experiencias transformadoras." />
@@ -36,8 +99,8 @@
             },
             content: {
               primary: '#F4F4F6',
-              secondary: '#868691',
-              muted: '#52525C'
+              secondary: '#A1A1AA', // High contrast WCAG AA (Ratio > 5.5:1)
+              muted: '#71717A'      // High contrast WCAG AA (Ratio > 4.5:1)
             },
             accent: {
               DEFAULT: '#00F076',
@@ -202,7 +265,7 @@
   <!-- =========================================================================
        HERO SECTION (100svh)
        ========================================================================= -->
-  <main>
+  <main id="main-content" tabindex="-1">
     <section id="hero" class="relative z-10 min-h-[100svh] flex flex-col justify-between pt-28 pb-10 md:pb-14 px-6 md:px-12 lg:px-20 max-w-[1720px] mx-auto">
       
       <!-- Primer renglón del Body: Metadatos (JOY Agency retirado) -->
@@ -1160,7 +1223,9 @@
         <span id="live-clock">Buenos Aires, AR (UTC-3) — --:--:--</span>
       </div>
 
-      <div class="flex items-center gap-6">
+      <div class="flex flex-wrap items-center gap-6">
+        <button id="footer-btn-privacy" class="hover:text-accent transition-colors focus:outline-none focus:underline" data-cursor="interactive">Política de Privacidad</button>
+        <button id="footer-btn-cookies" class="hover:text-accent transition-colors focus:outline-none focus:underline" data-cursor="interactive">Política de Cookies</button>
         <span>© 2026 Santiago Bermúdez</span>
       </div>
 
@@ -1801,8 +1866,193 @@
       updateLiveClock();
       setInterval(updateLiveClock, 1000);
 
+      // -----------------------------------------------------------------------
+      // 10. Gestión de Consentimiento de Cookies & Modales de Privacidad (GDPR)
+      // -----------------------------------------------------------------------
+      const cookieBanner = document.getElementById('cookie-consent-banner');
+      const btnAcceptCookies = document.getElementById('btn-accept-cookies');
+      const btnOpenPrivacy = document.getElementById('btn-open-privacy');
+      const privacyModal = document.getElementById('privacy-modal');
+      const privacyBackdrop = document.getElementById('privacy-modal-backdrop');
+      const btnClosePrivacy = document.getElementById('btn-close-privacy');
+      const btnClosePrivacyFooter = document.getElementById('btn-close-privacy-footer');
+      const cookiesModal = document.getElementById('cookies-modal');
+      const btnCloseCookies = document.getElementById('btn-close-cookies');
+      const btnCloseCookiesFooter = document.getElementById('btn-close-cookies-footer');
+      const footerBtnPrivacy = document.getElementById('footer-btn-privacy');
+      const footerBtnCookies = document.getElementById('footer-btn-cookies');
+
+      // Verificar si ya se aceptó el consentimiento
+      if (!localStorage.getItem('cookie_consent_accepted')) {
+        setTimeout(() => {
+          if (cookieBanner) {
+            cookieBanner.classList.remove('translate-y-full', 'opacity-0');
+          }
+        }, 1200);
+      }
+
+      if (btnAcceptCookies) {
+        btnAcceptCookies.addEventListener('click', () => {
+          localStorage.setItem('cookie_consent_accepted', 'true');
+          if (cookieBanner) {
+            cookieBanner.classList.add('translate-y-full', 'opacity-0');
+          }
+        });
+      }
+
+      function openPrivacyModal() {
+        if (privacyModal && privacyBackdrop) {
+          privacyBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+          privacyModal.classList.remove('opacity-0', 'pointer-events-none');
+          privacyModal.setAttribute('open', '');
+        }
+      }
+
+      function closePrivacyModal() {
+        if (privacyModal && privacyBackdrop) {
+          privacyBackdrop.classList.add('opacity-0', 'pointer-events-none');
+          privacyModal.classList.add('opacity-0', 'pointer-events-none');
+          privacyModal.removeAttribute('open');
+        }
+      }
+
+      function openCookiesModal() {
+        if (cookiesModal && privacyBackdrop) {
+          privacyBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+          cookiesModal.classList.remove('opacity-0', 'pointer-events-none');
+          cookiesModal.setAttribute('open', '');
+        }
+      }
+
+      function closeCookiesModal() {
+        if (cookiesModal && privacyBackdrop) {
+          privacyBackdrop.classList.add('opacity-0', 'pointer-events-none');
+          cookiesModal.classList.add('opacity-0', 'pointer-events-none');
+          cookiesModal.removeAttribute('open');
+        }
+      }
+
+      if (btnOpenPrivacy) btnOpenPrivacy.addEventListener('click', openPrivacyModal);
+      if (footerBtnPrivacy) footerBtnPrivacy.addEventListener('click', openPrivacyModal);
+      if (btnClosePrivacy) btnClosePrivacy.addEventListener('click', closePrivacyModal);
+      if (btnClosePrivacyFooter) btnClosePrivacyFooter.addEventListener('click', closePrivacyModal);
+
+      if (footerBtnCookies) footerBtnCookies.addEventListener('click', openCookiesModal);
+      if (btnCloseCookies) btnCloseCookies.addEventListener('click', closeCookiesModal);
+      if (btnCloseCookiesFooter) btnCloseCookiesFooter.addEventListener('click', closeCookiesModal);
+
+      if (privacyBackdrop) {
+        privacyBackdrop.addEventListener('click', () => {
+          closePrivacyModal();
+          closeCookiesModal();
+        });
+      }
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closePrivacyModal();
+          closeCookiesModal();
+        }
+      });
+
+
     });
   </script>
+
+
+  <!-- =========================================================================
+       AVISO DE CONSENTIMIENTO DE COOKIES & PRIVACIDAD (WCAG & GDPR / LEY 25.326)
+       ========================================================================= -->
+  <div id="cookie-consent-banner" class="fixed bottom-4 left-4 right-4 sm:left-6 sm:right-auto sm:max-w-lg z-50 p-5 rounded-xl bg-surface/95 backdrop-blur-md border border-border shadow-2xl transition-all duration-500 translate-y-full opacity-0" role="region" aria-label="Consentimiento de Privacidad y Cookies">
+    <div class="flex items-start gap-3 mb-3 font-mono text-xs">
+      <span class="w-2 h-2 rounded-full bg-accent mt-1 flex-shrink-0"></span>
+      <div>
+        <span class="text-content-primary font-semibold block uppercase tracking-wider text-[11px]">Transparencia & Privacidad de Datos</span>
+        <p class="text-content-secondary text-[11px] leading-relaxed mt-1">
+          Este sitio web es un portafolio profesional estático. Únicamente utilizamos almacenamiento local técnico estrictamente necesario para guardar tus preferencias de uso. No utilizamos cookies de rastreo, analítica de terceros ni publicidad.
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center justify-end gap-2.5 pt-2 border-t border-border/50 font-mono text-[11px]">
+      <button id="btn-open-privacy" class="text-content-secondary hover:text-content-primary transition-colors px-2.5 py-1 focus:outline-none focus:ring-1 focus:ring-accent rounded">
+        Política de Privacidad
+      </button>
+      <button id="btn-accept-cookies" class="px-4 py-1.5 rounded-full bg-accent text-canvas font-semibold hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-accent">
+        Entendido & Aceptar
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL: POLÍTICA DE PRIVACIDAD COMPLETA (LEY 25.326 / GDPR / CCPA)
+       ========================================================================= -->
+  <div id="privacy-modal-backdrop" class="fixed inset-0 bg-[#0A0A0C]/85 backdrop-blur-md z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <dialog id="privacy-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] max-w-2xl max-h-[85vh] bg-surface border border-border rounded-2xl z-50 p-6 sm:p-8 md:p-10 overflow-y-auto text-content-primary shadow-2xl m-0 opacity-0 pointer-events-none transition-all duration-300" aria-labelledby="privacy-modal-title">
+    <div class="flex items-center justify-between border-b border-border/60 pb-4 mb-6">
+      <div class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-accent">
+        <span class="w-2 h-2 rounded-full bg-accent"></span>
+        <span>Aviso Legal & Protección de Datos</span>
+      </div>
+      <button id="btn-close-privacy" class="text-content-secondary hover:text-content-primary px-3 py-1 rounded-full border border-border-subtle bg-surface-elevated font-mono text-xs uppercase" aria-label="Cerrar política de privacidad">
+        Cerrar [Esc]
+      </button>
+    </div>
+
+    <h2 id="privacy-modal-title" class="text-2xl sm:text-3xl font-serif italic text-content-primary mb-4">
+      Política de Privacidad & Minimización de Datos
+    </h2>
+
+    <div class="space-y-4 text-xs sm:text-sm text-content-secondary leading-relaxed font-light">
+      <p><strong class="font-semibold text-content-primary">1. Identidad del Responsable:</strong> Este sitio web es propiedad y está administrado por Santiago Bermúdez (Director Creativo & Estratega de Marca), con base en Buenos Aires, Argentina. Correo de contacto: <a href="mailto:sabermudez@gmail.com" class="text-accent underline">sabermudez@gmail.com</a>.</p>
+      
+      <p><strong class="font-semibold text-content-primary">2. Principio de Minimización de Datos:</strong> En cumplimiento estricto de la Ley N° 25.326 de Protección de Datos Personales (Argentina), el Reglamento General de Protección de Datos de la Unión Europea (RGPD UE 2016/679) y la Ley de Privacidad del Consumidor de California (CCPA/CPRA), este sitio opera bajo el principio de minimización. No se recopilan ni procesan datos personales identificables de forma implícita o automatizada.</p>
+
+      <p><strong class="font-semibold text-content-primary">3. Formulario y Contacto Directo:</strong> Este sitio no utiliza formularios de recolección de datos en servidor. Los enlaces de contacto utilizan exclusivamente el protocolo nativo <code class="font-mono text-accent">mailto:</code> o enlaces directos a WhatsApp/LinkedIn, garantizando que el usuario inicie voluntariamente la interacción desde sus aplicaciones locales.</p>
+
+      <p><strong class="font-semibold text-content-primary">4. Servicios de Terceros e Infraestructura:</strong> El sitio está alojado en la infraestructura global de Vercel Inc. Los archivos de fuentes se sirven desde Google Fonts y las librerías CDN desde Cloudflare/GSAP. Ninguno de estos proveedores recopila datos para crear perfiles publicitarios personales a través de este sitio.</p>
+
+      <p><strong class="font-semibold text-content-primary">5. Derechos ARCO (Acceso, Rectificación, Cancelación y Oposición):</strong> Cualquier usuario puede solicitar la confirmación de no conservación de sus datos o realizar consultas legales escribiendo directamente a <a href="mailto:sabermudez@gmail.com" class="text-accent underline">sabermudez@gmail.com</a>.</p>
+    </div>
+
+    <div class="mt-8 pt-4 border-t border-border/60 flex justify-end font-mono text-xs">
+      <button id="btn-close-privacy-footer" class="px-5 py-2 rounded-full bg-accent text-canvas font-semibold hover:bg-white transition-colors">
+        Entendido
+      </button>
+    </div>
+  </dialog>
+
+  <!-- =========================================================================
+       MODAL: POLÍTICA DE COOKIES
+       ========================================================================= -->
+  <dialog id="cookies-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] max-w-2xl max-h-[85vh] bg-surface border border-border rounded-2xl z-50 p-6 sm:p-8 md:p-10 overflow-y-auto text-content-primary shadow-2xl m-0 opacity-0 pointer-events-none transition-all duration-300" aria-labelledby="cookies-modal-title">
+    <div class="flex items-center justify-between border-b border-border/60 pb-4 mb-6">
+      <div class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-accent">
+        <span class="w-2 h-2 rounded-full bg-accent"></span>
+        <span>Política de Cookies & Almacenamiento</span>
+      </div>
+      <button id="btn-close-cookies" class="text-content-secondary hover:text-content-primary px-3 py-1 rounded-full border border-border-subtle bg-surface-elevated font-mono text-xs uppercase" aria-label="Cerrar política de cookies">
+        Cerrar [Esc]
+      </button>
+    </div>
+
+    <h2 id="cookies-modal-title" class="text-2xl sm:text-3xl font-serif italic text-content-primary mb-4">
+      Política de Cookies & Almacenamiento Local
+    </h2>
+
+    <div class="space-y-4 text-xs sm:text-sm text-content-secondary leading-relaxed font-light">
+      <p><strong class="font-semibold text-content-primary">1. Ausencia de Cookies de Rastreo:</strong> Este sitio web NO utiliza cookies analíticas de seguimiento (como Google Analytics o Adobe Analytics), ni cookies publicitarias o de remarketing (como Meta Pixel o Google Ads).</p>
+      
+      <p><strong class="font-semibold text-content-primary">2. Almacenamiento Técnico Necesario:</strong> Se utiliza únicamente la memoria local técnica del navegador (<code class="font-mono text-accent">localStorage</code>) para registrar la preferencia del usuario respecto a la confirmación de esta política de privacidad (<code class="font-mono text-accent">cookie_consent_accepted</code>). Este registro es 100% local a tu dispositivo y jamás se transmite a servidores externos.</p>
+
+      <p><strong class="font-semibold text-content-primary">3. Control del Usuario:</strong> Puedes eliminar o bloquear el almacenamiento local en cualquier momento desde la configuración de privacidad de tu navegador web sin afectar la navegación en este sitio.</p>
+    </div>
+
+    <div class="mt-8 pt-4 border-t border-border/60 flex justify-end font-mono text-xs">
+      <button id="btn-close-cookies-footer" class="px-5 py-2 rounded-full bg-accent text-canvas font-semibold hover:bg-white transition-colors">
+        Aceptar
+      </button>
+    </div>
+  </dialog>
 
 </body>
 </html>
