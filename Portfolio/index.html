@@ -126,6 +126,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
+  <!-- Sistema de Traducción Bilingüe Instantánea (ES / EN) -->
+  <script src="./translations.js"></script>
+
   <!-- Core Styles: Reset, Textura de Grano, Cursor, Miniaturas Flotantes -->
   <style>
     /* Selección nativa */
@@ -225,39 +228,56 @@
           <span class="text-xs font-semibold tracking-tighter uppercase text-content-primary">
             Santiago Bermúdez
           </span>
-          <span class="font-mono text-[10px] tracking-wider text-content-secondary uppercase">
+          <span data-i18n="header.role" class="font-mono text-[10px] tracking-wider text-content-secondary uppercase">
             Director Creativo & Estratega de Marca
           </span>
         </div>
       </a>
 
       <!-- Indicador de Estado -->
-      <div class="hidden md:flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-surface/80 border border-border text-[11px] font-mono tracking-tight text-content-secondary">
+      <div class="hidden xl:flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-surface/80 border border-border text-[11px] font-mono tracking-tight text-content-secondary">
         <span class="relative flex h-2 w-2">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
         </span>
-        <span>Disponible para Dirección Creativa & Consultoría Estratégica</span>
+        <span data-i18n="header.status">Disponible para Dirección Creativa & Consultoría Estratégica</span>
       </div>
 
-      <!-- Enlaces de Navegación (Español Formal) -->
-      <nav class="flex items-center gap-5 sm:gap-8 lg:gap-10 font-mono text-xs tracking-wider uppercase text-content-secondary">
-        <a href="#cases" class="nav-link hover:text-content-primary transition-colors flex items-center gap-1.5 group" data-cursor="interactive">
-          <span class="text-[10px] text-content-muted group-hover:text-accent transition-colors">01</span>
-          <span>Casos</span>
-        </a>
-        <a href="#expertise" class="nav-link hover:text-content-primary transition-colors flex items-center gap-1.5 group" data-cursor="interactive">
-          <span class="text-[10px] text-content-muted group-hover:text-accent transition-colors">02</span>
-          <span>Trayectoria</span>
-        </a>
-        <a href="#index" class="nav-link hidden sm:flex hover:text-content-primary transition-colors items-center gap-1.5 group" data-cursor="interactive">
-          <span class="text-[10px] text-content-muted group-hover:text-accent transition-colors">03</span>
-          <span>Repertorio</span>
-        </a>
-        <a href="#contact" class="nav-link px-3.5 py-1.5 rounded-full border border-border-subtle bg-surface hover:border-accent hover:text-accent transition-all text-content-primary" data-cursor="interactive">
-          Contacto
-        </a>
-      </nav>
+      <!-- Controles de Derecha: Switch de Idioma + Enlaces de Navegación -->
+      <div class="flex items-center gap-4 sm:gap-6 lg:gap-8">
+        
+        <!-- Switch de Idioma Instantáneo (ES / EN) -->
+        <div class="inline-flex items-center rounded-full border border-border-subtle bg-surface p-0.5 font-mono text-[11px]" role="group" aria-label="Selector de idioma / Language selector">
+          <button id="lang-btn-es" type="button" class="lang-toggle-btn flex items-center gap-1.5 px-2.5 py-1 rounded-full transition-all text-accent bg-surface-elevated font-semibold shadow-sm" aria-label="Español" data-cursor="interactive">
+            <span aria-hidden="true">🇦🇷</span>
+            <span>ES</span>
+          </button>
+          <button id="lang-btn-en" type="button" class="lang-toggle-btn flex items-center gap-1.5 px-2.5 py-1 rounded-full transition-all text-content-muted hover:text-content-primary" aria-label="English" data-cursor="interactive">
+            <span aria-hidden="true">🇺🇸</span>
+            <span>EN</span>
+          </button>
+        </div>
+
+        <!-- Enlaces de Navegación -->
+        <nav class="flex items-center gap-4 sm:gap-6 lg:gap-8 font-mono text-xs tracking-wider uppercase text-content-secondary">
+          <a href="#cases" class="nav-link hover:text-content-primary transition-colors flex items-center gap-1.5 group" data-cursor="interactive">
+            <span class="text-[10px] text-content-muted group-hover:text-accent transition-colors">01</span>
+            <span data-i18n="header.navCases">Casos</span>
+          </a>
+          <a href="#expertise" class="nav-link hover:text-content-primary transition-colors flex items-center gap-1.5 group" data-cursor="interactive">
+            <span class="text-[10px] text-content-muted group-hover:text-accent transition-colors">02</span>
+            <span data-i18n="header.navExpertise">Trayectoria</span>
+          </a>
+          <a href="#index" class="nav-link hidden md:flex hover:text-content-primary transition-colors items-center gap-1.5 group" data-cursor="interactive">
+            <span class="text-[10px] text-content-muted group-hover:text-accent transition-colors">03</span>
+            <span data-i18n="header.navRepertoire">Repertorio</span>
+          </a>
+          <a href="#contact" class="nav-link px-3.5 py-1.5 rounded-full border border-border-subtle bg-surface hover:border-accent hover:text-accent transition-all text-content-primary" data-cursor="interactive">
+            <span data-i18n="header.navContact">Contacto</span>
+          </a>
+        </nav>
+
+      </div>
 
     </div>
   </header>
@@ -268,17 +288,17 @@
   <main id="main-content" tabindex="-1">
     <section id="hero" class="relative z-10 min-h-[100svh] flex flex-col justify-between pt-28 pb-10 md:pb-14 px-6 md:px-12 lg:px-20 max-w-[1720px] mx-auto">
       
-      <!-- Primer renglón del Body: Metadatos (JOY Agency retirado) -->
+      <!-- Primer renglón del Body: Metadatos -->
       <div class="hero-fade pt-4 flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] tracking-widest uppercase text-content-secondary border-b border-border/40 pb-4">
         <div class="flex items-center gap-2">
           <span class="inline-block w-1.5 h-1.5 bg-accent"></span>
-          <span>[ Base: Buenos Aires // Alcance Global ]</span>
+          <span data-i18n="hero.metaLocation">[ Base: Buenos Aires // Alcance Global ]</span>
         </div>
         <div>
-          <span>[ Actualidad: Director Creativo & Estratega de Marca ]</span>
+          <span data-i18n="hero.metaRole">[ Actualidad: Director Creativo & Estratega de Marca ]</span>
         </div>
         <div class="hidden lg:block text-content-muted">
-          <span>// Archivo 2026</span>
+          <span data-i18n="hero.metaArchive">// Archivo 2026</span>
         </div>
       </div>
 
@@ -308,10 +328,10 @@
         
         <!-- Definición de Rol & Propuesta de Valor -->
         <div class="md:col-span-8 lg:col-span-7">
-          <p class="font-mono text-xs text-accent uppercase tracking-widest mb-2.5">
+          <p data-i18n="hero.roleLabel" class="font-mono text-xs text-accent uppercase tracking-widest mb-2.5">
             Rol & Posicionamiento
           </p>
-          <p class="text-lg md:text-xl lg:text-2xl font-light text-content-primary leading-relaxed max-w-2xl">
+          <p data-i18n-html="hero.roleDesc" class="text-lg md:text-xl lg:text-2xl font-light text-content-primary leading-relaxed max-w-2xl">
             <strong class="font-semibold text-content-primary">Dirección Creativa × Estrategia de Marca.</strong>
             Articulando marcas de consumo masivo, cultura pop y experiencias transformadoras.
           </p>
@@ -320,7 +340,7 @@
         <!-- Microinteracción de Scroll hacia el Manifiesto -->
         <div class="md:col-span-4 lg:col-span-5 flex md:justify-end items-center">
           <a href="#manifesto" class="nav-link group flex items-center gap-4 text-content-secondary hover:text-content-primary transition-colors" data-cursor="interactive" aria-label="Explorar Manifiesto">
-            <span class="font-mono text-[10px] tracking-widest uppercase text-content-muted group-hover:text-accent transition-colors">
+            <span data-i18n="hero.scrollCta" class="font-mono text-[10px] tracking-widest uppercase text-content-muted group-hover:text-accent transition-colors">
               Explorar Manifiesto
             </span>
             <div class="relative w-7 h-12 rounded-full border border-border-subtle group-hover:border-accent transition-colors flex items-start justify-center p-1.5">
@@ -342,14 +362,14 @@
       <div class="flex items-center justify-between mb-14 md:mb-20 font-mono text-[11px] tracking-widest uppercase text-content-muted">
         <span class="flex items-center gap-2">
           <span class="w-2 h-[1px] bg-accent"></span>
-          <span>01 // PERSPECTIVA</span>
+          <span data-i18n="manifesto.tag">01 // PERSPECTIVA</span>
         </span>
-        <span>[ Tesis Estratégica ]</span>
+        <span data-i18n="manifesto.subtag">[ Tesis Estratégica ]</span>
       </div>
 
       <!-- Declaración Editorial Cinética -->
       <div class="max-w-5xl">
-        <p id="manifesto-text" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-[1.25] md:leading-[1.2] text-content-secondary">
+        <p id="manifesto-text" data-i18n="manifesto.quote" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-[1.25] md:leading-[1.2] text-content-secondary">
           Más de una década traduciendo data de negocio e insights culturales en conceptos de marca capaces de ocupar un lugar real en la vida de las personas.
         </p>
 
@@ -357,25 +377,25 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mt-16 md:mt-24 pt-12 border-t border-border/30">
           
           <div class="manifesto-col">
-            <span class="font-mono text-xs text-accent block mb-3">// 01. DIRECCIÓN</span>
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-content-primary mb-2">Liderazgo & Criterio</h2>
-            <p class="text-xs md:text-sm text-content-secondary leading-relaxed">
+            <span data-i18n="manifesto.col1Tag" class="font-mono text-xs text-accent block mb-3">// 01. DIRECCIÓN</span>
+            <h2 data-i18n="manifesto.col1Title" class="text-sm font-semibold uppercase tracking-wider text-content-primary mb-2">Liderazgo & Criterio</h2>
+            <p data-i18n="manifesto.col1Desc" class="text-xs md:text-sm text-content-secondary leading-relaxed">
               Dirección de equipos creativos multidisciplinarios y supervisión integral de craft visual para marcas de escala regional y global.
             </p>
           </div>
 
           <div class="manifesto-col">
-            <span class="font-mono text-xs text-accent block mb-3">// 02. ESTRATEGIA</span>
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-content-primary mb-2">Diagnóstico de Negocio</h2>
-            <p class="text-xs md:text-sm text-content-secondary leading-relaxed">
+            <span data-i18n="manifesto.col2Tag" class="font-mono text-xs text-accent block mb-3">// 02. ESTRATEGIA</span>
+            <h2 data-i18n="manifesto.col2Title" class="text-sm font-semibold uppercase tracking-wider text-content-primary mb-2">Diagnóstico de Negocio</h2>
+            <p data-i18n="manifesto.col2Desc" class="text-xs md:text-sm text-content-secondary leading-relaxed">
               Matrices de oportunidad, reposicionamiento competitivo y plataformas de comunicación ancladas en métricas tangibles.
             </p>
           </div>
 
           <div class="manifesto-col">
-            <span class="font-mono text-xs text-accent block mb-3">// 03. EXPERIENCIA</span>
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-content-primary mb-2">Impacto Omnicanal</h2>
-            <p class="text-xs md:text-sm text-content-secondary leading-relaxed">
+            <span data-i18n="manifesto.col3Tag" class="font-mono text-xs text-accent block mb-3">// 03. EXPERIENCIA</span>
+            <h2 data-i18n="manifesto.col3Title" class="text-sm font-semibold uppercase tracking-wider text-content-primary mb-2">Impacto Omnicanal</h2>
+            <p data-i18n="manifesto.col3Desc" class="text-xs md:text-sm text-content-secondary leading-relaxed">
               Retail experiencial, eventos inmersivos y activaciones donde lo físico y lo digital se potencian sin fricción.
             </p>
           </div>
@@ -395,16 +415,14 @@
         <div>
           <div class="flex items-center gap-2 mb-4 font-mono text-[11px] tracking-widest uppercase text-accent">
             <span class="w-2 h-[1px] bg-accent"></span>
-            <span>02 // CASOS SELECCIONADOS</span>
+            <span data-i18n="cases.tag">02 // CASOS SELECCIONADOS</span>
           </div>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-light tracking-tight text-content-primary">
+          <h2 data-i18n-html="cases.title" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-light tracking-tight text-content-primary">
             Criterio estratégico aplicado a <span class="italic text-content-primary">marcas de gran escala.</span>
           </h2>
         </div>
         <div class="font-mono text-xs text-content-muted flex items-center gap-4">
-          <span>[ Archivo 2025 — 2026 ]</span>
-          <span>//</span>
-          <span>[ Dirección Principal ]</span>
+          <span data-i18n="cases.meta">[ Archivo 2025 — 2026 ] // [ Dirección Principal ]</span>
         </div>
       </div>
 
@@ -425,7 +443,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/40 to-transparent"></div>
             
             <div class="absolute top-6 left-6 right-6 flex items-center justify-between font-mono text-[10px] uppercase tracking-widest">
-              <span class="px-2.5 py-1 rounded bg-canvas/80 backdrop-blur-md border border-border text-content-secondary">
+              <span data-i18n="cases.c1Badge" class="px-2.5 py-1 rounded bg-canvas/80 backdrop-blur-md border border-border text-content-secondary">
                 2026 // Co-Branding & Experiencial
               </span>
               <span class="w-8 h-8 rounded-full bg-canvas/80 backdrop-blur-md border border-border flex items-center justify-center text-content-primary group-hover:bg-accent group-hover:text-canvas transition-colors">
@@ -437,18 +455,18 @@
               <span class="font-mono text-xs text-accent uppercase tracking-widest block mb-1">
                 Adidas × Eukanuba
               </span>
-              <h3 class="text-2xl sm:text-3xl font-serif italic text-content-primary mb-2">
+              <h3 data-i18n="cases.c1Title" class="text-2xl sm:text-3xl font-serif italic text-content-primary mb-2">
                 Corriendo con tu Perro
               </h3>
-              <p class="text-xs sm:text-sm text-content-secondary max-w-xl font-light line-clamp-2">
+              <p data-i18n="cases.c1Desc" class="text-xs sm:text-sm text-content-secondary max-w-xl font-light line-clamp-2">
                 Desafiando el individualismo deportivo para legitimar la presencia de marca en el territorio pet-parents con running canino.
               </p>
             </div>
           </div>
 
           <div class="mt-4 flex items-center justify-between text-xs font-mono">
-            <span class="text-content-muted">Rol: Dirección Creativa & Estrategia de Marca</span>
-            <span class="text-accent group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+            <span data-i18n="cases.c1Role" class="text-content-muted">Rol: Dirección Creativa & Estrategia de Marca</span>
+            <span data-i18n="cases.viewStrategy" class="text-accent group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
               Ver Estrategia ↗
             </span>
           </div>
@@ -466,7 +484,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/40 to-transparent"></div>
 
             <div class="absolute top-6 left-6 right-6 flex items-center justify-between font-mono text-[10px] uppercase tracking-widest">
-              <span class="px-2.5 py-1 rounded bg-canvas/80 backdrop-blur-md border border-border text-content-secondary">
+              <span data-i18n="cases.c2Badge" class="px-2.5 py-1 rounded bg-canvas/80 backdrop-blur-md border border-border text-content-secondary">
                 2026 // Content Strategy & Creadores
               </span>
               <span class="w-8 h-8 rounded-full bg-canvas/80 backdrop-blur-md border border-border flex items-center justify-center text-content-primary group-hover:bg-accent group-hover:text-canvas transition-colors">
@@ -478,18 +496,18 @@
               <span class="font-mono text-xs text-accent uppercase tracking-widest block mb-1">
                 Colgate-Palmolive
               </span>
-              <h3 class="text-2xl sm:text-3xl font-serif italic text-content-primary mb-2">
+              <h3 data-i18n="cases.c2Title" class="text-2xl sm:text-3xl font-serif italic text-content-primary mb-2">
                 Expert Voices (Stream Studio & Content)
               </h3>
-              <p class="text-xs sm:text-sm text-content-secondary font-light line-clamp-2">
+              <p data-i18n="cases.c2Desc" class="text-xs sm:text-sm text-content-secondary font-light line-clamp-2">
                 Transformando odontólogos en creadores de contenido para combatir la desinformación y el auge de la IA con un set de streaming profesional.
               </p>
             </div>
           </div>
 
           <div class="mt-4 flex items-center justify-between text-xs font-mono">
-            <span class="text-content-muted">Rol: Dirección Creativa & Estrategia de Contenidos</span>
-            <span class="text-accent group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+            <span data-i18n="cases.c2Role" class="text-content-muted">Rol: Dirección Creativa & Estrategia de Contenidos</span>
+            <span data-i18n="cases.viewStrategy" class="text-accent group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
               Ver Estrategia ↗
             </span>
           </div>
@@ -507,7 +525,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/40 to-transparent"></div>
 
             <div class="absolute top-6 left-6 right-6 flex items-center justify-between font-mono text-[10px] uppercase tracking-widest">
-              <span class="px-2.5 py-1 rounded bg-canvas/80 backdrop-blur-md border border-border text-content-secondary">
+              <span data-i18n="cases.c3Badge" class="px-2.5 py-1 rounded bg-canvas/80 backdrop-blur-md border border-border text-content-secondary">
                 2026 // Consumo Masivo & Plataforma Web
               </span>
               <span class="w-8 h-8 rounded-full bg-canvas/80 backdrop-blur-md border border-border flex items-center justify-center text-content-primary group-hover:bg-accent group-hover:text-canvas transition-colors">
@@ -519,18 +537,18 @@
               <span class="font-mono text-xs text-accent uppercase tracking-widest block mb-1">
                 Fabuloso (Colgate-Palmolive UY)
               </span>
-              <h3 class="text-2xl sm:text-3xl font-serif italic text-content-primary mb-2">
+              <h3 data-i18n="cases.c3Title" class="text-2xl sm:text-3xl font-serif italic text-content-primary mb-2">
                 El Valor Emocional de las Fragancias
               </h3>
-              <p class="text-xs sm:text-sm text-content-secondary font-light line-clamp-2">
+              <p data-i18n="cases.c3Desc" class="text-xs sm:text-sm text-content-secondary font-light line-clamp-2">
                 Apalancándose en la memoria olfativa para reconectar emocionalmente con los consumidores a través de relatos familiares y experiencias digitales.
               </p>
             </div>
           </div>
 
           <div class="mt-4 flex items-center justify-between text-xs font-mono">
-            <span class="text-content-muted">Rol: Estrategia de Comunicación & Dirección Creativa</span>
-            <span class="text-accent group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+            <span data-i18n="cases.c3Role" class="text-content-muted">Rol: Estrategia de Comunicación & Dirección Creativa</span>
+            <span data-i18n="cases.viewStrategy" class="text-accent group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
               Ver Estrategia ↗
             </span>
           </div>
@@ -548,7 +566,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/40 to-transparent"></div>
 
             <div class="absolute top-6 left-6 right-6 flex items-center justify-between font-mono text-[10px] uppercase tracking-widest">
-              <span class="px-2.5 py-1 rounded bg-canvas/80 backdrop-blur-md border border-border text-content-secondary">
+              <span data-i18n="cases.c4Badge" class="px-2.5 py-1 rounded bg-canvas/80 backdrop-blur-md border border-border text-content-secondary">
                 2026 // Activación Cultural & Evento Inmersivo
               </span>
               <span class="w-8 h-8 rounded-full bg-canvas/80 backdrop-blur-md border border-border flex items-center justify-center text-content-primary group-hover:bg-accent group-hover:text-canvas transition-colors">
@@ -560,18 +578,18 @@
               <span class="font-mono text-xs text-accent uppercase tracking-widest block mb-1">
                 Koleston / Wella Company
               </span>
-              <h3 class="text-2xl sm:text-3xl font-serif italic text-content-primary mb-2">
+              <h3 data-i18n="cases.c4Title" class="text-2xl sm:text-3xl font-serif italic text-content-primary mb-2">
                 Reinicio Capilar Cósmico (Trailer Planetario)
               </h3>
-              <p class="text-xs sm:text-sm text-content-secondary font-light line-clamp-2">
+              <p data-i18n="cases.c4Desc" class="text-xs sm:text-sm text-content-secondary font-light line-clamp-2">
                 Conexión cósmica en el Planetario de Buenos Aires: sincronizando el calendario lunar con las fases de cuidado y coloración capilar.
               </p>
             </div>
           </div>
 
           <div class="mt-4 flex items-center justify-between text-xs font-mono">
-            <span class="text-content-muted">Rol: Dirección Creativa & Ideación de Eventos</span>
-            <span class="text-accent group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+            <span data-i18n="cases.c4Role" class="text-content-muted">Rol: Dirección Creativa & Ideación de Eventos</span>
+            <span data-i18n="cases.viewStrategy" class="text-accent group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
               Ver Estrategia ↗
             </span>
           </div>
@@ -587,11 +605,11 @@
         
         <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 mb-8">
           <div>
-            <span class="font-mono text-xs text-accent tracking-widest uppercase block">
+            <span data-i18n="cases.repoTitle" class="font-mono text-xs text-accent tracking-widest uppercase block">
               // REPOSITORIO EJECUTIVO
             </span>
           </div>
-          <span class="font-mono text-xs text-content-muted">
+          <span data-i18n="cases.repoSubtitle" class="font-mono text-xs text-content-muted">
             11 Presentaciones Documentadas · Click para desplegar ficha
           </span>
         </div>
@@ -601,10 +619,10 @@
           
           <!-- Encabezado de la Tabla -->
           <div class="px-6 py-4 bg-surface font-mono text-[11px] text-content-muted tracking-widest uppercase grid grid-cols-12 gap-4">
-            <div class="col-span-5 md:col-span-4">Proyecto / Campaña</div>
-            <div class="col-span-3 hidden sm:block md:col-span-3">Cliente</div>
-            <div class="col-span-4 sm:col-span-3 md:col-span-3">Disciplina & Categoría</div>
-            <div class="col-span-3 sm:col-span-1 md:col-span-2 text-right">Año & Ficha ↗</div>
+            <div data-i18n="cases.thProject" class="col-span-5 md:col-span-4">Proyecto / Campaña</div>
+            <div data-i18n="cases.thClient" class="col-span-3 hidden sm:block md:col-span-3">Cliente</div>
+            <div data-i18n="cases.thCategory" class="col-span-4 sm:col-span-3 md:col-span-3">Disciplina & Categoría</div>
+            <div data-i18n="cases.thYear" class="col-span-3 sm:col-span-1 md:col-span-2 text-right">Año & Ficha ↗</div>
           </div>
 
           <!-- Fila 01: Royal Canin Verano -->
@@ -798,14 +816,14 @@
       <div class="flex items-center justify-between mb-16 md:mb-24 font-mono text-[11px] tracking-widest uppercase text-content-muted">
         <span class="flex items-center gap-2">
           <span class="w-2 h-[1px] bg-accent"></span>
-          <span>03 // LIDERAZGO & TRAYECTORIA</span>
+          <span data-i18n="expertise.tag">03 // LIDERAZGO & TRAYECTORIA</span>
         </span>
-        <span>[ Credenciales Directivas ]</span>
+        <span data-i18n="expertise.subtag">[ Credenciales Directivas ]</span>
       </div>
 
       <!-- Declaración de Trayectoria -->
       <div class="max-w-5xl mb-20 md:mb-28">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-[1.2] text-content-primary">
+        <h2 data-i18n-html="expertise.headline" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-[1.2] text-content-primary">
           Más de una década articulando <span class="italic text-content-primary">estrategia de negocio</span>, cultura contemporánea y dirección de arte de escala regional y global.
         </h2>
       </div>
@@ -818,16 +836,16 @@
           <div>
             <div class="flex items-center justify-between mb-8 font-mono text-xs">
               <span class="text-accent">// 01</span>
-              <span class="text-content-muted uppercase tracking-widest">Liderazgo</span>
+              <span data-i18n="expertise.p1Cat" class="text-content-muted uppercase tracking-widest">Liderazgo</span>
             </div>
-            <h3 class="text-xl md:text-2xl font-serif italic text-content-primary mb-4 group-hover:text-accent transition-colors">
+            <h3 data-i18n="expertise.p1Title" class="text-xl md:text-2xl font-serif italic text-content-primary mb-4 group-hover:text-accent transition-colors">
               Dirección Creativa
             </h3>
-            <p class="text-sm text-content-secondary leading-relaxed font-light">
+            <p data-i18n="expertise.p1Desc" class="text-sm text-content-secondary leading-relaxed font-light">
               Conducción y curaduría de equipos creativos multidisciplinarios. Conceptualización de alto impacto visual, supervisión integral de craft y coherencia discursiva omnicanal.
             </p>
           </div>
-          <div class="mt-8 pt-6 border-t border-border/60 font-mono text-[11px] text-content-muted">
+          <div data-i18n="expertise.p1Foot" class="mt-8 pt-6 border-t border-border/60 font-mono text-[11px] text-content-muted">
             Tono de Voz · Craft Visual · Operaciones Creativas
           </div>
         </div>
@@ -837,16 +855,16 @@
           <div>
             <div class="flex items-center justify-between mb-8 font-mono text-xs">
               <span class="text-accent">// 02</span>
-              <span class="text-content-muted uppercase tracking-widest">Negocio</span>
+              <span data-i18n="expertise.p2Cat" class="text-content-muted uppercase tracking-widest">Negocio</span>
             </div>
-            <h3 class="text-xl md:text-2xl font-serif italic text-content-primary mb-4 group-hover:text-accent transition-colors">
+            <h3 data-i18n="expertise.p2Title" class="text-xl md:text-2xl font-serif italic text-content-primary mb-4 group-hover:text-accent transition-colors">
               Estrategia & Posicionamiento
             </h3>
-            <p class="text-sm text-content-secondary leading-relaxed font-light">
+            <p data-i18n="expertise.p2Desc" class="text-sm text-content-secondary leading-relaxed font-light">
               Diagnóstico de mercado, matrices de oportunidad y go-to-market. Creación de plataformas de comunicación ancladas en insights culturales que mueven métricas de negocio.
             </p>
           </div>
-          <div class="mt-8 pt-6 border-t border-border/60 font-mono text-[11px] text-content-muted">
+          <div data-i18n="expertise.p2Foot" class="mt-8 pt-6 border-t border-border/60 font-mono text-[11px] text-content-muted">
             Diagnóstico de Mercado · Narrativa · Go-to-Market
           </div>
         </div>
@@ -856,16 +874,16 @@
           <div>
             <div class="flex items-center justify-between mb-8 font-mono text-xs">
               <span class="text-accent">// 03</span>
-              <span class="text-content-muted uppercase tracking-widest">Activación</span>
+              <span data-i18n="expertise.p3Cat" class="text-content-muted uppercase tracking-widest">Activación</span>
             </div>
-            <h3 class="text-xl md:text-2xl font-serif italic text-content-primary mb-4 group-hover:text-accent transition-colors">
+            <h3 data-i18n="expertise.p3Title" class="text-xl md:text-2xl font-serif italic text-content-primary mb-4 group-hover:text-accent transition-colors">
               Experiencia & Omnicanalidad
             </h3>
-            <p class="text-sm text-content-secondary leading-relaxed font-light">
+            <p data-i18n="expertise.p3Desc" class="text-sm text-content-secondary leading-relaxed font-light">
               Diseño de activaciones inmersivas, retail experiencial y ecosistemas donde el plano físico y las plataformas digitales se retroalimentan sin fricción.
             </p>
           </div>
-          <div class="mt-8 pt-6 border-t border-border/60 font-mono text-[11px] text-content-muted">
+          <div data-i18n="expertise.p3Foot" class="mt-8 pt-6 border-t border-border/60 font-mono text-[11px] text-content-muted">
             Identidad Espacial · Estudios en Vivo · Comunidad
           </div>
         </div>
@@ -875,17 +893,17 @@
       <!-- Registro Profesional / Career Ledger Actualizado -->
       <div class="border border-border rounded-xl bg-surface/50 overflow-hidden mb-12">
         <div class="px-6 py-4 bg-surface border-b border-border flex items-center justify-between font-mono text-xs tracking-widest uppercase text-content-muted">
-          <span>REGISTRO PROFESIONAL & CARGOS DIRECTIVOS</span>
-          <span class="hidden sm:inline">ÍNDICE 2012 — 2026</span>
+          <span data-i18n="expertise.ledgerTitle">REGISTRO PROFESIONAL & CARGOS DIRECTIVOS</span>
+          <span data-i18n="expertise.ledgerIndex" class="hidden sm:inline">ÍNDICE 2012 — 2026</span>
         </div>
 
         <!-- Fila 1: 2020 - Actualidad -->
         <div class="p-6 md:p-8 border-b border-border/60 hover:bg-surface-elevated/70 transition-colors grid grid-cols-1 md:grid-cols-12 gap-4 items-baseline group">
           <div class="md:col-span-6 lg:col-span-5 flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6">
-            <span class="font-mono text-xs text-accent tracking-widest shrink-0">2020 — ACTUALIDAD</span>
-            <span class="text-lg md:text-xl font-semibold text-content-primary">Director Creativo & Estratega de Marca</span>
+            <span data-i18n="expertise.r1Period" class="font-mono text-xs text-accent tracking-widest shrink-0">2020 — ACTUALIDAD</span>
+            <span data-i18n="expertise.r1Role" class="text-lg md:text-xl font-semibold text-content-primary">Director Creativo & Estratega de Marca</span>
           </div>
-          <div class="md:col-span-6 lg:col-span-7 font-mono text-xs text-content-secondary">
+          <div data-i18n="expertise.r1Desc" class="md:col-span-6 lg:col-span-7 font-mono text-xs text-content-secondary">
             Dirección estratégica y conceptual para marcas líderes de consumo masivo, retail, belleza y tecnología.
           </div>
         </div>
@@ -893,10 +911,10 @@
         <!-- Fila 2: Roles anteriores -->
         <div class="p-6 md:p-8 hover:bg-surface-elevated/70 transition-colors grid grid-cols-1 md:grid-cols-12 gap-4 items-baseline group">
           <div class="md:col-span-6 lg:col-span-5 flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6">
-            <span class="font-mono text-xs text-content-muted tracking-widest shrink-0">ROLES ANTERIORES</span>
-            <span class="text-lg md:text-xl font-semibold text-content-primary">Director de Arte</span>
+            <span data-i18n="expertise.r2Period" class="font-mono text-xs text-content-muted tracking-widest shrink-0">ROLES ANTERIORES</span>
+            <span data-i18n="expertise.r2Role" class="text-lg md:text-xl font-semibold text-content-primary">Director de Arte</span>
           </div>
-          <div class="md:col-span-6 lg:col-span-7 font-mono text-xs text-content-secondary">
+          <div data-i18n="expertise.r2Desc" class="md:col-span-6 lg:col-span-7 font-mono text-xs text-content-secondary">
             Dirección de arte, conceptualización visual y diseño de identidad en agencias creativas y proyectos regionales.
           </div>
         </div>
@@ -915,19 +933,19 @@
         <div>
           <div class="flex items-center gap-2 mb-4 font-mono text-[11px] tracking-widest uppercase text-accent">
             <span class="w-2 h-[1px] bg-accent"></span>
-            <span>04 // REPERTORIO VISUAL & CRAFT</span>
+            <span data-i18n="repertoire.tag">04 // REPERTORIO VISUAL & CRAFT</span>
           </div>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-content-primary">
+          <h2 data-i18n-html="repertoire.headline" class="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-content-primary">
             Exploración de identidad y <span class="italic">diseño editorial.</span>
           </h2>
         </div>
 
         <!-- Selector de Modo de Vista -->
         <div class="flex items-center gap-2 p-1.5 rounded-full bg-surface border border-border font-mono text-xs">
-          <button id="view-grid-btn" class="px-3.5 py-1.5 rounded-full bg-surface-elevated text-content-primary border border-border-subtle transition-all" data-cursor="interactive">
+          <button id="view-grid-btn" data-i18n="repertoire.btnGrid" class="px-3.5 py-1.5 rounded-full bg-surface-elevated text-content-primary border border-border-subtle transition-all" data-cursor="interactive">
             Vista Cuadrícula [06]
           </button>
-          <button id="view-table-btn" class="px-3.5 py-1.5 rounded-full text-content-secondary hover:text-content-primary transition-all" data-cursor="interactive">
+          <button id="view-table-btn" data-i18n="repertoire.btnTable" class="px-3.5 py-1.5 rounded-full text-content-secondary hover:text-content-primary transition-all" data-cursor="interactive">
             Vista Directorio
           </button>
         </div>
@@ -1050,10 +1068,10 @@
       <div id="behance-table-view" class="hidden border border-border rounded-xl bg-surface/40 overflow-hidden divide-y divide-border/60">
         
         <div class="px-6 py-4 bg-surface font-mono text-[11px] text-content-muted tracking-widest uppercase grid grid-cols-12 gap-4">
-          <div class="col-span-5 md:col-span-4">Pieza / Proyecto</div>
-          <div class="hidden md:block col-span-3">Disciplina</div>
-          <div class="col-span-5 md:col-span-3">Categoría</div>
-          <div class="col-span-2 text-right">Año & Link ↗</div>
+          <div data-i18n="repertoire.thPiece" class="col-span-5 md:col-span-4">Pieza / Proyecto</div>
+          <div data-i18n="repertoire.thDisc" class="hidden md:block col-span-3">Disciplina</div>
+          <div data-i18n="repertoire.thCat" class="col-span-5 md:col-span-3">Categoría</div>
+          <div data-i18n="repertoire.thLink" class="col-span-2 text-right">Año & Link ↗</div>
         </div>
 
         <a href="https://www.behance.net/gallery/250171841/Lo-cambia-todo" target="_blank" rel="noopener noreferrer" class="table-row-item px-6 py-5 hover:bg-surface-elevated/70 transition-colors grid grid-cols-12 gap-4 items-center group" data-preview="https://mir-s3-cdn-cf.behance.net/projects/808/00ebcf250171841.Y3JvcCw4MDgsNjMyLDAsMA.png" data-cursor="interactive">
@@ -1150,9 +1168,9 @@
 
       <!-- Barra de Enlace Externo a Behance -->
       <div class="mt-12 pt-6 border-t border-border/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-xs">
-        <span class="text-content-muted">Archivo con más de 30 proyectos y exploraciones.</span>
+        <span data-i18n="repertoire.footerNote" class="text-content-muted">Archivo con más de 30 proyectos y exploraciones.</span>
         <a href="https://www.behance.net/sabermudez" target="_blank" rel="noopener noreferrer" class="text-content-primary hover:text-accent transition-colors flex items-center gap-1.5" data-cursor="interactive">
-          <span>Ver Perfil Completo en Behance</span>
+          <span data-i18n="repertoire.footerLink">Ver Perfil Completo en Behance</span>
           <span>↗</span>
         </a>
       </div>
@@ -1170,10 +1188,10 @@
     <div class="mb-14 md:mb-20">
       <div class="flex items-center gap-2 mb-6 font-mono text-[11px] tracking-widest uppercase text-accent">
         <span class="w-2 h-[1px] bg-accent"></span>
-        <span>05 // INICIAR CONVERSACIÓN</span>
+        <span data-i18n="contact.tag">05 // INICIAR CONVERSACIÓN</span>
       </div>
       
-      <p class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-light text-content-primary max-w-4xl leading-tight">
+      <p data-i18n-html="contact.headline" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-light text-content-primary max-w-4xl leading-tight">
         ¿Tenés un desafío estratégico de marca o un proyecto de gran escala en puerta? <span class="italic text-content-primary">Hablemos.</span>
       </p>
     </div>
@@ -1190,7 +1208,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-10 border-b border-border/40 font-mono text-xs">
       
       <div>
-        <span class="text-content-muted block mb-2">// TELÉFONO / WHATSAPP</span>
+        <span data-i18n="contact.phoneLabel" class="text-content-muted block mb-2">// TELÉFONO / WHATSAPP</span>
         <a href="https://wa.me/541153287681" target="_blank" rel="noopener noreferrer" class="text-content-primary hover:text-accent transition-colors flex items-center gap-2" data-cursor="interactive">
           <span>+54 11 53287681</span>
           <span>↗</span>
@@ -1198,7 +1216,7 @@
       </div>
 
       <div>
-        <span class="text-content-muted block mb-2">// RED PROFESIONAL</span>
+        <span data-i18n="contact.linkedinLabel" class="text-content-muted block mb-2">// RED PROFESIONAL</span>
         <a href="https://www.linkedin.com/in/santiagobermudez/" target="_blank" rel="noopener noreferrer" class="text-content-primary hover:text-accent transition-colors flex items-center gap-2" data-cursor="interactive">
           <span>linkedin.com/in/santiagobermudez</span>
           <span>↗</span>
@@ -1206,7 +1224,7 @@
       </div>
 
       <div>
-        <span class="text-content-muted block mb-2">// PORTFOLIO CREATIVO</span>
+        <span data-i18n="contact.behanceLabel" class="text-content-muted block mb-2">// PORTFOLIO CREATIVO</span>
         <a href="https://www.behance.net/sabermudez" target="_blank" rel="noopener noreferrer" class="text-content-primary hover:text-accent transition-colors flex items-center gap-2" data-cursor="interactive">
           <span>behance.net/sabermudez</span>
           <span>↗</span>
@@ -1224,9 +1242,9 @@
       </div>
 
       <div class="flex flex-wrap items-center gap-6">
-        <button id="footer-btn-privacy" class="hover:text-accent transition-colors focus:outline-none focus:underline" data-cursor="interactive">Política de Privacidad</button>
-        <button id="footer-btn-cookies" class="hover:text-accent transition-colors focus:outline-none focus:underline" data-cursor="interactive">Política de Cookies</button>
-        <span>© 2026 Santiago Bermúdez</span>
+        <button id="footer-btn-privacy" data-i18n="contact.privacyLink" class="hover:text-accent transition-colors focus:outline-none focus:underline" data-cursor="interactive">Política de Privacidad</button>
+        <button id="footer-btn-cookies" data-i18n="contact.cookiesLink" class="hover:text-accent transition-colors focus:outline-none focus:underline" data-cursor="interactive">Política de Cookies</button>
+        <span data-i18n="contact.copyright">© 2026 Santiago Bermúdez</span>
       </div>
 
     </div>
@@ -1245,11 +1263,11 @@
       <div class="flex items-center justify-between border-b border-border/60 pb-6 mb-8">
         <div class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-accent">
           <span class="w-1.5 h-1.5 bg-accent"></span>
-          <span id="drawer-meta">ANÁLISIS ESTRATÉGICO</span>
+          <span id="drawer-meta" data-i18n="drawer.meta">ANÁLISIS ESTRATÉGICO</span>
         </div>
         
         <button id="drawer-close-btn" class="group flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border-subtle bg-surface-elevated hover:border-accent text-xs font-mono tracking-widest uppercase text-content-secondary hover:text-content-primary transition-all" data-cursor="interactive" aria-label="Cerrar modal">
-          <span>Cerrar</span>
+          <span data-i18n="drawer.closeBtn">Cerrar</span>
           <span class="text-content-muted group-hover:text-accent font-sans">[Esc]</span>
           <span class="text-base leading-none">&times;</span>
         </button>
@@ -1271,25 +1289,25 @@
         
         <!-- Desafío -->
         <div class="p-5 rounded-lg bg-canvas/60 border border-border">
-          <span class="font-mono text-[11px] text-content-muted uppercase tracking-widest block mb-2">// 01. Desafío Estratégico</span>
+          <span data-i18n="drawer.challengeLabel" class="font-mono text-[11px] text-content-muted uppercase tracking-widest block mb-2">// 01. Desafío Estratégico</span>
           <p id="drawer-challenge" class="text-sm md:text-base text-content-primary font-light leading-relaxed"></p>
         </div>
 
         <!-- Solución -->
         <div class="p-5 rounded-lg bg-canvas/60 border border-border">
-          <span class="font-mono text-[11px] text-accent uppercase tracking-widest block mb-2">// 02. Solución Conceptual & Creativa</span>
+          <span data-i18n="drawer.solutionLabel" class="font-mono text-[11px] text-accent uppercase tracking-widest block mb-2">// 02. Solución Conceptual & Creativa</span>
           <p id="drawer-solution" class="text-sm md:text-base text-content-primary font-light leading-relaxed"></p>
         </div>
 
         <!-- Piezas Clave -->
         <div>
-          <span class="font-mono text-[11px] text-content-muted uppercase tracking-widest block mb-3">// 03. Piezas & Entregables Clave</span>
+          <span data-i18n="drawer.piecesLabel" class="font-mono text-[11px] text-content-muted uppercase tracking-widest block mb-3">// 03. Piezas & Entregables Clave</span>
           <ul id="drawer-pieces" class="grid grid-cols-1 gap-2.5 font-mono text-xs text-content-secondary"></ul>
         </div>
 
         <!-- Galería Visual & Piezas -->
         <div id="drawer-gallery-container" class="mt-8 pt-8 border-t border-border/60 hidden">
-          <span class="font-mono text-[11px] text-accent uppercase tracking-widest block mb-4">// 04. Galería Visual & Piezas</span>
+          <span data-i18n="drawer.galleryLabel" class="font-mono text-[11px] text-accent uppercase tracking-widest block mb-4">// 04. Galería Visual & Piezas</span>
           <div id="drawer-gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
         </div>
 
@@ -1298,8 +1316,8 @@
 
     <!-- Barra Inferior de Acción / Contacto -->
     <div class="border-t border-border/60 pt-8 mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs">
-      <span class="text-content-muted text-[11px]">Archivo Directivo 2026</span>
-      <a id="drawer-cta-mail" href="mailto:sabermudez@gmail.com" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-accent text-canvas font-semibold hover:bg-white transition-colors text-center" data-cursor="interactive">
+      <span data-i18n="drawer.footerNote" class="text-content-muted text-[11px]">Archivo Directivo 2026</span>
+      <a id="drawer-cta-mail" data-i18n="drawer.cta" href="mailto:sabermudez@gmail.com" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-accent text-canvas font-semibold hover:bg-white transition-colors text-center" data-cursor="interactive">
         Conversar sobre este desafío ↗
       </a>
     </div>
@@ -1701,13 +1719,17 @@
       const drawerCtaMail = document.getElementById('drawer-cta-mail');
 
       function openDrawer(caseId) {
-        const data = caseStudiesData[caseId];
+        const activeStudies = (typeof getActiveCaseStudies === 'function') ? getActiveCaseStudies() : caseStudiesData;
+        const data = (activeStudies && activeStudies[caseId]) ? activeStudies[caseId] : caseStudiesData[caseId];
         if (!data) return;
+
+        const isEn = (typeof currentLang !== 'undefined' && currentLang === 'en');
+        const rolePrefix = isEn ? 'Role: ' : 'Rol: ';
 
         drawerClient.textContent = `${data.client} — ${data.year}`;
         drawerTitle.textContent = data.title;
         drawerCategory.textContent = data.category;
-        drawerRole.textContent = `Rol: ${data.role}`;
+        drawerRole.textContent = `${rolePrefix}${data.role}`;
         drawerChallenge.textContent = data.challenge;
         drawerSolution.textContent = data.solution;
 
@@ -1718,18 +1740,20 @@
         // Renderizado de Galería Visual en Drawer
         if (drawerGalleryContainer && drawerGalleryGrid) {
           if (data.galleryImages && data.galleryImages.length > 0) {
+            const pieceLabel = isEn ? 'Piece' : 'Pieza';
+            const ofLabel = isEn ? 'of' : 'de';
             drawerGalleryContainer.classList.remove('hidden');
             drawerGalleryGrid.innerHTML = data.galleryImages.map((imgUrl, idx) => `
               <div class="relative group overflow-hidden rounded-lg bg-canvas border border-border aspect-[16/10]">
                 <img 
                   src="${imgUrl}" 
-                  alt="Pieza ${idx + 1} de ${data.title}" 
+                  alt="${pieceLabel} ${idx + 1} ${ofLabel} ${data.title}" 
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                   loading="lazy"
                   onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80';"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-canvas/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3 pointer-events-none">
-                  <span class="font-mono text-[10px] text-content-primary">Pieza ${idx + 1}</span>
+                  <span class="font-mono text-[10px] text-content-primary">${pieceLabel} ${idx + 1}</span>
                 </div>
               </div>
             `).join('');
@@ -1739,7 +1763,10 @@
           }
         }
 
-        drawerCtaMail.href = `mailto:sabermudez@gmail.com?subject=Consulta%20Estrat%C3%A9gica:%20${encodeURIComponent(data.title)}%20(${encodeURIComponent(data.client)})`;
+        const mailSubject = isEn 
+          ? `Strategic Inquiry: ${encodeURIComponent(data.title)} (${encodeURIComponent(data.client)})`
+          : `Consulta Estratégica: ${encodeURIComponent(data.title)} (${encodeURIComponent(data.client)})`;
+        drawerCtaMail.href = `mailto:sabermudez@gmail.com?subject=${mailSubject}`;
 
         // Mostrar drawer y fondo
         drawerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
@@ -1853,6 +1880,8 @@
       function updateLiveClock() {
         if (!clockElement) return;
         const now = new Date();
+        const isEn = (typeof currentLang !== 'undefined' && currentLang === 'en');
+        const locale = isEn ? 'en-US' : 'es-AR';
         const options = {
           timeZone: 'America/Argentina/Buenos_Aires',
           hour: '2-digit',
@@ -1860,7 +1889,7 @@
           second: '2-digit',
           hour12: false
         };
-        const timeString = new Intl.DateTimeFormat('es-AR', options).format(now);
+        const timeString = new Intl.DateTimeFormat(locale, options).format(now);
         clockElement.textContent = `Buenos Aires, AR (UTC-3) — ${timeString}`;
       }
       updateLiveClock();
@@ -1967,17 +1996,17 @@
     <div class="flex items-start gap-3 mb-3 font-mono text-xs">
       <span class="w-2 h-2 rounded-full bg-accent mt-1 flex-shrink-0"></span>
       <div>
-        <span class="text-content-primary font-semibold block uppercase tracking-wider text-[11px]">Transparencia & Privacidad de Datos</span>
-        <p class="text-content-secondary text-[11px] leading-relaxed mt-1">
+        <span data-i18n="cookiesBanner.title" class="text-content-primary font-semibold block uppercase tracking-wider text-[11px]">Transparencia & Privacidad de Datos</span>
+        <p data-i18n="cookiesBanner.text" class="text-content-secondary text-[11px] leading-relaxed mt-1">
           Este sitio web es un portafolio profesional estático. Únicamente utilizamos almacenamiento local técnico estrictamente necesario para guardar tus preferencias de uso. No utilizamos cookies de rastreo, analítica de terceros ni publicidad.
         </p>
       </div>
     </div>
     <div class="flex flex-wrap items-center justify-end gap-2.5 pt-2 border-t border-border/50 font-mono text-[11px]">
-      <button id="btn-open-privacy" class="text-content-secondary hover:text-content-primary transition-colors px-2.5 py-1 focus:outline-none focus:ring-1 focus:ring-accent rounded">
+      <button id="btn-open-privacy" data-i18n="cookiesBanner.btnPrivacy" class="text-content-secondary hover:text-content-primary transition-colors px-2.5 py-1 focus:outline-none focus:ring-1 focus:ring-accent rounded">
         Política de Privacidad
       </button>
-      <button id="btn-accept-cookies" class="px-4 py-1.5 rounded-full bg-accent text-canvas font-semibold hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-accent">
+      <button id="btn-accept-cookies" data-i18n="cookiesBanner.btnAccept" class="px-4 py-1.5 rounded-full bg-accent text-canvas font-semibold hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-accent">
         Entendido & Aceptar
       </button>
     </div>

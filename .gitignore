@@ -1,3 +1,6 @@
+# Ignore Dupla repo inside outer portfolio workspace
+Dupla/
+
 # OS & system files
 .DS_Store
 .AppleDouble
@@ -9,17 +12,21 @@
 # Node / Vercel build output
 .vercel
 node_modules/
+.env*
+Portfolio/.env*
+scratch/
+Portfolio/scratch/
 
 # Inactive project folders (ignore unused heavy files)
-Proyectos/Adidas Day
-Proyectos/Aromitalia
-Proyectos/Colgate OHM
-Proyectos/Decathlon
-Proyectos/Extremas
-Proyectos/Koleston Mes de la Mujer
-Proyectos/Olaplex
-Proyectos/Rimmel
-Proyectos/Royal Canin 8M
-Proyectos/Royal Canin Dachshund
-Proyectos/Royal Canin Verano
-Proyectos/ShopGallery
+Portfolio/Proyectos/Adidas Day
+Portfolio/Proyectos/Aromitalia
+Portfolio/Proyectos/Colgate OHM
+Portfolio/Proyectos/Decathlon
+Portfolio/Proyectos/Extremas
+Portfolio/Proyectos/Koleston Mes de la Mujer
+Portfolio/Proyectos/Olaplex
+Portfolio/Proyectos/Rimmel
+Portfolio/Proyectos/Royal Canin 8M
+Portfolio/Proyectos/Royal Canin Dachshund
+Portfolio/Proyectos/Royal Canin Verano
+Portfolio/Proyectos/ShopGallery
