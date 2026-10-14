@@ -132,6 +132,13 @@ const translations = {
       text: "Este sitio web es un portafolio profesional estático. Únicamente utilizamos almacenamiento local técnico estrictamente necesario para guardar tus preferencias de uso (como tu idioma de preferencia). No utilizamos cookies de rastreo, analítica de terceros ni publicidad.",
       btnPrivacy: "Política de Privacidad",
       btnAccept: "Entendido & Aceptar"
+    },
+    lightbox: {
+      closeBtn: "Cerrar",
+      fullscreenBtn: "Pantalla Completa",
+      hint: "Selecciona una miniatura o haz clic para ampliar en detalle",
+      piece: "Pieza",
+      of: "de"
     }
   },
 
@@ -264,6 +271,13 @@ const translations = {
       text: "This website is a static professional portfolio. We only use strictly necessary technical local storage to save your user preferences (such as your preferred language). We do not use tracking cookies, third-party analytics, or advertising.",
       btnPrivacy: "Privacy Policy",
       btnAccept: "Understood & Accept"
+    },
+    lightbox: {
+      closeBtn: "Close",
+      fullscreenBtn: "Fullscreen",
+      hint: "Select a thumbnail or click to enlarge in detail",
+      piece: "Piece",
+      of: "of"
     }
   }
 };
