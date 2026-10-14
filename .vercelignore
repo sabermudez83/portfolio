@@ -1,0 +1,25 @@
+# OS & system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Node / Vercel build output
+.vercel
+node_modules/
+
+# Inactive project folders (ignore unused heavy files)
+Proyectos/Adidas Day
+Proyectos/Aromitalia
+Proyectos/Colgate OHM
+Proyectos/Decathlon
+Proyectos/Extremas
+Proyectos/Koleston Mes de la Mujer
+Proyectos/Olaplex
+Proyectos/Rimmel
+Proyectos/Royal Canin 8M
+Proyectos/Royal Canin Dachshund
+Proyectos/Royal Canin Verano
+Proyectos/ShopGallery
