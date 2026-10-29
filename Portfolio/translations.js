@@ -9,9 +9,10 @@ const translations = {
     header: {
       role: "Director Creativo & Estratega de Marca",
       status: "Disponible para Dirección Creativa & Consultoría Estratégica",
+      navBio: "Bio",
       navCases: "Casos",
-      navExpertise: "Trayectoria",
-      navRepertoire: "Repertorio",
+      navRepo: "Repositorio",
+      navRepertoire: "Behance",
       navContact: "Contacto"
     },
     hero: {
@@ -20,7 +21,27 @@ const translations = {
       metaArchive: "// Archivo 2026",
       roleLabel: "Rol & Posicionamiento",
       roleDesc: "<strong class=\"font-semibold text-content-primary\">Dirección Creativa × Estrategia de Marca.</strong> Articulando marcas de consumo masivo, cultura pop y experiencias transformadoras.",
-      scrollCta: "Explorar Manifiesto"
+      scrollCta: "Explorar Bio ↓"
+    },
+    bio: {
+      tag: "01 // BIO SINTÉTICA",
+      subtag: "[ Liderazgo & Visión ]",
+      quote: "Más de una década articulando estrategia de negocio, cultura contemporánea y dirección de arte de escala regional y global.",
+      p1Tag: "// 01. DIRECCIÓN CREATIVA",
+      p1Title: "Liderazgo & Criterio Visual",
+      p1Desc: "Conducción de equipos creativos multidisciplinarios y supervisión integral de craft para marcas líderes de escala global.",
+      p2Tag: "// 02. ESTRATEGIA DE MARCA",
+      p2Title: "Diagnóstico & Posicionamiento",
+      p2Desc: "Matrices de oportunidad, reposicionamiento competitivo y plataformas de comunicación ancladas en métricas tangibles de negocio.",
+      p3Tag: "// 03. EXPERIENCIA & CRAFT",
+      p3Title: "Omnicanalidad & Retail",
+      p3Desc: "Activaciones inmersivas, diseño de experiencias y narrativas donde el plano físico y digital se potencian sin fricción.",
+      m1Num: "+10",
+      m1Label: "Años de Trayectoria Directiva",
+      m2Num: "16+",
+      m2Label: "Casos Documentados",
+      m3Num: "360°",
+      m3Label: "Estrategia Omnicanal"
     },
     manifesto: {
       tag: "01 // PERSPECTIVA",
@@ -148,9 +169,10 @@ const translations = {
     header: {
       role: "Creative Director & Brand Strategist",
       status: "Available for Creative Direction & Strategic Advisory",
+      navBio: "Bio",
       navCases: "Cases",
-      navExpertise: "Expertise",
-      navRepertoire: "Repertoire",
+      navRepo: "Repository",
+      navRepertoire: "Behance",
       navContact: "Contact"
     },
     hero: {
@@ -159,7 +181,27 @@ const translations = {
       metaArchive: "// Archive 2026",
       roleLabel: "Role & Positioning",
       roleDesc: "<strong class=\"font-semibold text-content-primary\">Creative Direction × Brand Strategy.</strong> Articulating consumer goods, pop culture, and transformative brand experiences.",
-      scrollCta: "Explore Manifesto"
+      scrollCta: "Explore Bio ↓"
+    },
+    bio: {
+      tag: "01 // SYNTHETIC BIO",
+      subtag: "[ Leadership & Vision ]",
+      quote: "Over a decade articulating business strategy, contemporary culture, and art direction on a regional and global scale.",
+      p1Tag: "// 01. CREATIVE DIRECTION",
+      p1Title: "Leadership & Visual Craft",
+      p1Desc: "Leading multidisciplinary creative teams and supervising end-to-end craft for leading global brands.",
+      p2Tag: "// 02. BRAND STRATEGY",
+      p2Title: "Diagnosis & Positioning",
+      p2Desc: "Opportunity matrices, competitive repositioning, and communication platforms anchored in tangible business metrics.",
+      p3Tag: "// 03. EXPERIENCE & CRAFT",
+      p3Title: "Omnichannel & Retail",
+      p3Desc: "Immersive activations, experience design, and ecosystems where physical and digital touchpoints amplify each other.",
+      m1Num: "+10",
+      m1Label: "Years of Leadership",
+      m2Num: "16+",
+      m2Label: "Documented Cases",
+      m3Num: "360°",
+      m3Label: "Omnichannel Strategy"
     },
     manifesto: {
       tag: "01 // PERSPECTIVE",
@@ -861,43 +903,44 @@ function setLanguage(lang) {
   const btnEn = document.getElementById('lang-btn-en');
   if (btnEs && btnEn) {
     if (lang === 'es') {
-      btnEs.classList.add('text-accent', 'bg-surface-elevated', 'font-semibold', 'shadow-sm');
-      btnEs.classList.remove('text-content-muted');
+      btnEs.classList.add('text-content-primary', 'bg-surface', 'font-semibold', 'shadow-sm', 'border', 'border-border');
+      btnEs.classList.remove('text-content-muted', 'border-transparent');
       btnEs.setAttribute('aria-pressed', 'true');
 
-      btnEn.classList.remove('text-accent', 'bg-surface-elevated', 'font-semibold', 'shadow-sm');
-      btnEn.classList.add('text-content-muted');
+      btnEn.classList.remove('text-content-primary', 'bg-surface', 'font-semibold', 'shadow-sm', 'border', 'border-border');
+      btnEn.classList.add('text-content-muted', 'border-transparent');
       btnEn.setAttribute('aria-pressed', 'false');
     } else {
-      btnEn.classList.add('text-accent', 'bg-surface-elevated', 'font-semibold', 'shadow-sm');
-      btnEn.classList.remove('text-content-muted');
+      btnEn.classList.add('text-content-primary', 'bg-surface', 'font-semibold', 'shadow-sm', 'border', 'border-border');
+      btnEn.classList.remove('text-content-muted', 'border-transparent');
       btnEn.setAttribute('aria-pressed', 'true');
 
-      btnEs.classList.remove('text-accent', 'bg-surface-elevated', 'font-semibold', 'shadow-sm');
-      btnEs.classList.add('text-content-muted');
+      btnEs.classList.remove('text-content-primary', 'bg-surface', 'font-semibold', 'shadow-sm', 'border', 'border-border');
+      btnEs.classList.add('text-content-muted', 'border-transparent');
       btnEs.setAttribute('aria-pressed', 'false');
     }
   }
 
-  // Update Kinetic Manifesto Words if initialized
-  const manifestoParagraph = document.getElementById('manifesto-text');
-  if (manifestoParagraph && t.manifesto && t.manifesto.quote) {
-    const words = t.manifesto.quote.trim().split(/\s+/);
-    manifestoParagraph.innerHTML = words
-      .map((word) => `<span class="inline-block transition-colors duration-200 text-content-muted mr-[0.26em] will-change-transform">${word}</span>`)
+  // Update Kinetic Words if initialized
+  const bioParagraph = document.getElementById('bio-text') || document.getElementById('manifesto-text');
+  const quoteText = (t.bio && t.bio.quote) || (t.manifesto && t.manifesto.quote);
+  if (bioParagraph && quoteText) {
+    const words = quoteText.trim().split(/\s+/);
+    bioParagraph.innerHTML = words
+      .map((word) => `<span class="inline-block transition-colors duration-200 text-content-muted mr-[0.24em] will-change-transform">${word}</span>`)
       .join('');
 
     // Re-bind GSAP ScrollTrigger if gsap is loaded
     if (window.gsap && window.ScrollTrigger) {
-      const wordSpans = manifestoParagraph.querySelectorAll('span');
+      const wordSpans = bioParagraph.querySelectorAll('span');
       gsap.to(wordSpans, {
         scrollTrigger: {
-          trigger: '#manifesto-text',
+          trigger: bioParagraph,
           start: 'top 80%',
           end: 'bottom 45%',
           scrub: 0.8,
         },
-        color: '#F4F4F6',
+        color: '#141414',
         stagger: 0.05,
         ease: 'none'
       });
