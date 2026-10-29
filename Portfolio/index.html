@@ -69,10 +69,10 @@
   }
   </script>
 
-  <!-- Google Fonts: Editorial Serif + Neutral Swiss Sans + Technical Mono -->
+  <!-- Google Fonts: Tipografía Palo Seco (Sans-serif Suizo) + Technical Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 
   <!-- Three.js (Motor 3D para Escena de Plaza) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -84,7 +84,7 @@
   <!-- Sistema de Traducción Bilingüe Instantánea (ES / EN) -->
   <script src="./translations.js"></script>
 
-  <!-- Tailwind CSS CDN con Paleta Editorial Minimalista & Arquitectónica -->
+  <!-- Tailwind CSS CDN con Paleta Editorial Minimalista & Tipografía 100% Palo Seco -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -115,8 +115,8 @@
             }
           },
           fontFamily: {
-            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
             sans: ['"Plus Jakarta Sans"', '-apple-system', 'sans-serif'],
+            serif: ['"Plus Jakarta Sans"', '-apple-system', 'sans-serif'], // Garantía palo seco en todo el sitio
             mono: ['"Space Mono"', 'monospace']
           },
           letterSpacing: {
@@ -144,7 +144,7 @@
     body {
       background-color: #FBFBFA;
       color: #141414;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
       overflow-x: hidden;
     }
 
@@ -190,18 +190,10 @@
       z-index: 1;
       outline: none;
     }
-
-    /* Líneas finas decorativas */
-    .hairline-b {
-      border-bottom: 1px solid #E8E8E4;
-    }
-    .hairline-t {
-      border-top: 1px solid #E8E8E4;
-    }
   </style>
 </head>
 
-<body class="bg-canvas text-content-primary antialiased selection:bg-accent selection:text-white">
+<body class="bg-canvas text-content-primary antialiased selection:bg-accent selection:text-white font-sans">
 
   <!-- Textura sutil de papel editorial -->
   <div class="grain-overlay" aria-hidden="true"></div>
@@ -274,7 +266,7 @@
             <span class="text-[10px] text-content-muted group-hover:text-accent transition-colors">04</span>
             <span data-i18n="header.navRepertoire">Behance</span>
           </a>
-          <a href="#contact" class="nav-link px-3.5 py-1.5 rounded-full border border-border bg-surface hover:border-accent hover:text-accent transition-all text-content-primary shadow-sm">
+          <a href="#contact" class="nav-link px-3.5 py-1.5 rounded-full border border-border bg-surface hover:border-accent hover:text-accent transition-all text-content-primary shadow-sm font-medium">
             <span data-i18n="header.navContact">Contacto</span>
           </a>
         </nav>
@@ -285,12 +277,12 @@
   </header>
 
   <!-- =========================================================================
-       SECCIÓN 01: HERO INTERACTIVO (3D PLAZA CON PEQUEÑAS PERSONAS + NOMBRE CENTRAL)
+       SECCIÓN 01: HERO INTERACTIVO (3D PLAZA PURA, NOMBRE CENTRAL EN PAVIMENTO)
        ========================================================================= -->
   <main id="main-content" tabindex="-1">
     <section id="hero" class="relative min-h-[100svh] flex flex-col justify-between pt-24 pb-8 md:pb-12 px-6 md:px-12 lg:px-20 max-w-[1720px] mx-auto overflow-hidden">
       
-      <!-- Canvas Three.js: Plaza urbana 3D con personitas a escala humana -->
+      <!-- Canvas Three.js: Plaza urbana 3D completa con personitas y nombre central -->
       <canvas id="hero-canvas" aria-label="Plaza 3D interactiva"></canvas>
 
       <!-- Metadatos Superiores del Hero -->
@@ -307,45 +299,27 @@
         </div>
       </div>
 
-      <!-- Centro Hero: Tipografía Monumental Flotante -->
-      <div class="relative z-10 my-auto py-10 md:py-16 pointer-events-none select-none">
-        <h1 class="flex flex-col leading-[0.88] tracking-tightest">
-          
-          <!-- Línea 1: SANTIAGO -->
-          <span class="hero-line block overflow-hidden font-extrabold uppercase text-[clamp(3.8rem,13vw,14rem)] text-content-primary">
-            <span class="inline-block transform will-change-transform hero-text-1">
-              Santiago
-            </span>
-          </span>
-
-          <!-- Línea 2: BERMÚDEZ -->
-          <span class="hero-line block overflow-hidden font-serif italic font-light text-[clamp(4.2rem,14.5vw,15.5rem)] text-content-primary/95 -mt-3 md:-mt-8 lg:-mt-12 pl-2 md:pl-6">
-            <span class="inline-block transform will-change-transform hero-text-2">
-              Bermúdez<span class="text-accent font-sans not-italic font-normal">.</span>
-            </span>
-          </span>
-
-        </h1>
-      </div>
+      <!-- Espacio Central Abierto: La plaza 3D respira como protagonista absoluta sin texto superpuesto -->
+      <div class="my-auto pointer-events-none select-none"></div>
 
       <!-- Cuadrícula Inferior: Posicionamiento & Indicador de Desplazamiento -->
       <div class="relative z-10 hero-fade grid grid-cols-1 md:grid-cols-12 gap-8 items-end border-t border-border/80 pt-6">
         
         <!-- Rol & Propuesta de Valor Sintética -->
         <div class="md:col-span-8 lg:col-span-7">
-          <p data-i18n="hero.roleLabel" class="font-mono text-xs text-accent uppercase tracking-widest mb-2">
+          <p data-i18n="hero.roleLabel" class="font-mono text-xs text-accent uppercase tracking-widest mb-2 font-medium">
             Rol & Posicionamiento
           </p>
-          <p data-i18n-html="hero.roleDesc" class="text-lg md:text-xl lg:text-2xl font-light text-content-primary leading-relaxed max-w-2xl">
-            <strong class="font-semibold text-content-primary">Dirección Creativa × Estrategia de Marca.</strong>
+          <p data-i18n-html="hero.roleDesc" class="text-base sm:text-lg md:text-xl font-normal text-content-primary leading-relaxed max-w-2xl">
+            <strong class="font-bold text-content-primary">Dirección Creativa × Estrategia de Marca.</strong>
             Articulando marcas de consumo masivo, cultura pop y experiencias transformadoras.
           </p>
         </div>
 
         <!-- Botón de Scroll hacia la Bio -->
         <div class="md:col-span-4 lg:col-span-5 flex md:justify-end items-center">
-          <a href="#bio" class="nav-link group flex items-center gap-3.5 text-content-secondary hover:text-content-primary transition-colors bg-surface/90 backdrop-blur-sm px-4 py-2 rounded-full border border-border shadow-sm" aria-label="Explorar Bio">
-            <span data-i18n="hero.scrollCta" class="font-mono text-[11px] tracking-widest uppercase text-content-secondary group-hover:text-accent transition-colors">
+          <a href="#bio" class="nav-link group flex items-center gap-3 text-content-secondary hover:text-content-primary transition-colors bg-surface/90 backdrop-blur-sm px-4 py-2 rounded-full border border-border shadow-sm" aria-label="Explorar Bio">
+            <span data-i18n="hero.scrollCta" class="font-mono text-[11px] tracking-widest uppercase text-content-secondary group-hover:text-accent transition-colors font-medium">
               Explorar Bio ↓
             </span>
             <div class="w-6 h-6 rounded-full bg-surface-elevated border border-border flex items-center justify-center text-xs text-accent group-hover:translate-y-0.5 transition-transform">
@@ -372,9 +346,9 @@
         <span data-i18n="bio.subtag">[ Liderazgo & Visión ]</span>
       </div>
 
-      <!-- Gran Párrafo de Impacto (Cinético) -->
+      <!-- Gran Párrafo de Impacto (Palo Seco) -->
       <div class="max-w-5xl">
-        <p id="bio-text" data-i18n="bio.quote" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-[1.25] md:leading-[1.2] text-content-primary">
+        <p id="bio-text" data-i18n="bio.quote" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-snug tracking-tight text-content-primary">
           Más de una década articulando estrategia de negocio, cultura contemporánea y dirección de arte de escala regional y global.
         </p>
 
@@ -383,27 +357,27 @@
           
           <!-- Pilar 01 -->
           <div class="p-8 rounded-2xl bg-surface border border-border shadow-sm hover:border-accent/40 transition-all duration-300">
-            <span data-i18n="bio.p1Tag" class="font-mono text-xs text-accent block mb-3">// 01. DIRECCIÓN CREATIVA</span>
-            <h2 data-i18n="bio.p1Title" class="text-base font-semibold uppercase tracking-wider text-content-primary mb-2">Liderazgo & Criterio Visual</h2>
-            <p data-i18n="bio.p1Desc" class="text-xs md:text-sm text-content-secondary leading-relaxed font-light">
+            <span data-i18n="bio.p1Tag" class="font-mono text-xs text-accent block mb-3 font-medium">// 01. DIRECCIÓN CREATIVA</span>
+            <h2 data-i18n="bio.p1Title" class="text-base font-bold uppercase tracking-wider text-content-primary mb-2">Liderazgo & Criterio Visual</h2>
+            <p data-i18n="bio.p1Desc" class="text-xs md:text-sm text-content-secondary leading-relaxed font-normal">
               Conducción de equipos creativos multidisciplinarios y supervisión integral de craft para marcas líderes de escala global.
             </p>
           </div>
 
           <!-- Pilar 02 -->
           <div class="p-8 rounded-2xl bg-surface border border-border shadow-sm hover:border-accent/40 transition-all duration-300">
-            <span data-i18n="bio.p2Tag" class="font-mono text-xs text-accent block mb-3">// 02. ESTRATEGIA DE MARCA</span>
-            <h2 data-i18n="bio.p2Title" class="text-base font-semibold uppercase tracking-wider text-content-primary mb-2">Diagnóstico & Posicionamiento</h2>
-            <p data-i18n="bio.p2Desc" class="text-xs md:text-sm text-content-secondary leading-relaxed font-light">
+            <span data-i18n="bio.p2Tag" class="font-mono text-xs text-accent block mb-3 font-medium">// 02. ESTRATEGIA DE MARCA</span>
+            <h2 data-i18n="bio.p2Title" class="text-base font-bold uppercase tracking-wider text-content-primary mb-2">Diagnóstico & Posicionamiento</h2>
+            <p data-i18n="bio.p2Desc" class="text-xs md:text-sm text-content-secondary leading-relaxed font-normal">
               Matrices de oportunidad, reposicionamiento competitivo y plataformas de comunicación ancladas en métricas tangibles de negocio.
             </p>
           </div>
 
           <!-- Pilar 03 -->
           <div class="p-8 rounded-2xl bg-surface border border-border shadow-sm hover:border-accent/40 transition-all duration-300">
-            <span data-i18n="bio.p3Tag" class="font-mono text-xs text-accent block mb-3">// 03. EXPERIENCIA & CRAFT</span>
-            <h2 data-i18n="bio.p3Title" class="text-base font-semibold uppercase tracking-wider text-content-primary mb-2">Omnicanalidad & Retail</h2>
-            <p data-i18n="bio.p3Desc" class="text-xs md:text-sm text-content-secondary leading-relaxed font-light">
+            <span data-i18n="bio.p3Tag" class="font-mono text-xs text-accent block mb-3 font-medium">// 03. EXPERIENCIA & CRAFT</span>
+            <h2 data-i18n="bio.p3Title" class="text-base font-bold uppercase tracking-wider text-content-primary mb-2">Omnicanalidad & Retail</h2>
+            <p data-i18n="bio.p3Desc" class="text-xs md:text-sm text-content-secondary leading-relaxed font-normal">
               Activaciones inmersivas, diseño de experiencias y narrativas donde el plano físico y digital se potencian sin fricción.
             </p>
           </div>
@@ -413,15 +387,15 @@
         <!-- Indicadores Numéricos Ejecutivos -->
         <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-border/60">
           <div>
-            <span data-i18n="bio.m1Num" class="block font-serif text-3xl md:text-4xl text-content-primary">+10</span>
+            <span data-i18n="bio.m1Num" class="block font-bold text-3xl md:text-4xl text-content-primary tracking-tight">+10</span>
             <span data-i18n="bio.m1Label" class="font-mono text-[11px] uppercase tracking-wider text-content-muted">Años de Trayectoria Directiva</span>
           </div>
           <div>
-            <span data-i18n="bio.m2Num" class="block font-serif text-3xl md:text-4xl text-content-primary">16+</span>
+            <span data-i18n="bio.m2Num" class="block font-bold text-3xl md:text-4xl text-content-primary tracking-tight">16+</span>
             <span data-i18n="bio.m2Label" class="font-mono text-[11px] uppercase tracking-wider text-content-muted">Casos Documentados</span>
           </div>
           <div>
-            <span data-i18n="bio.m3Num" class="block font-serif text-3xl md:text-4xl text-content-primary">360°</span>
+            <span data-i18n="bio.m3Num" class="block font-bold text-3xl md:text-4xl text-content-primary tracking-tight">360°</span>
             <span data-i18n="bio.m3Label" class="font-mono text-[11px] uppercase tracking-wider text-content-muted">Estrategia Omnicanal</span>
           </div>
         </div>
@@ -438,12 +412,12 @@
       <!-- Encabezado de Sección -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-24">
         <div>
-          <div class="flex items-center gap-2 mb-4 font-mono text-[11px] tracking-widest uppercase text-accent">
+          <div class="flex items-center gap-2 mb-4 font-mono text-[11px] tracking-widest uppercase text-accent font-medium">
             <span class="w-2 h-[1px] bg-accent"></span>
             <span data-i18n="cases.tag">02 // CASOS SELECCIONADOS</span>
           </div>
-          <h2 data-i18n-html="cases.title" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-light tracking-tight text-content-primary">
-            Criterio estratégico aplicado a <span class="italic text-content-primary">marcas de gran escala.</span>
+          <h2 data-i18n-html="cases.title" class="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-content-primary">
+            Criterio estratégico aplicado a <span class="font-bold text-content-primary">marcas de gran escala.</span>
           </h2>
         </div>
         <div class="font-mono text-xs text-content-muted flex items-center gap-4">
@@ -451,7 +425,7 @@
         </div>
       </div>
 
-      <!-- Cuadrícula 2×2 de Casos Insignia (Visual-First con imágenes nítidas) -->
+      <!-- Cuadrícula 2×2 de Casos Insignia -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
 
         <!-- CASO 01: ADIDAS × EUKANUBA -->
@@ -478,10 +452,10 @@
               <span class="font-mono text-xs text-white/80 uppercase tracking-widest block mb-1">
                 Adidas Running × Eukanuba
               </span>
-              <h3 data-i18n="cases.c1Title" class="text-2xl sm:text-3xl font-serif italic mb-2">
+              <h3 data-i18n="cases.c1Title" class="text-2xl sm:text-3xl font-bold tracking-tight mb-2">
                 Corriendo con tu Perro
               </h3>
-              <p data-i18n="cases.c1Desc" class="text-xs sm:text-sm text-white/90 font-light line-clamp-2">
+              <p data-i18n="cases.c1Desc" class="text-xs sm:text-sm text-white/90 font-normal line-clamp-2">
                 Desafiando el individualismo deportivo para legitimar la presencia de marca en el territorio pet-parents con running canino.
               </p>
             </div>
@@ -519,10 +493,10 @@
               <span class="font-mono text-xs text-white/80 uppercase tracking-widest block mb-1">
                 Colgate-Palmolive
               </span>
-              <h3 data-i18n="cases.c2Title" class="text-2xl sm:text-3xl font-serif italic mb-2">
+              <h3 data-i18n="cases.c2Title" class="text-2xl sm:text-3xl font-bold tracking-tight mb-2">
                 Expert Voices (Stream Studio & Content)
               </h3>
-              <p data-i18n="cases.c2Desc" class="text-xs sm:text-sm text-white/90 font-light line-clamp-2">
+              <p data-i18n="cases.c2Desc" class="text-xs sm:text-sm text-white/90 font-normal line-clamp-2">
                 Transformando odontólogos en creadores de contenido para combatir la desinformación y el auge de la IA con un set de streaming profesional.
               </p>
             </div>
@@ -560,10 +534,10 @@
               <span class="font-mono text-xs text-white/80 uppercase tracking-widest block mb-1">
                 Fabuloso / Colgate-Palmolive
               </span>
-              <h3 data-i18n="cases.c3Title" class="text-2xl sm:text-3xl font-serif italic mb-2">
+              <h3 data-i18n="cases.c3Title" class="text-2xl sm:text-3xl font-bold tracking-tight mb-2">
                 El Valor Emocional de las Fragancias
               </h3>
-              <p data-i18n="cases.c3Desc" class="text-xs sm:text-sm text-white/90 font-light line-clamp-2">
+              <p data-i18n="cases.c3Desc" class="text-xs sm:text-sm text-white/90 font-normal line-clamp-2">
                 Apalancándose en la memoria olfativa para reconectar emocionalmente con los consumidores a través de relatos familiares y experiencias digitales.
               </p>
             </div>
@@ -601,10 +575,10 @@
               <span class="font-mono text-xs text-white/80 uppercase tracking-widest block mb-1">
                 Koleston / Wella Company
               </span>
-              <h3 data-i18n="cases.c4Title" class="text-2xl sm:text-3xl font-serif italic mb-2">
+              <h3 data-i18n="cases.c4Title" class="text-2xl sm:text-3xl font-bold tracking-tight mb-2">
                 Reinicio Capilar Cósmico (Trailer Planetario)
               </h3>
-              <p data-i18n="cases.c4Desc" class="text-xs sm:text-sm text-white/90 font-light line-clamp-2">
+              <p data-i18n="cases.c4Desc" class="text-xs sm:text-sm text-white/90 font-normal line-clamp-2">
                 Conexión cósmica en el Planetario de Buenos Aires: sincronizando el calendario lunar con las fases de cuidado y coloración capilar.
               </p>
             </div>
@@ -629,10 +603,10 @@
       
       <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 mb-10">
         <div>
-          <span data-i18n="cases.repoTitle" class="font-mono text-xs text-accent tracking-widest uppercase block mb-1">
+          <span data-i18n="cases.repoTitle" class="font-mono text-xs text-accent tracking-widest uppercase block mb-1 font-medium">
             // 03. REPOSITORIO EJECUTIVO
           </span>
-          <h2 class="text-2xl sm:text-3xl font-serif italic text-content-primary">
+          <h2 class="text-2xl sm:text-3xl font-bold text-content-primary tracking-tight">
             Registro documentado de campañas & estrategias
           </h2>
         </div>
@@ -654,7 +628,7 @@
 
         <!-- Fila 01: Royal Canin Verano -->
         <div class="case-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center cursor-pointer group" data-case-id="case-rc-verano">
-          <div class="col-span-5 md:col-span-4 font-serif italic text-base md:text-lg text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-5 md:col-span-4 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Royal Canin — Verano en Movimiento (Tour Costero)
           </div>
           <div class="col-span-3 hidden sm:block md:col-span-3 font-mono text-xs text-content-secondary">
@@ -670,7 +644,7 @@
 
         <!-- Fila 02: Colgate Total Interdental -->
         <div class="case-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center cursor-pointer group" data-case-id="case-colgate-interdental">
-          <div class="col-span-5 md:col-span-4 font-serif italic text-base md:text-lg text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-5 md:col-span-4 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Colgate Total Interdental — Prevención & Mes de la Salud Oral
           </div>
           <div class="col-span-3 hidden sm:block md:col-span-3 font-mono text-xs text-content-secondary">
@@ -686,7 +660,7 @@
 
         <!-- Fila 03: Rimmel London La Previa -->
         <div class="case-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center cursor-pointer group" data-case-id="case-rimmel-previa">
-          <div class="col-span-5 md:col-span-4 font-serif italic text-base md:text-lg text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-5 md:col-span-4 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Rimmel London — La Previa (TikTok Studio & Clean Beauty)
           </div>
           <div class="col-span-3 hidden sm:block md:col-span-3 font-mono text-xs text-content-secondary">
@@ -702,7 +676,7 @@
 
         <!-- Fila 04: Decathlon Desembarco Abasto -->
         <div class="case-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center cursor-pointer group" data-case-id="case-decathlon-abasto">
-          <div class="col-span-5 md:col-span-4 font-serif italic text-base md:text-lg text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-5 md:col-span-4 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Decathlon — Desembarco y Experiencia Integral en Abasto Shopping
           </div>
           <div class="col-span-3 hidden sm:block md:col-span-3 font-mono text-xs text-content-secondary">
@@ -718,7 +692,7 @@
 
         <!-- Fila 05: Extremas Smash Burgers -->
         <div class="case-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center cursor-pointer group" data-case-id="case-extremas-burgers">
-          <div class="col-span-5 md:col-span-4 font-serif italic text-base md:text-lg text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-5 md:col-span-4 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Extremas Smash Burgers — Reposicionamiento & Ambición Urbana
           </div>
           <div class="col-span-3 hidden sm:block md:col-span-3 font-mono text-xs text-content-secondary">
@@ -734,7 +708,7 @@
 
         <!-- Fila 06: Olaplex Blossom Floralis -->
         <div class="case-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center cursor-pointer group" data-case-id="case-olaplex-blossom">
-          <div class="col-span-5 md:col-span-4 font-serif italic text-base md:text-lg text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-5 md:col-span-4 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Olaplex — Blossom: Cuidado Capilar Invernal en Floralis Genérica
           </div>
           <div class="col-span-3 hidden sm:block md:col-span-3 font-mono text-xs text-content-secondary">
@@ -750,7 +724,7 @@
 
         <!-- Fila 07: Royal Canin Mujeres Veterinarias 8M -->
         <div class="case-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center cursor-pointer group" data-case-id="case-rc-mujeres-vet">
-          <div class="col-span-5 md:col-span-4 font-serif italic text-base md:text-lg text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-5 md:col-span-4 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Royal Canin — Reconocimiento y Criterio de Mujeres Veterinarias (8M)
           </div>
           <div class="col-span-3 hidden sm:block md:col-span-3 font-mono text-xs text-content-secondary">
@@ -766,7 +740,7 @@
 
         <!-- Fila 08: Royal Canin Dachshund en SNT Coffee -->
         <div class="case-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center cursor-pointer group" data-case-id="case-rc-salchi">
-          <div class="col-span-5 md:col-span-4 font-serif italic text-base md:text-lg text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-5 md:col-span-4 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Royal Canin — Encuentro Dachshund para Tutores en SNT Coffee
           </div>
           <div class="col-span-3 hidden sm:block md:col-span-3 font-mono text-xs text-content-secondary">
@@ -782,7 +756,7 @@
 
         <!-- Fila 09: Aromitalia Materia Prima 2026 -->
         <div class="case-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center cursor-pointer group" data-case-id="case-aromitalia-materia">
-          <div class="col-span-5 md:col-span-4 font-serif italic text-base md:text-lg text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-5 md:col-span-4 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Aromitalia — Materia Prima 2026: Experiencia Sensorial B2B
           </div>
           <div class="col-span-3 hidden sm:block md:col-span-3 font-mono text-xs text-content-secondary">
@@ -798,7 +772,7 @@
 
         <!-- Fila 10: Koleston 8M -->
         <div class="case-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center cursor-pointer group" data-case-id="case-koleston-8m">
-          <div class="col-span-5 md:col-span-4 font-serif italic text-base md:text-lg text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-5 md:col-span-4 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Koleston — Mes de la Mujer: Deconstrucción del Espejo & Expresión
           </div>
           <div class="col-span-3 hidden sm:block md:col-span-3 font-mono text-xs text-content-secondary">
@@ -814,7 +788,7 @@
 
         <!-- Fila 11: ShopGallery -->
         <div class="case-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center cursor-pointer group" data-case-id="case-shopgallery">
-          <div class="col-span-5 md:col-span-4 font-serif italic text-base md:text-lg text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-5 md:col-span-4 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             ShopGallery — Plataforma de Experiencia Digital & E-Commerce
           </div>
           <div class="col-span-3 hidden sm:block md:col-span-3 font-mono text-xs text-content-secondary">
@@ -840,12 +814,12 @@
       <!-- Encabezado con Botones de Alternancia de Vista -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-20">
         <div>
-          <div class="flex items-center gap-2 mb-4 font-mono text-[11px] tracking-widest uppercase text-accent">
+          <div class="flex items-center gap-2 mb-4 font-mono text-[11px] tracking-widest uppercase text-accent font-medium">
             <span class="w-2 h-[1px] bg-accent"></span>
             <span data-i18n="repertoire.tag">04 // REPERTORIO VISUAL & CRAFT</span>
           </div>
-          <h2 data-i18n-html="repertoire.headline" class="text-3xl sm:text-4xl md:text-5xl font-serif font-light text-content-primary">
-            Exploración de identidad y <span class="italic">diseño editorial.</span>
+          <h2 data-i18n-html="repertoire.headline" class="text-3xl sm:text-4xl md:text-5xl font-medium text-content-primary tracking-tight">
+            Exploración de identidad y <span class="font-bold text-content-primary">diseño editorial.</span>
           </h2>
         </div>
 
@@ -860,7 +834,7 @@
         </div>
       </div>
 
-      <!-- VISTA 1: CUADRÍCULA (Enlaces directos a piezas específicas de Behance) -->
+      <!-- VISTA 1: CUADRÍCULA -->
       <div id="behance-grid-view" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         
         <!-- Proyecto Behance 1: Lo cambia todo -->
@@ -870,11 +844,11 @@
             <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm border border-border flex items-center justify-center text-xs text-content-primary group-hover:bg-accent group-hover:text-white transition-colors shadow-sm">↗</div>
           </div>
           <div class="p-6">
-            <div class="flex items-center justify-between font-mono text-[10px] text-accent tracking-widest uppercase mb-2">
+            <div class="flex items-center justify-between font-mono text-[10px] text-accent tracking-widest uppercase mb-2 font-medium">
               <span>Dirección de Arte & Redacción</span>
               <span class="text-content-muted">2026</span>
             </div>
-            <h3 class="text-lg font-serif italic text-content-primary group-hover:text-accent transition-colors">
+            <h3 class="text-lg font-bold text-content-primary group-hover:text-accent transition-colors">
               Lo cambia todo
             </h3>
             <p class="text-xs font-mono text-content-secondary mt-1">Campaña conceptual y dirección visual</p>
@@ -888,11 +862,11 @@
             <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm border border-border flex items-center justify-center text-xs text-content-primary group-hover:bg-accent group-hover:text-white transition-colors shadow-sm">↗</div>
           </div>
           <div class="p-6">
-            <div class="flex items-center justify-between font-mono text-[10px] text-accent tracking-widest uppercase mb-2">
+            <div class="flex items-center justify-between font-mono text-[10px] text-accent tracking-widest uppercase mb-2 font-medium">
               <span>Dirección de Arte & Campaña</span>
               <span class="text-content-muted">2026</span>
             </div>
-            <h3 class="text-lg font-serif italic text-content-primary group-hover:text-accent transition-colors">
+            <h3 class="text-lg font-bold text-content-primary group-hover:text-accent transition-colors">
               Santi Manotea
             </h3>
             <p class="text-xs font-mono text-content-secondary mt-1">Pieza creativa y storytelling publicitario</p>
@@ -906,11 +880,11 @@
             <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm border border-border flex items-center justify-center text-xs text-content-primary group-hover:bg-accent group-hover:text-white transition-colors shadow-sm">↗</div>
           </div>
           <div class="p-6">
-            <div class="flex items-center justify-between font-mono text-[10px] text-accent tracking-widest uppercase mb-2">
+            <div class="flex items-center justify-between font-mono text-[10px] text-accent tracking-widest uppercase mb-2 font-medium">
               <span>Comunicación & Publicidad</span>
               <span class="text-content-muted">2025</span>
             </div>
-            <h3 class="text-lg font-serif italic text-content-primary group-hover:text-accent transition-colors">
+            <h3 class="text-lg font-bold text-content-primary group-hover:text-accent transition-colors">
               Girasol Advanta
             </h3>
             <p class="text-xs font-mono text-content-secondary mt-1">Campaña de posicionamiento agro-industrial</p>
@@ -924,11 +898,11 @@
             <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm border border-border flex items-center justify-center text-xs text-content-primary group-hover:bg-accent group-hover:text-white transition-colors shadow-sm">↗</div>
           </div>
           <div class="p-6">
-            <div class="flex items-center justify-between font-mono text-[10px] text-accent tracking-widest uppercase mb-2">
+            <div class="flex items-center justify-between font-mono text-[10px] text-accent tracking-widest uppercase mb-2 font-medium">
               <span>Campaña & Dirección de Arte</span>
               <span class="text-content-muted">2024</span>
             </div>
-            <h3 class="text-lg font-serif italic text-content-primary group-hover:text-accent transition-colors">
+            <h3 class="text-lg font-bold text-content-primary group-hover:text-accent transition-colors">
               Royal Canin
             </h3>
             <p class="text-xs font-mono text-content-secondary mt-1">Identidad de marca y fotografía de escala</p>
@@ -942,11 +916,11 @@
             <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm border border-border flex items-center justify-center text-xs text-content-primary group-hover:bg-accent group-hover:text-white transition-colors shadow-sm">↗</div>
           </div>
           <div class="p-6">
-            <div class="flex items-center justify-between font-mono text-[10px] text-accent tracking-widest uppercase mb-2">
+            <div class="flex items-center justify-between font-mono text-[10px] text-accent tracking-widest uppercase mb-2 font-medium">
               <span>Salud & Comunicación Corporativa</span>
               <span class="text-content-muted">2024</span>
             </div>
-            <h3 class="text-lg font-serif italic text-content-primary group-hover:text-accent transition-colors">
+            <h3 class="text-lg font-bold text-content-primary group-hover:text-accent transition-colors">
               Ferring Pharma
             </h3>
             <p class="text-xs font-mono text-content-secondary mt-1">Estrategia de comunicación y craft visual</p>
@@ -960,11 +934,11 @@
             <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm border border-border flex items-center justify-center text-xs text-content-primary group-hover:bg-accent group-hover:text-white transition-colors shadow-sm">↗</div>
           </div>
           <div class="p-6">
-            <div class="flex items-center justify-between font-mono text-[10px] text-accent tracking-widest uppercase mb-2">
+            <div class="flex items-center justify-between font-mono text-[10px] text-accent tracking-widest uppercase mb-2 font-medium">
               <span>Identidad & Packaging</span>
               <span class="text-content-muted">2024</span>
             </div>
-            <h3 class="text-lg font-serif italic text-content-primary group-hover:text-accent transition-colors">
+            <h3 class="text-lg font-bold text-content-primary group-hover:text-accent transition-colors">
               Aromitalia
             </h3>
             <p class="text-xs font-mono text-content-secondary mt-1">Identidad de marca y packaging gastronómico</p>
@@ -973,7 +947,7 @@
 
       </div>
 
-      <!-- VISTA 2: DIRECTORIO (Oculta por defecto) -->
+      <!-- VISTA 2: DIRECTORIO -->
       <div id="behance-table-view" class="hidden border border-border rounded-2xl bg-surface overflow-hidden divide-y divide-border shadow-sm">
         
         <div class="px-6 py-4 bg-surface-elevated font-mono text-[11px] text-content-muted tracking-widest uppercase grid grid-cols-12 gap-4">
@@ -984,7 +958,7 @@
         </div>
 
         <a href="https://www.behance.net/gallery/250171841/Lo-cambia-todo" target="_blank" rel="noopener noreferrer" class="behance-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center group block" data-preview-img="https://mir-s3-cdn-cf.behance.net/projects/808/00ebcf250171841.Y3JvcCw4MDgsNjMyLDAsMA.png">
-          <div class="col-span-6 md:col-span-5 font-serif italic text-base text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-6 md:col-span-5 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Lo cambia todo
           </div>
           <div class="col-span-3 hidden md:block font-mono text-xs text-content-secondary">
@@ -993,13 +967,13 @@
           <div class="col-span-3 hidden sm:block font-mono text-xs text-content-muted">
             Campaña Conceptual
           </div>
-          <div class="col-span-6 sm:col-span-3 md:col-span-1 text-right font-mono text-xs text-accent">
+          <div class="col-span-6 sm:col-span-3 md:col-span-1 text-right font-mono text-xs text-accent font-semibold">
             2026 ↗
           </div>
         </a>
 
         <a href="https://www.behance.net/gallery/242029057/Santi-Manotea" target="_blank" rel="noopener noreferrer" class="behance-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center group block" data-preview-img="https://mir-s3-cdn-cf.behance.net/projects/808/bfc4f1242029057.Y3JvcCw4MDgsNjMyLDAsMA.jpg">
-          <div class="col-span-6 md:col-span-5 font-serif italic text-base text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-6 md:col-span-5 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Santi Manotea
           </div>
           <div class="col-span-3 hidden md:block font-mono text-xs text-content-secondary">
@@ -1008,13 +982,13 @@
           <div class="col-span-3 hidden sm:block font-mono text-xs text-content-muted">
             Storytelling
           </div>
-          <div class="col-span-6 sm:col-span-3 md:col-span-1 text-right font-mono text-xs text-accent">
+          <div class="col-span-6 sm:col-span-3 md:col-span-1 text-right font-mono text-xs text-accent font-semibold">
             2026 ↗
           </div>
         </a>
 
         <a href="https://www.behance.net/gallery/230940477/Girasol-Advanta" target="_blank" rel="noopener noreferrer" class="behance-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center group block" data-preview-img="https://mir-s3-cdn-cf.behance.net/projects/808/205470230940477.Y3JvcCw4MDgsNjMyLDAsMA.png">
-          <div class="col-span-6 md:col-span-5 font-serif italic text-base text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-6 md:col-span-5 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Girasol Advanta
           </div>
           <div class="col-span-3 hidden md:block font-mono text-xs text-content-secondary">
@@ -1023,13 +997,13 @@
           <div class="col-span-3 hidden sm:block font-mono text-xs text-content-muted">
             Agroindustria
           </div>
-          <div class="col-span-6 sm:col-span-3 md:col-span-1 text-right font-mono text-xs text-accent">
+          <div class="col-span-6 sm:col-span-3 md:col-span-1 text-right font-mono text-xs text-accent font-semibold">
             2025 ↗
           </div>
         </a>
 
         <a href="https://www.behance.net/gallery/214099385/Royal-Canin" target="_blank" rel="noopener noreferrer" class="behance-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center group block" data-preview-img="https://mir-s3-cdn-cf.behance.net/projects/808/5f98fc214099385.Y3JvcCwxMDgwLDg0NCwwLDA.jpg">
-          <div class="col-span-6 md:col-span-5 font-serif italic text-base text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-6 md:col-span-5 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Royal Canin
           </div>
           <div class="col-span-3 hidden md:block font-mono text-xs text-content-secondary">
@@ -1038,13 +1012,13 @@
           <div class="col-span-3 hidden sm:block font-mono text-xs text-content-muted">
             Identidad
           </div>
-          <div class="col-span-6 sm:col-span-3 md:col-span-1 text-right font-mono text-xs text-accent">
+          <div class="col-span-6 sm:col-span-3 md:col-span-1 text-right font-mono text-xs text-accent font-semibold">
             2024 ↗
           </div>
         </a>
 
         <a href="https://www.behance.net/gallery/207925827/Ferring-pharma" target="_blank" rel="noopener noreferrer" class="behance-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center group block" data-preview-img="https://mir-s3-cdn-cf.behance.net/projects/808/c5fa81207925827.Y3JvcCwzMjk4LDI1NzksMCw1MDA.png">
-          <div class="col-span-6 md:col-span-5 font-serif italic text-base text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-6 md:col-span-5 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Ferring Pharma
           </div>
           <div class="col-span-3 hidden md:block font-mono text-xs text-content-secondary">
@@ -1053,13 +1027,13 @@
           <div class="col-span-3 hidden sm:block font-mono text-xs text-content-muted">
             Corporativo
           </div>
-          <div class="col-span-6 sm:col-span-3 md:col-span-1 text-right font-mono text-xs text-accent">
+          <div class="col-span-6 sm:col-span-3 md:col-span-1 text-right font-mono text-xs text-accent font-semibold">
             2024 ↗
           </div>
         </a>
 
         <a href="https://www.behance.net/gallery/206552943/Aromitalia" target="_blank" rel="noopener noreferrer" class="behance-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center group block" data-preview-img="https://mir-s3-cdn-cf.behance.net/projects/808/046e7f206552943.Y3JvcCwxMDgwLDg0NCwwLDA.png">
-          <div class="col-span-6 md:col-span-5 font-serif italic text-base text-content-primary group-hover:text-accent transition-colors">
+          <div class="col-span-6 md:col-span-5 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
             Aromitalia
           </div>
           <div class="col-span-3 hidden md:block font-mono text-xs text-content-secondary">
@@ -1068,7 +1042,7 @@
           <div class="col-span-3 hidden sm:block font-mono text-xs text-content-muted">
             Gastronomía
           </div>
-          <div class="col-span-6 sm:col-span-3 md:col-span-1 text-right font-mono text-xs text-accent">
+          <div class="col-span-6 sm:col-span-3 md:col-span-1 text-right font-mono text-xs text-accent font-semibold">
             2024 ↗
           </div>
         </a>
@@ -1092,14 +1066,14 @@
     <footer id="contact" class="relative z-10 pt-24 md:pt-36 pb-16 px-6 md:px-12 lg:px-20 max-w-[1720px] mx-auto border-t border-border bg-canvas">
       
       <!-- Encabezado de Contacto -->
-      <div class="flex items-center gap-2 mb-8 font-mono text-[11px] tracking-widest uppercase text-accent">
+      <div class="flex items-center gap-2 mb-8 font-mono text-[11px] tracking-widest uppercase text-accent font-medium">
         <span class="w-2 h-[1px] bg-accent"></span>
         <span data-i18n="contact.tag">05 // INICIAR CONVERSACIÓN</span>
       </div>
 
       <!-- Titular Editorial -->
-      <p data-i18n-html="contact.headline" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-light text-content-primary max-w-4xl leading-tight mb-16">
-        ¿Tenés un desafío estratégico de marca o un proyecto de gran escala en puerta? <span class="italic text-content-primary">Hablemos.</span>
+      <p data-i18n-html="contact.headline" class="text-3xl sm:text-4xl md:text-5xl font-light text-content-primary max-w-4xl leading-tight mb-16 tracking-tight">
+        ¿Tenés un desafío estratégico de marca o un proyecto de gran escala en puerta? <span class="font-bold text-content-primary">Hablemos.</span>
       </p>
 
       <!-- Bloques de Canales de Contacto Directo -->
@@ -1108,37 +1082,37 @@
         <!-- Canal 1: Correo -->
         <a href="mailto:sabermudez@gmail.com" class="p-8 rounded-2xl bg-surface border border-border hover:border-accent/40 shadow-sm transition-all duration-300 group block">
           <span class="font-mono text-xs text-content-muted block mb-2">// CORREO DIRECTO</span>
-          <span class="text-lg font-serif italic text-content-primary group-hover:text-accent transition-colors block mb-1">
+          <span class="text-lg font-bold text-content-primary group-hover:text-accent transition-colors block mb-1">
             sabermudez@gmail.com
           </span>
-          <span class="font-mono text-[11px] text-accent inline-flex items-center gap-1">Enviar correo ↗</span>
+          <span class="font-mono text-[11px] text-accent inline-flex items-center gap-1 font-medium">Enviar correo ↗</span>
         </a>
 
         <!-- Canal 2: WhatsApp -->
         <a href="https://wa.me/5491131050219" target="_blank" rel="noopener noreferrer" class="p-8 rounded-2xl bg-surface border border-border hover:border-accent/40 shadow-sm transition-all duration-300 group block">
           <span data-i18n="contact.phoneLabel" class="font-mono text-xs text-content-muted block mb-2">// TELÉFONO / WHATSAPP</span>
-          <span class="text-lg font-serif italic text-content-primary group-hover:text-accent transition-colors block mb-1">
+          <span class="text-lg font-bold text-content-primary group-hover:text-accent transition-colors block mb-1">
             +54 9 11 3105-0219
           </span>
-          <span class="font-mono text-[11px] text-accent inline-flex items-center gap-1">Mensaje instantáneo ↗</span>
+          <span class="font-mono text-[11px] text-accent inline-flex items-center gap-1 font-medium">Mensaje instantáneo ↗</span>
         </a>
 
         <!-- Canal 3: LinkedIn -->
         <a href="https://www.linkedin.com/in/santiagobermudez/" target="_blank" rel="noopener noreferrer" class="p-8 rounded-2xl bg-surface border border-border hover:border-accent/40 shadow-sm transition-all duration-300 group block">
           <span data-i18n="contact.linkedinLabel" class="font-mono text-xs text-content-muted block mb-2">// RED PROFESIONAL</span>
-          <span class="text-lg font-serif italic text-content-primary group-hover:text-accent transition-colors block mb-1">
+          <span class="text-lg font-bold text-content-primary group-hover:text-accent transition-colors block mb-1">
             /in/santiagobermudez
           </span>
-          <span class="font-mono text-[11px] text-accent inline-flex items-center gap-1">Conectar en LinkedIn ↗</span>
+          <span class="font-mono text-[11px] text-accent inline-flex items-center gap-1 font-medium">Conectar en LinkedIn ↗</span>
         </a>
 
         <!-- Canal 4: Behance -->
         <a href="https://www.behance.net/sabermudez" target="_blank" rel="noopener noreferrer" class="p-8 rounded-2xl bg-surface border border-border hover:border-accent/40 shadow-sm transition-all duration-300 group block">
           <span data-i18n="contact.behanceLabel" class="font-mono text-xs text-content-muted block mb-2">// PORTFOLIO CREATIVO</span>
-          <span class="text-lg font-serif italic text-content-primary group-hover:text-accent transition-colors block mb-1">
+          <span class="text-lg font-bold text-content-primary group-hover:text-accent transition-colors block mb-1">
             /sabermudez
           </span>
-          <span class="font-mono text-[11px] text-accent inline-flex items-center gap-1">Explorar portfolio ↗</span>
+          <span class="font-mono text-[11px] text-accent inline-flex items-center gap-1 font-medium">Explorar portfolio ↗</span>
         </a>
 
       </div>
@@ -1186,7 +1160,7 @@
       </div>
       <div class="absolute bottom-4 left-4 right-4 px-4 py-2.5 rounded-xl bg-white/90 backdrop-blur-md border border-border flex items-center justify-between">
         <span id="drawer-preview-caption" class="font-mono text-xs text-content-primary font-medium tracking-wide"></span>
-        <button id="drawer-preview-zoom-btn" class="font-mono text-[11px] text-accent hover:underline flex items-center gap-1">
+        <button id="drawer-preview-zoom-btn" class="font-mono text-[11px] text-accent hover:underline flex items-center gap-1 font-semibold">
           <span data-i18n="lightbox.fullscreenBtn">Pantalla Completa</span> ↗
         </button>
       </div>
@@ -1208,7 +1182,7 @@
   >
     <!-- Cabecera del Drawer -->
     <div class="px-6 sm:px-8 py-5 border-b border-border flex items-center justify-between bg-surface-elevated">
-      <div class="flex items-center gap-2 font-mono text-[11px] text-accent uppercase tracking-widest">
+      <div class="flex items-center gap-2 font-mono text-[11px] text-accent uppercase tracking-widest font-semibold">
         <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
         <span id="drawer-meta" data-i18n="drawer.meta">ANÁLISIS ESTRATÉGICO</span>
       </div>
@@ -1221,34 +1195,34 @@
     <!-- Contenido con Scroll -->
     <div class="flex-1 overflow-y-auto px-6 sm:px-10 py-8 space-y-8 bg-surface">
       <div>
-        <span id="drawer-client" class="font-mono text-xs text-accent uppercase tracking-widest block mb-2 font-semibold"></span>
-        <h2 id="drawer-title" class="text-3xl sm:text-4xl font-serif italic text-content-primary leading-tight mb-4"></h2>
+        <span id="drawer-client" class="font-mono text-xs text-accent uppercase tracking-widest block mb-2 font-bold"></span>
+        <h2 id="drawer-title" class="text-2xl sm:text-3xl font-bold text-content-primary leading-tight mb-4 tracking-tight"></h2>
         <div class="flex flex-wrap items-center gap-2 font-mono text-xs">
           <span id="drawer-year" class="px-2.5 py-1 rounded-full bg-surface-elevated border border-border text-content-primary font-medium"></span>
           <span id="drawer-category" class="px-2.5 py-1 rounded-full bg-surface-elevated border border-border text-content-secondary uppercase"></span>
-          <span id="drawer-role" class="px-2.5 py-1 rounded-full bg-accent-subtle border border-accent/20 text-accent uppercase font-medium"></span>
+          <span id="drawer-role" class="px-2.5 py-1 rounded-full bg-accent-subtle border border-accent/20 text-accent uppercase font-semibold"></span>
         </div>
       </div>
 
       <div class="space-y-6 pt-6 border-t border-border">
         <div>
-          <span data-i18n="drawer.challengeLabel" class="font-mono text-[11px] text-content-muted uppercase tracking-widest block mb-2">// 01. Desafío Estratégico</span>
-          <p id="drawer-challenge" class="text-sm md:text-base text-content-primary font-light leading-relaxed"></p>
+          <span data-i18n="drawer.challengeLabel" class="font-mono text-[11px] text-content-muted uppercase tracking-widest block mb-2 font-medium">// 01. Desafío Estratégico</span>
+          <p id="drawer-challenge" class="text-sm md:text-base text-content-primary font-normal leading-relaxed"></p>
         </div>
 
         <div>
-          <span data-i18n="drawer.solutionLabel" class="font-mono text-[11px] text-accent uppercase tracking-widest block mb-2 font-semibold">// 02. Solución Conceptual & Creativa</span>
-          <p id="drawer-solution" class="text-sm md:text-base text-content-primary font-light leading-relaxed"></p>
+          <span data-i18n="drawer.solutionLabel" class="font-mono text-[11px] text-accent uppercase tracking-widest block mb-2 font-bold">// 02. Solución Conceptual & Creativa</span>
+          <p id="drawer-solution" class="text-sm md:text-base text-content-primary font-normal leading-relaxed"></p>
         </div>
 
         <div>
-          <span data-i18n="drawer.piecesLabel" class="font-mono text-[11px] text-content-muted uppercase tracking-widest block mb-3">// 03. Piezas & Entregables Clave</span>
+          <span data-i18n="drawer.piecesLabel" class="font-mono text-[11px] text-content-muted uppercase tracking-widest block mb-3 font-medium">// 03. Piezas & Entregables Clave</span>
           <ul id="drawer-pieces" class="grid grid-cols-1 gap-2.5 font-mono text-xs text-content-secondary"></ul>
         </div>
       </div>
 
       <div id="drawer-gallery-container" class="mt-8 pt-8 border-t border-border hidden">
-        <span data-i18n="drawer.galleryLabel" class="font-mono text-[11px] text-accent uppercase tracking-widest block mb-4 font-semibold">// 04. Galería Visual & Piezas</span>
+        <span data-i18n="drawer.galleryLabel" class="font-mono text-[11px] text-accent uppercase tracking-widest block mb-4 font-bold">// 04. Galería Visual & Piezas</span>
         <div id="drawer-gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
       </div>
     </div>
@@ -1268,8 +1242,8 @@
   <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex flex-col justify-between p-4 sm:p-8" role="dialog" aria-modal="true" aria-label="Visor a pantalla completa">
     <div class="w-full flex items-center justify-between font-mono text-xs z-20">
       <div class="flex items-center gap-3">
-        <span id="lightbox-counter" class="text-accent uppercase tracking-widest text-[11px] font-semibold"></span>
-        <span id="lightbox-title" class="text-white/80 hidden sm:inline truncate max-w-md"></span>
+        <span id="lightbox-counter" class="text-accent uppercase tracking-widest text-[11px] font-bold"></span>
+        <span id="lightbox-title" class="text-white/80 hidden sm:inline truncate max-w-md font-medium"></span>
       </div>
       <button id="lightbox-close-btn" class="group flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/20 bg-white/10 hover:border-accent text-xs font-mono tracking-widest uppercase text-white transition-all shadow-sm" aria-label="Cerrar visor">
         <span data-i18n="lightbox.closeBtn">Cerrar</span>
@@ -1306,7 +1280,7 @@
     <div class="flex items-start gap-3 mb-3 font-mono text-xs">
       <span class="w-2 h-2 rounded-full bg-accent mt-1 flex-shrink-0"></span>
       <div>
-        <span data-i18n="cookiesBanner.title" class="text-content-primary font-semibold block uppercase tracking-wider text-[11px]">Transparencia & Privacidad de Datos</span>
+        <span data-i18n="cookiesBanner.title" class="text-content-primary font-bold block uppercase tracking-wider text-[11px]">Transparencia & Privacidad de Datos</span>
         <p data-i18n="cookiesBanner.text" class="text-content-secondary text-[11px] leading-relaxed mt-1">
           Este sitio web es un portafolio profesional estático. Únicamente utilizamos almacenamiento local técnico estrictamente necesario para guardar tus preferencias de uso. No utilizamos cookies de rastreo, analítica de terceros ni publicidad.
         </p>
@@ -1326,7 +1300,7 @@
   <div id="privacy-modal-backdrop" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
   <dialog id="privacy-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] max-w-2xl max-h-[85vh] bg-surface border border-border rounded-2xl z-50 p-6 sm:p-8 md:p-10 overflow-y-auto text-content-primary shadow-2xl m-0 opacity-0 pointer-events-none transition-all duration-300" aria-labelledby="privacy-modal-title">
     <div class="flex items-center justify-between border-b border-border pb-4 mb-6">
-      <div class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-accent font-semibold">
+      <div class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-accent font-bold">
         <span class="w-2 h-2 rounded-full bg-accent"></span>
         <span>Aviso Legal & Protección de Datos</span>
       </div>
@@ -1335,15 +1309,15 @@
       </button>
     </div>
 
-    <h2 id="privacy-modal-title" class="text-2xl sm:text-3xl font-serif italic text-content-primary mb-4">
+    <h2 id="privacy-modal-title" class="text-2xl sm:text-3xl font-bold text-content-primary mb-4 tracking-tight">
       Política de Privacidad & Minimización de Datos
     </h2>
 
-    <div class="space-y-4 text-xs sm:text-sm text-content-secondary leading-relaxed font-light">
-      <p><strong class="font-semibold text-content-primary">1. Identidad del Responsable:</strong> Este sitio web es propiedad y está administrado por Santiago Bermúdez (Director Creativo & Estratega de Marca), con base en Buenos Aires, Argentina. Correo: <a href="mailto:sabermudez@gmail.com" class="text-accent underline">sabermudez@gmail.com</a>.</p>
-      <p><strong class="font-semibold text-content-primary">2. Minimización de Datos:</strong> No se recopilan ni procesan datos personales identificables de forma implícita o automatizada.</p>
-      <p><strong class="font-semibold text-content-primary">3. Contacto Directo:</strong> No se utilizan formularios con backend. Los enlaces abren directamente <code class="font-mono text-accent">mailto:</code> o plataformas externas (WhatsApp, LinkedIn).</p>
-      <p><strong class="font-semibold text-content-primary">4. Alojamiento:</strong> Infraestructura global de Vercel Inc. con conexiones cifradas SSL/TLS.</p>
+    <div class="space-y-4 text-xs sm:text-sm text-content-secondary leading-relaxed font-normal">
+      <p><strong class="font-bold text-content-primary">1. Identidad del Responsable:</strong> Este sitio web es propiedad y está administrado por Santiago Bermúdez (Director Creativo & Estratega de Marca), con base en Buenos Aires, Argentina. Correo: <a href="mailto:sabermudez@gmail.com" class="text-accent underline font-medium">sabermudez@gmail.com</a>.</p>
+      <p><strong class="font-bold text-content-primary">2. Minimización de Datos:</strong> No se recopilan ni procesan datos personales identificables de forma implícita o automatizada.</p>
+      <p><strong class="font-bold text-content-primary">3. Contacto Directo:</strong> No se utilizan formularios con backend. Los enlaces abren directamente <code class="font-mono text-accent">mailto:</code> o plataformas externas (WhatsApp, LinkedIn).</p>
+      <p><strong class="font-bold text-content-primary">4. Alojamiento:</strong> Infraestructura global de Vercel Inc. con conexiones cifradas SSL/TLS.</p>
     </div>
 
     <div class="mt-8 pt-4 border-t border-border flex justify-end font-mono text-xs">
@@ -1356,7 +1330,7 @@
   <!-- Modal Política de Cookies -->
   <dialog id="cookies-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] max-w-2xl max-h-[85vh] bg-surface border border-border rounded-2xl z-50 p-6 sm:p-8 md:p-10 overflow-y-auto text-content-primary shadow-2xl m-0 opacity-0 pointer-events-none transition-all duration-300" aria-labelledby="cookies-modal-title">
     <div class="flex items-center justify-between border-b border-border pb-4 mb-6">
-      <div class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-accent font-semibold">
+      <div class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-accent font-bold">
         <span class="w-2 h-2 rounded-full bg-accent"></span>
         <span>Política de Cookies & Almacenamiento</span>
       </div>
@@ -1365,13 +1339,13 @@
       </button>
     </div>
 
-    <h2 id="cookies-modal-title" class="text-2xl sm:text-3xl font-serif italic text-content-primary mb-4">
+    <h2 id="cookies-modal-title" class="text-2xl sm:text-3xl font-bold text-content-primary mb-4 tracking-tight">
       Política de Cookies & Almacenamiento Local
     </h2>
 
-    <div class="space-y-4 text-xs sm:text-sm text-content-secondary leading-relaxed font-light">
-      <p><strong class="font-semibold text-content-primary">1. Ausencia de Cookies de Rastreo:</strong> Este sitio NO utiliza cookies analíticas ni publicitarias.</p>
-      <p><strong class="font-semibold text-content-primary">2. Almacenamiento Técnico:</strong> Solo se utiliza <code class="font-mono text-accent">localStorage</code> para recordar la preferencia de idioma (<code class="font-mono text-accent">portfolio_lang</code>) y la aceptación de privacidad. Todo se conserva exclusivamente de forma local en tu navegador.</p>
+    <div class="space-y-4 text-xs sm:text-sm text-content-secondary leading-relaxed font-normal">
+      <p><strong class="font-bold text-content-primary">1. Ausencia de Cookies de Rastreo:</strong> Este sitio NO utiliza cookies analíticas ni publicitarias.</p>
+      <p><strong class="font-bold text-content-primary">2. Almacenamiento Técnico:</strong> Solo se utiliza <code class="font-mono text-accent">localStorage</code> para recordar la preferencia de idioma (<code class="font-mono text-accent">portfolio_lang</code>) y la aceptación de privacidad. Todo se conserva exclusivamente de forma local en tu navegador.</p>
     </div>
 
     <div class="mt-8 pt-4 border-t border-border flex justify-end font-mono text-xs">
@@ -1402,7 +1376,7 @@
         const clothesColors = [
           0x1E1E20, // Dark Charcoal
           0xFAF9F6, // Ecru / Off-white
-          0x9E5B3D, // Terracotta / Warm clay (Color acento de la referencia)
+          0x9E5B3D, // Terracotta / Warm clay
           0x738271, // Muted Sage
           0xBDB1A3, // Sand / Taupe
           0x3D4A56  // Slate Blue
@@ -1461,8 +1435,8 @@
           grid.position.y = 0.004;
           scene.add(grid);
 
-          // Podio Central de la Plaza: Monumento con Nombre de Santiago Bermúdez
-          const podiumGeo = new THREE.CylinderGeometry(5.2, 5.5, 0.22, 48);
+          // Podio Central de la Plaza
+          const podiumGeo = new THREE.CylinderGeometry(5.6, 6.0, 0.22, 64);
           const podiumMat = new THREE.MeshStandardMaterial({ color: 0xFAF9F5, roughness: 0.8 });
           const podium = new THREE.Mesh(podiumGeo, podiumMat);
           podium.position.y = 0.11;
@@ -1470,15 +1444,15 @@
           podium.castShadow = true;
           scene.add(podium);
 
-          const ringGeo = new THREE.CylinderGeometry(4.2, 4.2, 0.3, 48);
+          const ringGeo = new THREE.CylinderGeometry(4.6, 4.6, 0.28, 64);
           const ringMat = new THREE.MeshStandardMaterial({ color: 0xF4F2EB, roughness: 0.7 });
           const ring = new THREE.Mesh(ringGeo, ringMat);
-          ring.position.y = 0.15;
+          ring.position.y = 0.14;
           ring.receiveShadow = true;
           ring.castShadow = true;
           scene.add(ring);
 
-          // Disco Grabado en Alta Definición con el Nombre Central
+          // Disco Grabado en Alta Definición con el Nombre Central (Palo Seco, orientado hacia la cámara)
           const textCanvas = document.createElement('canvas');
           textCanvas.width = 1024;
           textCanvas.height = 1024;
@@ -1486,38 +1460,57 @@
           ctx.fillStyle = '#FAF9F5';
           ctx.fillRect(0, 0, 1024, 1024);
 
-          ctx.strokeStyle = '#D6D2C6';
-          ctx.lineWidth = 8;
+          // Anillos concéntricos sutiles
+          ctx.strokeStyle = '#D8D4C8';
+          ctx.lineWidth = 4;
           ctx.beginPath();
-          ctx.arc(512, 512, 480, 0, Math.PI * 2);
+          ctx.arc(512, 512, 470, 0, Math.PI * 2);
           ctx.stroke();
 
+          ctx.strokeStyle = '#E8E5DD';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.arc(512, 512, 450, 0, Math.PI * 2);
+          ctx.stroke();
+
+          // Tipografía palo seco pura
           ctx.fillStyle = '#141414';
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
-          ctx.font = 'bold 74px "Plus Jakarta Sans", sans-serif';
-          ctx.fillText('SANTIAGO', 512, 450);
+          ctx.font = '800 88px "Plus Jakarta Sans", sans-serif';
+          ctx.fillText('SANTIAGO', 512, 415);
 
-          ctx.font = 'italic 300 80px "Cormorant Garamond", Georgia, serif';
-          ctx.fillText('Bermúdez', 512, 535);
+          ctx.font = '800 80px "Plus Jakarta Sans", sans-serif';
+          ctx.fillText('BERMÚDEZ', 512, 510);
 
-          ctx.font = '600 24px "Space Mono", monospace';
+          ctx.font = '700 24px "Plus Jakarta Sans", sans-serif';
           ctx.fillStyle = '#9E5B3D';
-          ctx.fillText('DIRECTOR CREATIVO × ESTRATEGA DE MARCA', 512, 615);
+          ctx.fillText('DIRECTOR CREATIVO × ESTRATEGA DE MARCA', 512, 605);
 
           const textTexture = new THREE.CanvasTexture(textCanvas);
           textTexture.anisotropy = 8;
-          const centerPlateGeo = new THREE.CylinderGeometry(3.6, 3.6, 0.35, 48);
-          const centerPlateMat = new THREE.MeshStandardMaterial({
+
+          // Disco plano posicionado y orientado perfectamente hacia la cámara
+          const discGeo = new THREE.CircleGeometry(4.2, 64);
+          const discMat = new THREE.MeshStandardMaterial({
             map: textTexture,
             roughness: 0.6,
-            metalness: 0.08
+            metalness: 0.05
           });
-          const centerPlate = new THREE.Mesh(centerPlateGeo, centerPlateMat);
-          centerPlate.position.y = 0.18;
-          centerPlate.rotation.y = -Math.PI / 4;
-          centerPlate.receiveShadow = true;
-          scene.add(centerPlate);
+
+          // Grupo para rotar de manera precisa y evitar ambigüedad de ángulos
+          const centerGroup = new THREE.Group();
+          centerGroup.position.set(0, 0.16, 0);
+          
+          // Ángulo exacto hacia la cámara para que el texto esté completamente derecho y mirando hacia el espectador
+          const camAngle = Math.atan2(camera.position.x, camera.position.z);
+          centerGroup.rotation.y = camAngle;
+
+          const centerDisc = new THREE.Mesh(discGeo, discMat);
+          centerDisc.rotation.x = -Math.PI / 2;
+          centerDisc.receiveShadow = true;
+          centerGroup.add(centerDisc);
+          scene.add(centerGroup);
 
           // Árboles Esculturales de Maqueta Arquitectónica
           const treePositions = [
@@ -1629,7 +1622,8 @@
               torso,
               leftPivot,
               rightPivot,
-              speed: 0.024 + Math.random() * 0.034,
+              // Velocidad pausada y serena (más lenta, estilo maqueta arquitectónica)
+              speed: 0.007 + Math.random() * 0.009,
               target: new THREE.Vector3(),
               isWalking: true,
               walkCycleOffset: Math.random() * Math.PI * 2,
@@ -1727,7 +1721,7 @@
           }
         });
 
-        // Bucle de Animación a 60 FPS
+        // Bucle de Animación a 60 FPS (Pausado y Elegante)
         const clock = new THREE.Clock();
 
         function animate() {
@@ -1744,7 +1738,7 @@
           camera.position.z += (camTargetZ - camera.position.z) * 0.03;
           camera.lookAt(0, 0.7, 0);
 
-          // Micro-movimiento de las personas
+          // Micro-movimiento lento y sereno de las personas
           people.forEach((p, idx) => {
             if (p.isWalking) {
               const currentPos = p.mesh.position;
@@ -1769,28 +1763,29 @@
                   }
                 } else {
                   p.isWalking = false;
-                  p.idleTimer = 2.5 + Math.random() * 4;
+                  p.idleTimer = 3.5 + Math.random() * 5;
                 }
               } else {
                 dir.normalize();
                 const distFromCenter = Math.sqrt(currentPos.x * currentPos.x + currentPos.z * currentPos.z);
-                if (distFromCenter < 4.6) {
+                if (distFromCenter < 4.8) {
                   const pushAway = new THREE.Vector3(currentPos.x, 0, currentPos.z).normalize().multiplyScalar(0.04);
                   dir.add(pushAway).normalize();
                 }
 
+                // Avance a velocidad calmada
                 p.mesh.position.addScaledVector(dir, p.speed);
 
                 const targetRotation = Math.atan2(dir.x, dir.z);
-                p.mesh.rotation.y += (targetRotation - p.mesh.rotation.y) * 0.08;
+                p.mesh.rotation.y += (targetRotation - p.mesh.rotation.y) * 0.035;
 
-                // Balanceo de piernas orgánico
-                const swing = Math.sin(time * 7 + p.walkCycleOffset) * 0.45;
+                // Balanceo de piernas orgánico y pausado
+                const swing = Math.sin(time * 2.8 + p.walkCycleOffset) * 0.35;
                 p.leftPivot.rotation.x = swing;
                 p.rightPivot.rotation.x = -swing;
 
                 // Rebote vertical sutil al pisar
-                p.mesh.position.y = Math.abs(Math.sin(time * 14 + p.walkCycleOffset)) * 0.028;
+                p.mesh.position.y = Math.abs(Math.sin(time * 5.6 + p.walkCycleOffset)) * 0.012;
               }
             } else {
               p.idleTimer -= delta;
@@ -1801,11 +1796,11 @@
                 p.target.set(Math.cos(targetAngle) * targetRadius, 0, Math.sin(targetAngle) * targetRadius);
               }
 
-              // Postura relajada de conversación
-              p.leftPivot.rotation.x += (0.04 - p.leftPivot.rotation.x) * 0.1;
-              p.rightPivot.rotation.x += (-0.04 - p.rightPivot.rotation.x) * 0.1;
-              p.head.rotation.y = Math.sin(time * 0.8 + idx) * 0.22;
-              p.mesh.position.y = Math.sin(time * 1.4 + idx) * 0.006;
+              // Postura relajada de conversación con micro-movimientos lentos
+              p.leftPivot.rotation.x += (0.04 - p.leftPivot.rotation.x) * 0.05;
+              p.rightPivot.rotation.x += (-0.04 - p.rightPivot.rotation.x) * 0.05;
+              p.head.rotation.y = Math.sin(time * 0.4 + idx) * 0.15;
+              p.mesh.position.y = Math.sin(time * 0.7 + idx) * 0.003;
             }
           });
 
@@ -1876,20 +1871,6 @@
           duration: 0.9,
           stagger: 0.12
         }, '-=0.5');
-
-        heroTl.from('.hero-text-1', {
-          yPercent: 120,
-          skewY: 3,
-          duration: 1.2,
-          ease: 'power4.out'
-        }, '-=0.7');
-
-        heroTl.from('.hero-text-2', {
-          yPercent: 130,
-          skewY: -4,
-          duration: 1.4,
-          ease: 'power4.out'
-        }, '-=1.0');
       }
 
       // -----------------------------------------------------------------------
@@ -2162,7 +2143,7 @@
           data.pieces.forEach((piece) => {
             const li = document.createElement('li');
             li.className = 'flex items-start gap-2';
-            li.innerHTML = `<span class="text-accent select-none">›</span><span>${piece}</span>`;
+            li.innerHTML = `<span class="text-accent select-none font-bold">›</span><span>${piece}</span>`;
             piecesUl.appendChild(li);
           });
         }
@@ -2179,7 +2160,7 @@
             imgDiv.innerHTML = `
               <img src="${imgSrc}" alt="${data.title} - Pieza ${idx + 1}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-              <span class="absolute bottom-2 right-2 px-2 py-1 rounded bg-white/90 text-[10px] font-mono text-content-primary font-medium shadow-sm">
+              <span class="absolute bottom-2 right-2 px-2 py-1 rounded bg-white/90 text-[10px] font-mono text-content-primary font-bold shadow-sm">
                 0${idx + 1}
               </span>
             `;

@@ -59,7 +59,7 @@ const translations = {
     },
     cases: {
       tag: "02 // CASOS SELECCIONADOS",
-      title: "Criterio estratégico aplicado a <span class=\"italic text-content-primary\">marcas de gran escala.</span>",
+      title: "Criterio estratégico aplicado a <span class=\"font-semibold text-content-primary\">marcas de gran escala.</span>",
       meta: "[ Archivo 2025 — 2026 ] // [ Dirección Principal ]",
       viewStrategy: "Ver Estrategia ↗",
       // Card 1
@@ -93,7 +93,7 @@ const translations = {
     expertise: {
       tag: "03 // LIDERAZGO & TRAYECTORIA",
       subtag: "[ Credenciales Directivas ]",
-      headline: "Más de una década articulando <span class=\"italic text-content-primary\">estrategia de negocio</span>, cultura contemporánea y dirección de arte de escala regional y global.",
+      headline: "Más de una década articulando <span class=\"font-semibold text-content-primary\">estrategia de negocio</span>, cultura contemporánea y dirección de arte de escala regional y global.",
       p1Cat: "Liderazgo",
       p1Title: "Dirección Creativa",
       p1Desc: "Conducción y curaduría de equipos creativos multidisciplinarios. Conceptualización de alto impacto visual, supervisión integral de craft y coherencia discursiva omnicanal.",
@@ -117,7 +117,7 @@ const translations = {
     },
     repertoire: {
       tag: "04 // REPERTORIO VISUAL & CRAFT",
-      headline: "Exploración de identidad y <span class=\"italic\">diseño editorial.</span>",
+      headline: "Exploración de identidad y <span class=\"font-semibold text-content-primary\">diseño editorial.</span>",
       btnGrid: "Vista Cuadrícula [06]",
       btnTable: "Vista Directorio",
       thPiece: "Pieza / Proyecto",
@@ -129,7 +129,7 @@ const translations = {
     },
     contact: {
       tag: "05 // INICIAR CONVERSACIÓN",
-      headline: "¿Tenés un desafío estratégico de marca o un proyecto de gran escala en puerta? <span class=\"italic text-content-primary\">Hablemos.</span>",
+      headline: "¿Tenés un desafío estratégico de marca o un proyecto de gran escala en puerta? <span class=\"font-semibold text-content-primary\">Hablemos.</span>",
       phoneLabel: "// TELÉFONO / WHATSAPP",
       linkedinLabel: "// RED PROFESIONAL",
       behanceLabel: "// PORTFOLIO CREATIVO",
@@ -219,7 +219,7 @@ const translations = {
     },
     cases: {
       tag: "02 // SELECTED CASES",
-      title: "Strategic vision applied to <span class=\"italic text-content-primary\">large-scale brands.</span>",
+      title: "Strategic vision applied to <span class=\"font-semibold text-content-primary\">large-scale brands.</span>",
       meta: "[ Archive 2025 — 2026 ] // [ Principal Direction ]",
       viewStrategy: "View Strategy ↗",
       // Card 1
@@ -253,7 +253,7 @@ const translations = {
     expertise: {
       tag: "03 // LEADERSHIP & TRACK RECORD",
       subtag: "[ Directorial Credentials ]",
-      headline: "Over a decade articulating <span class=\"italic text-content-primary\">business strategy</span>, contemporary culture, and art direction on a regional and global scale.",
+      headline: "Over a decade articulating <span class=\"font-semibold text-content-primary\">business strategy</span>, contemporary culture, and art direction on a regional and global scale.",
       p1Cat: "Leadership",
       p1Title: "Creative Direction",
       p1Desc: "Leading and curating multidisciplinary creative teams. High-impact visual concepting, end-to-end craft supervision, and omnichannel narrative coherence.",
@@ -277,7 +277,7 @@ const translations = {
     },
     repertoire: {
       tag: "04 // VISUAL REPERTOIRE & CRAFT",
-      headline: "Exploration of identity and <span class=\"italic\">editorial design.</span>",
+      headline: "Exploration of identity and <span class=\"font-semibold text-content-primary\">editorial design.</span>",
       btnGrid: "Grid View [06]",
       btnTable: "Directory View",
       thPiece: "Piece / Project",
@@ -289,7 +289,7 @@ const translations = {
     },
     contact: {
       tag: "05 // START A CONVERSATION",
-      headline: "Got a strategic brand challenge or a large-scale project on the horizon? <span class=\"italic text-content-primary\">Let's talk.</span>",
+      headline: "Got a strategic brand challenge or a large-scale project on the horizon? <span class=\"font-semibold text-content-primary\">Let's talk.</span>",
       phoneLabel: "// PHONE / WHATSAPP",
       linkedinLabel: "// PROFESSIONAL NETWORK",
       behanceLabel: "// CREATIVE PORTFOLIO",
