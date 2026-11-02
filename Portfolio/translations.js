@@ -59,7 +59,7 @@ const translations = {
     },
     cases: {
       tag: "02 // CASOS SELECCIONADOS",
-      title: "Criterio estratégico aplicado a <span class=\"font-semibold text-content-primary\">marcas de gran escala.</span>",
+      title: "Casos seleccionados.",
       meta: "[ Archivo 2025 — 2026 ] // [ Dirección Principal ]",
       viewStrategy: "Ver Estrategia ↗",
       // Card 1
@@ -118,7 +118,7 @@ const translations = {
     repertoire: {
       tag: "04 // REPERTORIO VISUAL & CRAFT",
       headline: "Exploración de identidad y <span class=\"font-semibold text-content-primary\">diseño editorial.</span>",
-      btnGrid: "Vista Cuadrícula [06]",
+      btnGrid: "Vista Cuadrícula [04]",
       btnTable: "Vista Directorio",
       thPiece: "Pieza / Proyecto",
       thDisc: "Disciplina",
@@ -219,7 +219,7 @@ const translations = {
     },
     cases: {
       tag: "02 // SELECTED CASES",
-      title: "Strategic vision applied to <span class=\"font-semibold text-content-primary\">large-scale brands.</span>",
+      title: "Selected cases.",
       meta: "[ Archive 2025 — 2026 ] // [ Principal Direction ]",
       viewStrategy: "View Strategy ↗",
       // Card 1
@@ -278,7 +278,7 @@ const translations = {
     repertoire: {
       tag: "04 // VISUAL REPERTOIRE & CRAFT",
       headline: "Exploration of identity and <span class=\"font-semibold text-content-primary\">editorial design.</span>",
-      btnGrid: "Grid View [06]",
+      btnGrid: "Grid View [04]",
       btnTable: "Directory View",
       thPiece: "Piece / Project",
       thDisc: "Discipline",

@@ -9,17 +9,17 @@
 # Node / Vercel build output
 .vercel
 node_modules/
+Corregir/
 
-# Inactive project folders (ignore unused heavy files)
+# Large media files
+*.mp4
+*.mov
+Proyectos/Koleston Mes de la Mujer/*.mp4
+
+# Inactive unused project folders
 Proyectos/Adidas Day
-Proyectos/Aromitalia
 Proyectos/Colgate OHM
 Proyectos/Decathlon
-Proyectos/Extremas
-Proyectos/Koleston Mes de la Mujer
 Proyectos/Olaplex
-Proyectos/Rimmel
 Proyectos/Royal Canin 8M
 Proyectos/Royal Canin Dachshund
-Proyectos/Royal Canin Verano
-Proyectos/ShopGallery

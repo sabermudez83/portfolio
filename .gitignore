@@ -16,17 +16,18 @@ node_modules/
 Portfolio/.env*
 scratch/
 Portfolio/scratch/
+Corregir/
+Portfolio/Corregir/
 
-# Inactive project folders (ignore unused heavy files)
+# Large media files
+*.mp4
+*.mov
+Portfolio/Proyectos/Koleston Mes de la Mujer/*.mp4
+
+# Inactive unused project folders
 Portfolio/Proyectos/Adidas Day
-Portfolio/Proyectos/Aromitalia
 Portfolio/Proyectos/Colgate OHM
 Portfolio/Proyectos/Decathlon
-Portfolio/Proyectos/Extremas
-Portfolio/Proyectos/Koleston Mes de la Mujer
 Portfolio/Proyectos/Olaplex
-Portfolio/Proyectos/Rimmel
 Portfolio/Proyectos/Royal Canin 8M
 Portfolio/Proyectos/Royal Canin Dachshund
-Portfolio/Proyectos/Royal Canin Verano
-Portfolio/Proyectos/ShopGallery

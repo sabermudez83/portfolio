@@ -181,13 +181,15 @@
       transform: translate(-50%, -50%) scale(1);
     }
 
-    /* Canvas 3D Hero */
+    /* Canvas 3D de Fondo Permanente en Toda la Página */
     #hero-canvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
       outline: none;
     }
   </style>
@@ -285,22 +287,15 @@
       <!-- Canvas Three.js: Plaza urbana 3D completa con personitas y nombre central -->
       <canvas id="hero-canvas" aria-label="Plaza 3D interactiva"></canvas>
 
-      <!-- Metadatos Superiores del Hero -->
-      <div class="relative z-10 hero-fade pt-4 flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] tracking-widest uppercase text-content-secondary border-b border-border/80 pb-4 pointer-events-none">
-        <div class="flex items-center gap-2">
-          <span class="inline-block w-1.5 h-1.5 rounded-full bg-accent"></span>
-          <span data-i18n="hero.metaLocation">[ Base: Buenos Aires // Alcance Global ]</span>
-        </div>
-        <div>
-          <span data-i18n="hero.metaRole">[ Actualidad: Director Creativo & Estratega de Marca ]</span>
-        </div>
-        <div class="hidden lg:block text-content-muted">
-          <span data-i18n="hero.metaArchive">// Archivo 2026</span>
-        </div>
+      <!-- Nombre Central de Gran Impacto (Palo Seco Editorial, sobre la plaza) -->
+      <div class="my-auto relative z-10 text-center pointer-events-none select-none py-10 md:py-20 hero-fade">
+        <h1 class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter uppercase text-content-primary">
+          Santiago Bermúdez
+        </h1>
+        <p class="font-mono text-xs sm:text-sm tracking-[0.22em] uppercase text-accent mt-3 md:mt-4 font-semibold">
+          Director Creativo & Estratega de Marca
+        </p>
       </div>
-
-      <!-- Espacio Central Abierto: La plaza 3D respira como protagonista absoluta sin texto superpuesto -->
-      <div class="my-auto pointer-events-none select-none"></div>
 
       <!-- Cuadrícula Inferior: Posicionamiento & Indicador de Desplazamiento -->
       <div class="relative z-10 hero-fade grid grid-cols-1 md:grid-cols-12 gap-8 items-end border-t border-border/80 pt-6">
@@ -335,7 +330,7 @@
     <!-- =========================================================================
        SECCIÓN 02: BIO SINTÉTICA (EDITORIAL MINIMALISTA, AIRE & CREDENCIALES)
        ========================================================================= -->
-    <section id="bio" class="relative z-10 py-24 md:py-36 px-6 md:px-12 lg:px-20 max-w-[1720px] mx-auto border-t border-border bg-canvas">
+    <section id="bio" class="relative z-10 py-24 md:py-36 px-6 md:px-12 lg:px-20 max-w-[1720px] mx-auto border-t border-border bg-canvas/92 backdrop-blur-[2px]">
       
       <!-- Coordenadas & Encabezado -->
       <div class="flex items-center justify-between mb-14 md:mb-20 font-mono text-[11px] tracking-widest uppercase text-content-muted">
@@ -407,7 +402,7 @@
     <!-- =========================================================================
        SECCIÓN 03: CASOS SELECCIONADOS (VISUAL-FIRST, 4 PROYECTOS INSIGNIA)
        ========================================================================= -->
-    <section id="cases" class="relative z-10 py-24 md:py-36 px-6 md:px-12 lg:px-20 max-w-[1720px] mx-auto border-t border-border bg-canvas">
+    <section id="cases" class="relative z-10 py-24 md:py-36 px-6 md:px-12 lg:px-20 max-w-[1720px] mx-auto border-t border-border bg-canvas/92 backdrop-blur-[2px]">
       
       <!-- Encabezado de Sección -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-24">
@@ -417,7 +412,7 @@
             <span data-i18n="cases.tag">02 // CASOS SELECCIONADOS</span>
           </div>
           <h2 data-i18n-html="cases.title" class="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-content-primary">
-            Criterio estratégico aplicado a <span class="font-bold text-content-primary">marcas de gran escala.</span>
+            Casos seleccionados.
           </h2>
         </div>
         <div class="font-mono text-xs text-content-muted flex items-center gap-4">
@@ -599,7 +594,7 @@
     <!-- =========================================================================
        SECCIÓN 04: REPOSITORIO EJECUTIVO (DIRECTORIO DE 11 PRESENTACIONES)
        ========================================================================= -->
-    <section id="repository" class="relative z-10 py-24 md:py-36 px-6 md:px-12 lg:px-20 max-w-[1720px] mx-auto border-t border-border bg-canvas">
+    <section id="repository" class="relative z-10 py-24 md:py-36 px-6 md:px-12 lg:px-20 max-w-[1720px] mx-auto border-t border-border bg-canvas/92 backdrop-blur-[2px]">
       
       <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 mb-10">
         <div>
@@ -809,7 +804,7 @@
     <!-- =========================================================================
        SECCIÓN 05: BEHANCE SHOWCASE (CURATORÍA EDITORIAL & CRAFT)
        ========================================================================= -->
-    <section id="behance" class="relative z-10 py-24 md:py-36 px-6 md:px-12 lg:px-20 max-w-[1720px] mx-auto border-t border-border bg-canvas">
+    <section id="behance" class="relative z-10 py-24 md:py-36 px-6 md:px-12 lg:px-20 max-w-[1720px] mx-auto border-t border-border bg-canvas/92 backdrop-blur-[2px]">
       
       <!-- Encabezado con Botones de Alternancia de Vista -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-20">
@@ -826,7 +821,7 @@
         <!-- Selector de Modo de Vista -->
         <div class="flex items-center gap-2 p-1.5 rounded-full bg-surface border border-border font-mono text-xs shadow-sm">
           <button id="view-grid-btn" data-i18n="repertoire.btnGrid" class="px-3.5 py-1.5 rounded-full bg-surface-elevated text-content-primary border border-border font-medium transition-all">
-            Vista Cuadrícula [06]
+            Vista Cuadrícula [04]
           </button>
           <button id="view-table-btn" data-i18n="repertoire.btnTable" class="px-3.5 py-1.5 rounded-full text-content-secondary hover:text-content-primary transition-all">
             Vista Directorio
@@ -835,7 +830,7 @@
       </div>
 
       <!-- VISTA 1: CUADRÍCULA -->
-      <div id="behance-grid-view" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <div id="behance-grid-view" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         
         <!-- Proyecto Behance 1: Lo cambia todo -->
         <a href="https://www.behance.net/gallery/250171841/Lo-cambia-todo" target="_blank" rel="noopener noreferrer" class="group block rounded-2xl overflow-hidden bg-surface border border-border hover:border-accent/40 shadow-sm transition-all duration-300">
@@ -906,42 +901,6 @@
               Royal Canin
             </h3>
             <p class="text-xs font-mono text-content-secondary mt-1">Identidad de marca y fotografía de escala</p>
-          </div>
-        </a>
-
-        <!-- Proyecto Behance 5: Ferring Pharma -->
-        <a href="https://www.behance.net/gallery/207925827/Ferring-pharma" target="_blank" rel="noopener noreferrer" class="group block rounded-2xl overflow-hidden bg-surface border border-border hover:border-accent/40 shadow-sm transition-all duration-300">
-          <div class="relative aspect-[4/3] overflow-hidden bg-surface-elevated">
-            <img src="https://mir-s3-cdn-cf.behance.net/projects/808/c5fa81207925827.Y3JvcCwzMjk4LDI1NzksMCw1MDA.png" alt="Ferring Pharma - Behance" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" />
-            <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm border border-border flex items-center justify-center text-xs text-content-primary group-hover:bg-accent group-hover:text-white transition-colors shadow-sm">↗</div>
-          </div>
-          <div class="p-6">
-            <div class="flex items-center justify-between font-mono text-[10px] text-accent tracking-widest uppercase mb-2 font-medium">
-              <span>Salud & Comunicación Corporativa</span>
-              <span class="text-content-muted">2024</span>
-            </div>
-            <h3 class="text-lg font-bold text-content-primary group-hover:text-accent transition-colors">
-              Ferring Pharma
-            </h3>
-            <p class="text-xs font-mono text-content-secondary mt-1">Estrategia de comunicación y craft visual</p>
-          </div>
-        </a>
-
-        <!-- Proyecto Behance 6: Aromitalia Identidad -->
-        <a href="https://www.behance.net/gallery/206552943/Aromitalia" target="_blank" rel="noopener noreferrer" class="group block rounded-2xl overflow-hidden bg-surface border border-border hover:border-accent/40 shadow-sm transition-all duration-300">
-          <div class="relative aspect-[4/3] overflow-hidden bg-surface-elevated">
-            <img src="https://mir-s3-cdn-cf.behance.net/projects/808/046e7f206552943.Y3JvcCwxMDgwLDg0NCwwLDA.png" alt="Aromitalia - Behance" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" />
-            <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm border border-border flex items-center justify-center text-xs text-content-primary group-hover:bg-accent group-hover:text-white transition-colors shadow-sm">↗</div>
-          </div>
-          <div class="p-6">
-            <div class="flex items-center justify-between font-mono text-[10px] text-accent tracking-widest uppercase mb-2 font-medium">
-              <span>Identidad & Packaging</span>
-              <span class="text-content-muted">2024</span>
-            </div>
-            <h3 class="text-lg font-bold text-content-primary group-hover:text-accent transition-colors">
-              Aromitalia
-            </h3>
-            <p class="text-xs font-mono text-content-secondary mt-1">Identidad de marca y packaging gastronómico</p>
           </div>
         </a>
 
@@ -1017,36 +976,6 @@
           </div>
         </a>
 
-        <a href="https://www.behance.net/gallery/207925827/Ferring-pharma" target="_blank" rel="noopener noreferrer" class="behance-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center group block" data-preview-img="https://mir-s3-cdn-cf.behance.net/projects/808/c5fa81207925827.Y3JvcCwzMjk4LDI1NzksMCw1MDA.png">
-          <div class="col-span-6 md:col-span-5 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
-            Ferring Pharma
-          </div>
-          <div class="col-span-3 hidden md:block font-mono text-xs text-content-secondary">
-            Salud & Comunicación Corporativa
-          </div>
-          <div class="col-span-3 hidden sm:block font-mono text-xs text-content-muted">
-            Corporativo
-          </div>
-          <div class="col-span-6 sm:col-span-3 md:col-span-1 text-right font-mono text-xs text-accent font-semibold">
-            2024 ↗
-          </div>
-        </a>
-
-        <a href="https://www.behance.net/gallery/206552943/Aromitalia" target="_blank" rel="noopener noreferrer" class="behance-table-row px-6 py-4.5 hover:bg-surface-elevated transition-colors grid grid-cols-12 gap-4 items-center group block" data-preview-img="https://mir-s3-cdn-cf.behance.net/projects/808/046e7f206552943.Y3JvcCwxMDgwLDg0NCwwLDA.png">
-          <div class="col-span-6 md:col-span-5 font-semibold text-base text-content-primary group-hover:text-accent transition-colors">
-            Aromitalia
-          </div>
-          <div class="col-span-3 hidden md:block font-mono text-xs text-content-secondary">
-            Identidad & Packaging
-          </div>
-          <div class="col-span-3 hidden sm:block font-mono text-xs text-content-muted">
-            Gastronomía
-          </div>
-          <div class="col-span-6 sm:col-span-3 md:col-span-1 text-right font-mono text-xs text-accent font-semibold">
-            2024 ↗
-          </div>
-        </a>
-
       </div>
 
       <!-- Pie de Sección Behance -->
@@ -1063,7 +992,7 @@
     <!-- =========================================================================
        SECCIÓN 06: CONTACTO & PIE DE PÁGINA (MINIMALISTA BLANCO)
        ========================================================================= -->
-    <footer id="contact" class="relative z-10 pt-24 md:pt-36 pb-16 px-6 md:px-12 lg:px-20 max-w-[1720px] mx-auto border-t border-border bg-canvas">
+    <footer id="contact" class="relative z-10 pt-24 md:pt-36 pb-16 px-6 md:px-12 lg:px-20 max-w-[1720px] mx-auto border-t border-border bg-canvas/92 backdrop-blur-[2px]">
       
       <!-- Encabezado de Contacto -->
       <div class="flex items-center gap-2 mb-8 font-mono text-[11px] tracking-widest uppercase text-accent font-medium">
@@ -1175,7 +1104,7 @@
   <!-- Panel Lateral del Drawer -->
   <aside 
     id="case-drawer" 
-    class="fixed top-0 right-0 bottom-0 w-full sm:w-[36rem] xl:w-[42rem] bg-surface border-l border-border z-50 transform translate-x-full transition-transform duration-500 ease-out flex flex-col shadow-2xl" 
+    class="fixed top-0 right-0 bottom-0 w-full sm:w-[36rem] xl:w-[42rem] bg-surface border-l border-border z-[60] transform translate-x-full transition-transform duration-500 ease-out flex flex-col shadow-2xl" 
     aria-hidden="true" 
     role="dialog" 
     aria-labelledby="drawer-title"
@@ -1239,7 +1168,7 @@
   <!-- =========================================================================
        LIGHTBOX / VISOR DE IMÁGENES A PANTALLA COMPLETA
        ========================================================================= -->
-  <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex flex-col justify-between p-4 sm:p-8" role="dialog" aria-modal="true" aria-label="Visor a pantalla completa">
+  <div id="lightbox-modal" class="fixed inset-0 z-[70] bg-black/90 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex flex-col justify-between p-4 sm:p-8" role="dialog" aria-modal="true" aria-label="Visor a pantalla completa">
     <div class="w-full flex items-center justify-between font-mono text-xs z-20">
       <div class="flex items-center gap-3">
         <span id="lightbox-counter" class="text-accent uppercase tracking-widest text-[11px] font-bold"></span>
@@ -1369,9 +1298,8 @@
 
       if (canvasEl && window.THREE) {
         let renderer, scene, camera;
-        let isHeroVisible = true;
         let people = [];
-        const numPeople = 38;
+        const numPeople = 52;
 
         const clothesColors = [
           0x1E1E20, // Dark Charcoal
@@ -1383,8 +1311,8 @@
         ];
 
         function initThree() {
-          const width = heroSection.clientWidth || window.innerWidth;
-          const height = heroSection.clientHeight || window.innerHeight;
+          const width = window.innerWidth;
+          const height = window.innerHeight;
 
           scene = new THREE.Scene();
           scene.background = new THREE.Color(0xFBFBFA);
@@ -1672,7 +1600,7 @@
               );
               person.mesh.lookAt(center.x, 0, center.z);
             } else {
-              const radius = 5.8 + Math.random() * 9.5;
+              const radius = 5.2 + Math.random() * 15.5;
               const angle = Math.random() * Math.PI * 2;
               person.mesh.position.set(Math.cos(angle) * radius, 0, Math.sin(angle) * radius);
               setNewTarget(person);
@@ -1695,48 +1623,38 @@
 
         // Responsividad en Resize
         function onResize() {
-          if (!renderer || !camera || !heroSection) return;
-          const w = heroSection.clientWidth || window.innerWidth;
-          const h = heroSection.clientHeight || window.innerHeight;
+          if (!renderer || !camera) return;
+          const w = window.innerWidth;
+          const h = window.innerHeight;
           camera.aspect = w / h;
           camera.updateProjectionMatrix();
           renderer.setSize(w, h);
         }
         window.addEventListener('resize', onResize);
 
-        // Optimización de Recursos: Pausa cuando el Hero no está en pantalla
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            isHeroVisible = entry.isIntersecting;
-          });
-        }, { threshold: 0.05 });
-        observer.observe(heroSection);
-
-        document.addEventListener('visibilitychange', () => {
-          if (document.hidden) {
-            isHeroVisible = false;
-          } else {
-            const rect = heroSection.getBoundingClientRect();
-            isHeroVisible = rect.bottom > 0 && rect.top < window.innerHeight;
-          }
-        });
-
-        // Bucle de Animación a 60 FPS (Pausado y Elegante)
+        // Bucle de Animación Continuo en Toda la Página (Pausado y Elegante)
         const clock = new THREE.Clock();
 
         function animate() {
           requestAnimationFrame(animate);
-          if (!isHeroVisible) return;
+          if (document.hidden) return;
 
           const delta = clock.getDelta();
           const time = clock.getElapsedTime();
 
-          // Movimiento sutil de cámara con inercia
+          // Parallax de cámara orgánico con inercia y scroll suave de la página
+          const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+          const maxScroll = (document.documentElement.scrollHeight - window.innerHeight) || 1;
+          const scrollRatio = scrollY / maxScroll;
+
           const camTargetX = 18 + mouseX * 2.2 + Math.sin(time * 0.12) * 0.6;
-          const camTargetZ = 22 + mouseY * 1.8 + Math.cos(time * 0.1) * 0.6;
-          camera.position.x += (camTargetX - camera.position.x) * 0.03;
-          camera.position.z += (camTargetZ - camera.position.z) * 0.03;
-          camera.lookAt(0, 0.7, 0);
+          const camTargetY = 20 - scrollRatio * 5.5;
+          const camTargetZ = 22 + mouseY * 1.8 + Math.cos(time * 0.1) * 0.6 + scrollRatio * 7;
+
+          camera.position.x += (camTargetX - camera.position.x) * 0.035;
+          camera.position.y += (camTargetY - camera.position.y) * 0.035;
+          camera.position.z += (camTargetZ - camera.position.z) * 0.035;
+          camera.lookAt(0, 0.7 - scrollRatio * 1.8, 0);
 
           // Micro-movimiento lento y sereno de las personas
           people.forEach((p, idx) => {
@@ -1912,15 +1830,14 @@
             'Banco de guiones y cápsulas de respuesta rápida a tendencias virales'
           ],
           galleryImages: [
+            './Proyectos/Colgate Expert Voices/Portada.png',
             './Proyectos/Colgate Expert Voices/1.png',
             './Proyectos/Colgate Expert Voices/2.png',
             './Proyectos/Colgate Expert Voices/3.png',
             './Proyectos/Colgate Expert Voices/4.png',
             './Proyectos/Colgate Expert Voices/5.png',
             './Proyectos/Colgate Expert Voices/6.png',
-            './Proyectos/Colgate Expert Voices/7.png',
-            './Proyectos/Colgate Expert Voices/8.png',
-            './Proyectos/Colgate Expert Voices/9.png'
+            './Proyectos/Colgate Expert Voices/7.png'
           ]
         },
         'case-fabuloso': {
@@ -1938,6 +1855,7 @@
             'Guía de contenido para creadores de estilo de vida y hogar'
           ],
           galleryImages: [
+            './Proyectos/Fabuloso/Portada.png',
             './Proyectos/Fabuloso/1.png',
             './Proyectos/Fabuloso/2.png',
             './Proyectos/Fabuloso/3.png',
@@ -1946,8 +1864,7 @@
             './Proyectos/Fabuloso/6.png',
             './Proyectos/Fabuloso/7.png',
             './Proyectos/Fabuloso/8.png',
-            './Proyectos/Fabuloso/9.png',
-            './Proyectos/Fabuloso/10.png'
+            './Proyectos/Fabuloso/9.png'
           ]
         },
         'case-koleston-trailer': {
@@ -1965,10 +1882,10 @@
             'Estrategia de amplificación PR con creadores de belleza y lifestyle'
           ],
           galleryImages: [
+            './Proyectos/Koleston Trailer/Portada.png',
             './Proyectos/Koleston Trailer/1.png',
             './Proyectos/Koleston Trailer/2.png',
-            './Proyectos/Koleston Trailer/3.png',
-            './Proyectos/Koleston Trailer/4.png'
+            './Proyectos/Koleston Trailer/3.png'
           ]
         },
         'case-rc-verano': {
@@ -1980,7 +1897,14 @@
           challenge: 'Llevar la prescripción nutricional veterinaria a los centros turísticos veraniegos con calidez y cercanía con tutores de mascotas.',
           solution: 'Tour costero con estaciones móviles de hidratación, pesaje guiado por veterinarios y juegos de estimulación cognitiva en playas pet-friendly de la Costa Atlántica.',
           pieces: ['Módulos móviles de atención veterinaria', 'Guía de hidratación estival', 'Contenido geolocalizado en redes'],
-          galleryImages: ['./Proyectos/Royal Canin Verano/Portada.png']
+          galleryImages: [
+            './Proyectos/Royal Canin Verano/Portada.png',
+            './Proyectos/Royal Canin Verano/1.png',
+            './Proyectos/Royal Canin Verano/2.png',
+            './Proyectos/Royal Canin Verano/3.png',
+            './Proyectos/Royal Canin Verano/4.png',
+            './Proyectos/Royal Canin Verano/5.png'
+          ]
         },
         'case-colgate-interdental': {
           client: 'Colgate-Palmolive',
@@ -1991,7 +1915,11 @@
           challenge: 'Aumentar el uso habitual del hilo e higiene interdental en el mercado masivo latinoamericano.',
           solution: 'Campaña didáctica y lúdica bajo el lema del "Espacio Invisible", mostrando los micro-territorios que el cepillado normal no alcanza.',
           pieces: ['Spots televisivos y digitales', 'Material educativo para consultorios', 'Activación en puntos de venta'],
-          galleryImages: ['./Proyectos/Colgate Expert Voices/1.png']
+          galleryImages: [
+            './Proyectos/Colgate Expert Voices/Portada.png',
+            './Proyectos/Colgate Expert Voices/1.png',
+            './Proyectos/Colgate Expert Voices/2.png'
+          ]
         },
         'case-rimmel-previa': {
           client: 'Rimmel London (Coty)',
@@ -2002,7 +1930,14 @@
           challenge: 'Reconectar con la audiencia de 18 a 24 años en el momento cumbre de su fin de semana: el ritual de arreglo colectivo.',
           solution: 'Pop-up Beauty Bar en Palermo Soho con iluminación pro y creadoras de TikTok liderando sesiones de maquillaje rápido y cruelty-free.',
           pieces: ['Pop-up Beauty Bar experiencial', 'Filtros interactivos de Realidad Aumentada', 'Challenges en TikTok con microinfluencers'],
-          galleryImages: ['./Proyectos/Rimmel/Portada.png']
+          galleryImages: [
+            './Proyectos/Rimmel/Portada.png',
+            './Proyectos/Rimmel/1.png',
+            './Proyectos/Rimmel/2.png',
+            './Proyectos/Rimmel/3.png',
+            './Proyectos/Rimmel/4.png',
+            './Proyectos/Rimmel/5.png'
+          ]
         },
         'case-decathlon-abasto': {
           client: 'Decathlon',
@@ -2013,7 +1948,11 @@
           challenge: 'Crear expectativa masiva y tráfico hacia la apertura del flagship store en uno de los centros comerciales más concurridos de Argentina.',
           solution: 'Intervención de la plaza central del shopping con canchas de micro-deportes y estaciones de prueba de equipamiento.',
           pieces: ['Diseño de fachada temporal y señalética', 'Mini-canchas interactivas', 'Campaña de vía pública y digital'],
-          galleryImages: ['./Proyectos/Extremas/Portada.png']
+          galleryImages: [
+            './Proyectos/Extremas/Portada.png',
+            './Proyectos/Extremas/1.png',
+            './Proyectos/Extremas/2.png'
+          ]
         },
         'case-extremas-burgers': {
           client: 'Extremas Smash Burgers',
@@ -2024,7 +1963,12 @@
           challenge: 'Diferenciar a una cadena emergente en el mercado saturado de smash burgers porteñas.',
           solution: 'Identidad cruda, tipografía display brutalista y packaging inspirado en fanzines de skate y cultura callejera.',
           pieces: ['Manual de identidad visual y tipográfica', 'Packaging sustentable serigrafiado', 'Estrategia de redes sociales'],
-          galleryImages: ['./Proyectos/Extremas/Portada.png']
+          galleryImages: [
+            './Proyectos/Extremas/Portada.png',
+            './Proyectos/Extremas/1.png',
+            './Proyectos/Extremas/2.png',
+            './Proyectos/Extremas/3.png'
+          ]
         },
         'case-olaplex-blossom': {
           client: 'Olaplex',
@@ -2035,7 +1979,11 @@
           challenge: 'Posicionar la línea de reparación capilar ante los daños del invierno en un evento exclusivo para estilistas y prensa.',
           solution: 'Cena sensorial y pasarela de tendencias capilares junto a la emblemática escultura metálica Floralis Genérica en Recoleta.',
           pieces: ['Diseño de escenografía e iluminación floral', 'Kit de prensa premium', 'Registro audiovisual cinematográfico'],
-          galleryImages: ['./Proyectos/Koleston Trailer/1.png']
+          galleryImages: [
+            './Proyectos/Koleston Trailer/Portada.png',
+            './Proyectos/Koleston Trailer/1.png',
+            './Proyectos/Koleston Trailer/2.png'
+          ]
         },
         'case-rc-mujeres-vet': {
           client: 'Royal Canin',
@@ -2046,7 +1994,11 @@
           challenge: 'Rendir homenaje genuino a las profesionales que representan más del 70% de la medicina veterinaria moderna.',
           solution: 'Serie documental de micro-historias que retratan la precisión quirúrgica, investigación científica y empatía en quirófanos.',
           pieces: ['Mini-documental de 3 episodios', 'Libro editorial conmemorativo', 'Campaña digital en LinkedIn y revistas médicas'],
-          galleryImages: ['./Proyectos/Royal Canin Verano/Portada.png']
+          galleryImages: [
+            './Proyectos/Royal Canin Verano/Portada.png',
+            './Proyectos/Royal Canin Verano/6.png',
+            './Proyectos/Royal Canin Verano/7.png'
+          ]
         },
         'case-rc-salchi': {
           client: 'Royal Canin',
@@ -2057,7 +2009,11 @@
           challenge: 'Presentar la fórmula nutricional específica para razas de columna elongada a tutores exigentes.',
           solution: 'Café temático con rampas especiales, asesoría de postura canina y degustación personalizada en un café de especialidad pet-friendly.',
           pieces: ['Ambientación del espacio y señalética ergonómica canina', 'Kits personalizados por peso y edad', 'Cobertura en redes sociales'],
-          galleryImages: ['./Proyectos/Royal Canin Verano/Portada.png']
+          galleryImages: [
+            './Proyectos/Royal Canin Verano/Portada.png',
+            './Proyectos/Royal Canin Verano/8.png',
+            './Proyectos/Royal Canin Verano/9.png'
+          ]
         },
         'case-aromitalia-materia': {
           client: 'Aromitalia',
@@ -2068,7 +2024,13 @@
           challenge: 'Presentar insumos de pastelería y heladería italiana premium a maestros heladeros de la región.',
           solution: 'Galería de aromas a ciegas donde los asistentes descubren el origen de vainillas, pistachos y avellanas antes de degustar.',
           pieces: ['Campanas de cata olfativa', 'Catálogo técnico editorial de materias primas', 'Video corporativo de procedencia'],
-          galleryImages: ['./Proyectos/Aromitalia/Portada.png']
+          galleryImages: [
+            './Proyectos/Aromitalia/Portada.png',
+            './Proyectos/Aromitalia/1.png',
+            './Proyectos/Aromitalia/2.png',
+            './Proyectos/Aromitalia/3.png',
+            './Proyectos/Aromitalia/4.png'
+          ]
         },
         'case-koleston-8m': {
           client: 'Koleston / Wella Company',
@@ -2079,7 +2041,11 @@
           challenge: 'Abordar el Día Internacional de la Mujer desde la belleza sin caer en clichés comerciales superficiales.',
           solution: 'El color como decisión íntima de autonomía y reinvención personal, a través de testimonios de mujeres de distintas edades.',
           pieces: ['Spots testimoniales sin retoque digital', 'Instalación interactiva de espejos sin distorsión', 'Manifiesto impreso'],
-          galleryImages: ['./Proyectos/Koleston Mes de la Mujer/Portada.png']
+          galleryImages: [
+            './Proyectos/Koleston Mes de la Mujer/Portada.png',
+            './Proyectos/Koleston Trailer/1.png',
+            './Proyectos/Koleston Trailer/2.png'
+          ]
         },
         'case-shopgallery': {
           client: 'ShopGallery',
@@ -2090,7 +2056,12 @@
           challenge: 'Unificar las tiendas duty-free aeroportuarias con una experiencia de compra anticipada sin estrés.',
           solution: 'Diseño de interfaz con retiro rápido en puerta de embarque y catálogo editorial de marcas de lujo.',
           pieces: ['Arquitectura de información y diseño UI/UX', 'Guía de estilo y sistema de diseño', 'Campaña en terminales aéreas'],
-          galleryImages: ['./Proyectos/ShopGallery/Portada.png']
+          galleryImages: [
+            './Proyectos/ShopGallery/Portada.png',
+            './Proyectos/ShopGallery/assets/momentos1.png',
+            './Proyectos/ShopGallery/assets/momentos2.png',
+            './Proyectos/ShopGallery/assets/momentos3.png'
+          ]
         }
       };
 
@@ -2188,6 +2159,8 @@
         }
 
         drawer.classList.remove('translate-x-full');
+        const drawerScroll = drawer.querySelector('.overflow-y-auto');
+        if (drawerScroll) drawerScroll.scrollTop = 0;
         drawerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
         drawerBackdrop.classList.add('opacity-100', 'pointer-events-auto');
         document.body.classList.add('overflow-hidden');

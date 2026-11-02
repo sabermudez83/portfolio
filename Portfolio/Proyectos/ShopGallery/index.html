@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Gallery - Propuestas Creativas e Influencer Event</title>
+
+    <!-- Meta tags SEO -->
+    <meta name="description"
+        content="Explorá las dos propuestas creativas de Shop Gallery para conectar locales físicos, e-commerce y creadores de contenido directamente con los consumidores.">
+    <meta name="keywords"
+        content="Shop Gallery, Evento Influencers, Propuestas Creativas, Aeropuerto, E-commerce, Retail Luxury">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Shop Gallery - Propuestas Creativas e Influencer Event">
+    <meta property="og:description"
+        content="Llevamos la emoción de las compras del aeropuerto directamente a las manos de los consumidores. Explorá las propuestas.">
+    <meta property="og:image" content="assets/shop_moments.png">
+    <meta property="og:type" content="website">
+
+    <!-- Styles and Fonts -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon"
+        href="https://ssl.gstatic.com/images/branding/productlogos/slides_2026/v2/ico/slides_2026_256dp.ico">
+</head>
+
+<body>
+
+    <!-- Glowing Background blobs -->
+    <div class="bg-glow-container">
+        <div class="bg-glow glow-orange"></div>
+        <div class="bg-glow glow-blue"></div>
+        <div class="bg-glow glow-gold"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header id="main-header">
+        <div class="logo-container">
+            <a href="#">
+                <img src="assets/sg-logo.svg" alt="Shop Gallery Logo Oficial">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#propuestas">Propuestas</a></li>
+                <li><a href="#estrategia">Estrategia</a></li>
+                <li><a href="#influencers">Crew / Influencers</a></li>
+            </ul>
+        </nav>
+        <a href="#propuestas" class="cta-header">Explorar Propuestas</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-tag">EVENTO INFLUENCERS 2026</div>
+    <!-- Styles for Slides (Integrated with Theme) -->
+    <style>
+      .slides-wrapper *, .slides-wrapper *::before, .slides-wrapper *::after { box-sizing: border-box; }
+
+      .slides-wrapper { 
+        background: transparent; 
+        color: var(--text-main); 
+        font-family: var(--font-body); 
+        max-width: 1100px; 
+        margin: 0 auto; 
+        padding: 60px 32px 80px; 
+        text-align: left; 
+        width: 100%;
+      }
+
+      /* --- TICKER --- */
+      .slides-wrapper .ticker-wrap { border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass); padding: 10px 0; overflow: hidden; margin-bottom: 60px; }
+      .slides-wrapper .ticker-track { display: flex; gap: 0; white-space: nowrap; animation: ticker-slides 22s linear infinite; }
+      .slides-wrapper .ticker-item { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; color: var(--luxury-gold); padding: 0 32px; }
+      .slides-wrapper .ticker-sep { color: var(--text-muted); }
+      @keyframes ticker-slides { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+      /* --- SLIDE WRAPPER --- */
+      .slides-wrapper .slide { margin-bottom: 80px; border: 1px solid var(--border-glass); border-radius: 24px; overflow: hidden; position: relative; background: var(--bg-card); box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+      .slides-wrapper .slide-tag { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.18em; color: var(--primary); padding: 14px 28px; border-bottom: 1px solid var(--border-glass); display: flex; justify-content: space-between; align-items: center; background: rgba(255, 79, 25, 0.05); }
+
+      /* =======================================
+         SLIDE 1 — DESAFÍO Y OBJETIVO
+      ======================================= */
+      .slides-wrapper .s1-body { padding: 52px 56px 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+      .slides-wrapper .s1-eyebrow { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; color: var(--primary); margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+      .slides-wrapper .s1-eyebrow::before { content: ''; display: block; width: 20px; height: 1px; background: var(--primary); }
+      .slides-wrapper .s1-headline { font-size: 38px; font-weight: 800; line-height: 1.15; color: var(--text-main); margin-bottom: 24px; letter-spacing: -1px; font-family: var(--font-heading); }
+      .slides-wrapper .s1-headline em { font-style: normal; color: var(--primary); }
+      .slides-wrapper .s1-desc { font-size: 1.1rem; color: var(--text-muted); line-height: 1.6; font-weight: 400; max-width: 380px; }
+
+      .slides-wrapper .s1-right { display: flex; flex-direction: column; gap: 16px; padding-top: 4px; }
+
+      .slides-wrapper .challenge-card { border: 1px solid var(--border-glass); border-radius: 16px; padding: 22px 24px; background: var(--bg-dark-surface); position: relative; overflow: hidden; }
+      .slides-wrapper .challenge-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary); }
+      .slides-wrapper .cc-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.15em; color: var(--text-muted); margin-bottom: 10px; }
+      .slides-wrapper .cc-title { font-size: 14px; font-weight: 600; color: var(--text-main); margin-bottom: 6px; font-family: var(--font-heading); }
+      .slides-wrapper .cc-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+      .slides-wrapper .cc-split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      .slides-wrapper .cc-mini { border: 1px solid var(--border-glass); border-radius: 12px; padding: 16px 18px; background: rgba(255, 255, 255, 0.02); }
+      .slides-wrapper .cc-mini-icon { font-size: 18px; margin-bottom: 8px; }
+      .slides-wrapper .cc-mini-label { font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.14em; color: var(--text-muted); margin-bottom: 4px; }
+      .slides-wrapper .cc-mini-val { font-size: 13px; font-weight: 500; color: var(--text-main); line-height: 1.5; }
+
+      .slides-wrapper .s1-arrow { text-align: center; padding: 8px 0; }
+      .slides-wrapper .s1-arrow svg { opacity: 0.25; }
+
+      /* =======================================
+         SLIDE 2 — ESTRATEGIA INFLUENCER
+      ======================================= */
+      .slides-wrapper .s2-body { padding: 48px 56px 52px; }
+
+      .slides-wrapper .s2-top { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end; margin-bottom: 44px; }
+      .slides-wrapper .s2-eyebrow { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; color: var(--primary); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+      .slides-wrapper .s2-eyebrow::before { content: ''; display: block; width: 20px; height: 1px; background: var(--primary); }
+      .slides-wrapper .s2-headline { font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -1px; font-family: var(--font-heading); margin: 0; }
+      .slides-wrapper .s2-headline em { font-style: normal; color: var(--primary); }
+      .slides-wrapper .s2-kpi-box { border: 1px solid var(--border-glass); border-radius: 12px; padding: 16px 22px; background: var(--bg-dark-surface); text-align: right; white-space: nowrap; }
+      .slides-wrapper .s2-kpi-val { font-family: var(--font-mono); font-size: 22px; font-weight: 700; color: var(--primary); }
+      .slides-wrapper .s2-kpi-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em; color: var(--text-muted); margin-top: 4px; }
+
+      /* Timeline / roadmap */
+      .slides-wrapper .timeline-slides { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; position: relative; margin-bottom: 44px; }
+      .slides-wrapper .timeline-slides::before { content: ''; position: absolute; top: 28px; left: calc(16.66% + 4px); right: calc(16.66% + 4px); height: 1px; background: linear-gradient(90deg, var(--primary) 0%, rgba(255, 79, 25, 0.2) 100%); z-index: 0; }
+      .slides-wrapper .tl-step { position: relative; z-index: 1; text-align: center; }
+      .slides-wrapper .tl-node { width: 56px; height: 56px; border-radius: 50%; border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; background: var(--bg-dark-deep); position: relative; }
+      .slides-wrapper .tl-node.active { background: var(--primary); }
+      .slides-wrapper .tl-node.active .tl-num { color: white; }
+      .slides-wrapper .tl-num { font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--primary); }
+      .slides-wrapper .tl-content { padding: 0 12px; }
+      .slides-wrapper .tl-tag { font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.14em; color: var(--text-muted); margin-bottom: 6px; }
+      .slides-wrapper .tl-title { font-size: 14px; font-weight: 600; color: var(--luxury-gold); margin-bottom: 5px; font-family: var(--font-heading); }
+      .slides-wrapper .tl-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; font-family: var(--font-body); }
+
+      /* Strategy pillars */
+      .slides-wrapper .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 36px; }
+      .slides-wrapper .pillar { border: 1px solid var(--border-glass); border-radius: 16px; padding: 22px 24px; background: var(--bg-dark-surface); position: relative; }
+      .slides-wrapper .pillar-badge { font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.14em; color: white; background: var(--primary); padding: 3px 10px; border-radius: 4px; display: inline-block; margin-bottom: 12px; font-weight: bold; }
+      .slides-wrapper .pillar-badge.teal { background: var(--secondary-blue); color: #fff; }
+      .slides-wrapper .pillar-title { font-size: 15px; font-weight: 600; color: var(--text-main); margin-bottom: 6px; font-family: var(--font-heading); }
+      .slides-wrapper .pillar-desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+      .slides-wrapper .pillar-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px; }
+      .slides-wrapper .ptag { font-size: 11px; padding: 4px 10px; border: 1px solid var(--border-glass); color: var(--text-muted); border-radius: 4px; font-family: var(--font-mono); background: rgba(255,255,255,0.02); }
+
+      /* Footer statement */
+      .slides-wrapper .s2-footer { border-top: 1px solid var(--border-glass); padding-top: 24px; display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
+      .slides-wrapper .s2-footer-icon { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: rgba(255, 79, 25, 0.05); }
+      .slides-wrapper .s2-footer-text { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+      .slides-wrapper .s2-footer-text strong { color: var(--primary); font-weight: 500; }
+
+      @media (max-width: 720px) {
+        .slides-wrapper { padding: 32px 16px 60px; }
+        .slides-wrapper .s1-body { grid-template-columns: 1fr; gap: 32px; padding: 32px 28px 36px; }
+        .slides-wrapper .s2-body { padding: 32px 28px 36px; }
+        .slides-wrapper .s2-top { grid-template-columns: 1fr; }
+        .slides-wrapper .timeline-slides { grid-template-columns: 1fr; gap: 24px; }
+        .slides-wrapper .timeline-slides::before { display: none; }
+        .slides-wrapper .pillars { grid-template-columns: 1fr; }
+        .slides-wrapper .s1-headline { font-size: 28px; }
+        .slides-wrapper .s2-headline { font-size: 26px; }
+      }
+    </style>
+
+    <div class="slides-wrapper">
+      <!-- TICKER -->
+      <div class="ticker-wrap">
+        <div class="ticker-track">
+          <span class="ticker-item">SG-2026 INFLUENCER STRATEGY <span class="ticker-sep">✦</span></span>
+          <span class="ticker-item">OBJETIVO: DAR A CONOCER SHOP GALLERY <span class="ticker-sep">✦</span></span>
+          <span class="ticker-item">TIENDA ONLINE + LOCAL AEROPARQUE <span class="ticker-sep">✦</span></span>
+          <span class="ticker-item">PRIMER ESLABÓN DE UNA ESTRATEGIA DIGITAL 2026 <span class="ticker-sep">✦</span></span>
+          <span class="ticker-item">SG-2026 INFLUENCER STRATEGY <span class="ticker-sep">✦</span></span>
+          <span class="ticker-item">OBJETIVO: DAR A CONOCER SHOP GALLERY <span class="ticker-sep">✦</span></span>
+          <span class="ticker-item">TIENDA ONLINE + LOCAL AEROPARQUE <span class="ticker-sep">✦</span></span>
+          <span class="ticker-item">PRIMER ESLABÓN DE UNA ESTRATEGIA DIGITAL 2026 <span class="ticker-sep">✦</span></span>
+        </div>
+      </div>
+
+      <!-- ================================================
+           SLIDE 1 — DESAFÍO Y OBJETIVO
+      ================================================ -->
+      <section class="slide" id="desafio">
+        <div class="slide-tag">
+          <span>SG-OBJ-01 &nbsp;·&nbsp; DESAFÍO Y OBJETIVO DE CAMPAÑA</span>
+          <span>2026 H2</span>
+        </div>
+
+        <div class="s1-body">
+          <div class="s1-left">
+            <div class="s1-eyebrow">PUNTO DE PARTIDA</div>
+            <h2 class="s1-headline">
+              Shop Gallery<br>
+              tiene algo que el<br>
+              mundo aún no<br>
+              <em>conoce.</em>
+            </h2>
+            <p class="s1-desc">
+              Una tienda online accesible para todos y un local físico único dentro de Aeropuertos Argentina. Dos canales, una sola oportunidad: construir presencia digital y llevar la experiencia aeropuerto a cualquier pantalla.
+            </p>
+          </div>
+
+          <div class="s1-right">
+
+            <div class="challenge-card">
+              <div class="cc-label">DESAFÍO DE MARCA</div>
+              <div class="cc-title">Baja notoriedad en canales digitales</div>
+              <div class="cc-desc">Shop Gallery no tiene aún el reconocimiento digital que su oferta merece. El objetivo es construir awareness real, no solo visibilidad puntual.</div>
+            </div>
+
+            <div class="cc-split">
+              <div class="cc-mini">
+                <div class="cc-mini-icon">🌐</div>
+                <div class="cc-mini-label">CANAL 1</div>
+                <div class="cc-mini-val">E-commerce online — accesible desde cualquier lugar del país</div>
+              </div>
+              <div class="cc-mini">
+                <div class="cc-mini-icon">✈️</div>
+                <div class="cc-mini-label">CANAL 2</div>
+                <div class="cc-mini-val">Tienda física en Aeropuertos Argentina — target viajero exclusivo</div>
+              </div>
+            </div>
+
+            <div class="challenge-card" style="border-color: rgba(255, 79, 25, 0.3); background: rgba(255, 79, 25, 0.05);">
+              <div class="cc-label">OBJETIVO PRINCIPAL</div>
+              <div class="cc-title">Dar a conocer Shop Gallery en redes sociales</div>
+              <div class="cc-desc">Generar awareness, tráfico a la tienda online y posicionar el local de Aeropuertos Argentina como un destino de compra premium para el viajero argentino.</div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           SLIDE 2 — ESTRATEGIA INFLUENCER
+      ================================================ -->
+      <section class="slide" id="estrategia-influencer">
+        <div class="slide-tag">
+          <span>SG-EST-02 &nbsp;·&nbsp; ESTRATEGIA INTEGRAL DE INFLUENCERS</span>
+          <span>ROADMAP 2026</span>
+        </div>
+
+        <div class="s2-body">
+
+          <div class="s2-top">
+            <div>
+              <div class="s2-eyebrow">VISIÓN ESTRATÉGICA</div>
+              <h2 class="s2-headline">
+                El desayuno es el<br>
+                <em>inicio.</em> No el plan.
+              </h2>
+            </div>
+            <div class="s2-kpi-box">
+              <div class="s2-kpi-val">H2 2026</div>
+              <div class="s2-kpi-label">HORIZONTE DE ESTRATEGIA</div>
+            </div>
+          </div>
+
+          <!-- TIMELINE / ROADMAP -->
+          <div class="timeline-slides">
+            <div class="tl-step">
+              <div class="tl-node active">
+                <span class="tl-num">01</span>
+              </div>
+              <div class="tl-content">
+                <div class="tl-tag">AHORA · EVENTO</div>
+                <div class="tl-title">Experiencia de activación</div>
+                <div class="tl-desc">El desayuno se convierte en un evento creativo con un giro experiencial que da a los influencers razones reales para generar contenido auténtico y de alto valor.</div>
+              </div>
+            </div>
+            <div class="tl-step">
+              <div class="tl-node">
+                <span class="tl-num">02</span>
+              </div>
+              <div class="tl-content">
+                <div class="tl-tag">POST-EVENTO · RELACIÓN</div>
+                <div class="tl-title">Perfiles recurrentes</div>
+                <div class="tl-desc">Los creadores con mejor performance se convierten en embajadores continuos de la marca. Contenido sostenido, no puntual.</div>
+              </div>
+            </div>
+            <div class="tl-step">
+              <div class="tl-node">
+                <span class="tl-num">03</span>
+              </div>
+              <div class="tl-content">
+                <div class="tl-tag">ESCALA · ESTRATEGIA</div>
+                <div class="tl-title">Ecosistema digital activo</div>
+                <div class="tl-desc">Una comunidad de creadores que comunica de forma constante ambos canales: la tienda online para todos y el local de Aeropuertos Argentina para el target viajero.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PILARES -->
+          <div class="pillars">
+            <div class="pillar">
+              <span class="pillar-badge">PERFIL DIGITAL</span>
+              <div class="pillar-title">Estrategia online — tienda accesible para todos</div>
+              <div class="pillar-desc">Perfiles lifestyle, beauty y UGC con audiencias masivas en Argentina. Su misión: llevar tráfico al e-commerce y mostrar que comprar en Shop Gallery no requiere estar en el aeropuerto.</div>
+              <div class="pillar-tags">
+                <span class="ptag">Micro + Mid Tier</span>
+                <span class="ptag">UGC Creators</span>
+                <span class="ptag">Instagram + TikTok</span>
+                <span class="ptag">Link en bio / Stories</span>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-badge teal">PERFIL TRAVEL</span>
+              <div class="pillar-title">Estrategia Aeropuertos Argentina — target viajero</div>
+              <div class="pillar-desc">Creadores de contenido de viajes con comunidades activas de personas que vuelan seguido. Su misión: posicionar el local de Aeropuertos Argentina como parada obligada antes o después de cada vuelo.</div>
+              <div class="pillar-tags">
+                <span class="ptag">Travel Creators</span>
+                <span class="ptag">Mid + Macro</span>
+                <span class="ptag">YouTube + IG</span>
+                <span class="ptag">Contexto de viaje</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOTER STATEMENT -->
+          <div class="s2-footer">
+            <div class="s2-footer-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+              </svg>
+            </div>
+            <div class="s2-footer-text">
+              Este evento es el <strong>primer eslabón de una estrategia digital con influencers</strong> pensada para lo que resta del 2026. No un hito aislado, sino el inicio de una relación continua entre Shop Gallery y los creadores que mejor representan sus dos canales: el mundo online y el universo del viaje.
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+        <h1>Llevamos la emoción de las compras del aeropuerto <span>directamente a las manos de los consumidores.</span>
+        </h1>
+        <p>Explorá las dos propuestas creativas diseñadas para conectar locales físicos, e-commerce y creadores de
+            contenido.</p>
+        <div class="hero-actions">
+            <a href="#propuestas" class="btn-primary">Ver Propuestas</a>
+            <a href="#influencers" class="btn-secondary">Flight Crew (Influencers)</a>
+        </div>
+        <div class="scroll-indicator"
+            onclick="document.getElementById('ticker-section').scrollIntoView({behavior: 'smooth'})">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Flight Arrivals Live Ticker (Marquee) -->
+    <div class="arrivals-ticker" id="ticker-section">
+        <div class="arrivals-ticker-track">
+            <!-- First loop -->
+            <div class="arrivals-ticker-item">
+                <span class="flight-no">SG-2026</span> DEPARTURE: AEROPARQUE <span class="status-live">BOARDING</span>
+            </div>
+            <div class="arrivals-ticker-item">
+                SHOP GALLERY GLOBAL E-COMMERCE <span class="status-live">ONLINE</span>
+            </div>
+            <div class="arrivals-ticker-item">
+                <span class="flight-no">AR-1302</span> MIAMI -> BUENOS AIRES <span class="status-live">LANDED</span>
+            </div>
+            <div class="arrivals-ticker-item">
+                EXCLUSIVOS DESCUENTOS BANCARIOS 12 CUOTAS <span class="status-live">LIVE</span>
+            </div>
+            <div class="arrivals-ticker-item">
+                <span class="flight-no">SG-0406</span> OPTION 1: SHOP DE MOMENTOS <span class="status-live">READY</span>
+            </div>
+            <div class="arrivals-ticker-item">
+                <span class="flight-no">SG-0407</span> OPTION 2: CÓDIGO DE RESERVA <span
+                    class="status-live">READY</span>
+            </div>
+            <!-- Duplicated loop for infinite scroll -->
+            <div class="arrivals-ticker-item">
+                <span class="flight-no">SG-2026</span> DEPARTURE: AEROPARQUE <span class="status-live">BOARDING</span>
+            </div>
+            <div class="arrivals-ticker-item">
+                SHOP GALLERY GLOBAL E-COMMERCE <span class="status-live">ONLINE</span>
+            </div>
+            <div class="arrivals-ticker-item">
+                <span class="flight-no">AR-1302</span> MIAMI -> BUENOS AIRES <span class="status-live">LANDED</span>
+            </div>
+            <div class="arrivals-ticker-item">
+                EXCLUSIVOS DESCUENTOS BANCARIOS 12 CUOTAS <span class="status-live">LIVE</span>
+            </div>
+            <div class="arrivals-ticker-item">
+                <span class="flight-no">SG-0406</span> OPTION 1: SHOP DE MOMENTOS <span class="status-live">READY</span>
+            </div>
+            <div class="arrivals-ticker-item">
+                <span class="flight-no">SG-0407</span> OPTION 2: CÓDIGO DE RESERVA <span
+                    class="status-live">READY</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Creative Proposals Section -->
+    <section class="proposals-section" id="propuestas">
+        <div class="section-header">
+            <span class="section-tag">Propuestas Creativas</span>
+            <h2>Estrategias de Experiencia e Interacción</h2>
+            <p>Elegí una opción para descifrar el concepto creativo, la mecánica del evento y los entregables
+                propuestos.</p>
+        </div>
+
+        <div class="proposals-grid">
+
+            <!-- Proposal 1 Card -->
+            <div class="proposal-card reveal-sweep" data-proposal="1" id="card-prop-1">
+                <div class="card-badge">
+                    <span class="pulse-dot"></span>
+                    OPCIÓN 1
+                </div>
+
+                <div class="title-crypt">PROPUESTA ENCRIPTADA</div>
+                <h3 class="actual-title"></h3>
+
+                <div class="card-media">
+                    <div class="laser-scanner"></div>
+                    <img src="assets/momentos1.png" alt="Shop de Momentos - Propuesta principal">
+                    <div class="card-media-overlay"></div>
+                </div>
+
+                <div class="unrevealed-teaser">
+                    <p>Propuesta enfocada en la acción inmediata en punto de venta y la gamificación por tiempo. Un
+                        desafío real de compras exprés con un presupuesto asignado...</p>
+                </div>
+
+                <div class="revealed-content">
+                    <p class="proposal-intro">Shop Gallery es sinónimo de viajes y momentos. Pero gracias a que algunos
+                        de sus locales están en sectores públicos de los aeropuertos y que tienen e-commerce, no
+                        necesitás estar de viaje para disfrutar de sus productos y tener los mejores momentos.</p>
+
+                    <!-- Host de la Experiencia Card -->
+                    <div class="proposal-host-card">
+                        <div class="host-badge">HOST OFICIAL</div>
+                        <div class="host-profile">
+                            <div class="host-avatar">
+                                <img src="assets/host_valen.png" alt="Valen Rizzuti">
+                            </div>
+                            <div class="host-info">
+                                <h4>Valen Rizzuti</h4>
+                                <a href="https://www.instagram.com/valenrizzuti/" target="_blank"
+                                    class="host-instagram">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                    @valenrizzuti
+                                </a>
+                                <p class="host-bio-text">Conocido por su estilo fresco e irreverente en
+                                    <strong>OLGA</strong>. Valen será el encargado de guiar la experiencia del "Shop de
+                                    Momentos", entrevistando en vivo a las participantes y aportando su carisma único en
+                                    Aeroparque.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-number">1</div>
+                            <div class="timeline-title">El Despegue (Destino: Aeroparque)</div>
+                            <div class="timeline-desc">Llevaremos a los influencers al local físico de Shop Gallery en
+                                Aeroparque. Al llegar, cada creador recibirá una tarjeta de compra precargada con
+                                $100.000.</div>
+                            <div class="timeline-img"><img src="assets/momentos2.png"
+                                    alt="El Despegue - Destino Aeroparque"></div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-number">2</div>
+                            <div class="timeline-title">Desafío Express: 5 Minutos</div>
+                            <div class="timeline-desc">Cada uno tendrá exactamente 5 minutos para armar el regalo
+                                perfecto para situaciones específicas (Día del Padre, mudanza, regreso de viaje, etc.),
+                                fomentando contenido en vivo dinámico.</div>
+                            <div class="timeline-img"><img src="assets/momentos3.png" alt="Desafío Express 5 Minutos">
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-number">3</div>
+                            <div class="timeline-title">Cruce de Descuentos & Recompensa</div>
+                            <div class="timeline-desc">Al pasar por caja, conocerán y comunicarán los descuentos
+                                bancarios y cuotas. Quien arme el mejor regalo y consiga el mayor ahorro acumulado, se
+                                lleva toda la selección gratis a su casa.</div>
+                            <div class="timeline-img"><img src="assets/momentos4.png"
+                                    alt="Cruce de Descuentos y Recompensa"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-reveal" id="btn-reveal-1">
+                    <span>Revelar Propuesta</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Proposal 2 Card -->
+            <div class="proposal-card reveal-sweep" data-proposal="2" id="card-prop-2">
+                <div class="card-badge">
+                    <span class="pulse-dot"></span>
+                    OPCIÓN 2
+                </div>
+
+                <div class="title-crypt">PROPUESTA ENCRIPTADA</div>
+                <h3 class="actual-title"></h3>
+
+                <div class="card-media">
+                    <div class="laser-scanner"></div>
+                    <img src="assets/codigo1.png" alt="Código de Reserva - Propuesta principal">
+                    <div class="card-media-overlay"></div>
+                </div>
+
+                <div class="unrevealed-teaser">
+                    <p>Propuesta enfocada en la intriga previa y el misterio físico. Los influencers recibirán un
+                        carry-on sellado y deberán resolver un código de acceso durante el evento...</p>
+                </div>
+
+                <div class="revealed-content">
+                    <p class="proposal-intro">Con Shop Gallery todos los productos que podés encontrar en un aeropuerto
+                        también los podés encontrar en tu casa. Y esta propuesta viene a demostrarlo realmente.</p>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-number">1</div>
+                            <div class="timeline-title">Invitación Exclusiva (Lock-Box)</div>
+                            <div class="timeline-desc">Durante los días previos al evento, los influencers recibirán una
+                                invitación junto a una carry-on con etiquetas de diferentes partes del mundo. Para
+                                abrirla, necesitarán una clave de seguridad revelada en el desayuno.</div>
+                            <div class="timeline-img"><img src="assets/codigo2.png" alt="Invitación Exclusiva Lock-Box">
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-number">2</div>
+                            <div class="timeline-title">El Desafío en Aerolíneas Argentinas</div>
+                            <div class="timeline-desc">En las oficinas de Aerolíneas Argentinas, tendrán que descifrar
+                                la combinación de la carry-on. Dentro, encontrarán muestras premium de Shop Gallery y
+                                tarjetas con beneficios y descuentos bancarios.</div>
+                            <div class="timeline-img"><img src="assets/codigo3.png"
+                                    alt="Desafío en Aerolíneas Argentinas"></div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-number">3</div>
+                            <div class="timeline-title">Generación de Contenido Spotlight</div>
+                            <div class="timeline-desc">Aprovechando la presencia de los creadores y el catálogo de
+                                productos de Shop Gallery, crearemos un espacio fotográfico y de video estético
+                                optimizado para amplificar el unboxing en redes sociales.</div>
+                            <div class="timeline-img"><img src="assets/codigo4.png"
+                                    alt="Generación de Contenido Spotlight"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-reveal" id="btn-reveal-2">
+                    <span>Revelar Propuesta</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Estrategia Section -->
+    <section class="estrategia-section" id="estrategia">
+        <div class="estrategia-container">
+            <div class="estrategia-header">
+                <span class="section-tag">Planificación</span>
+                <h2 class="estrategia-title">Estrategia</h2>
+            </div>
+
+            <div class="estrategia-content">
+                <p class="estrategia-paragraph">Desde Instagram y TikTok, los perfiles compartirán su experiencia mientras presentan la marca, sus categorías de productos y opciones de financiación. Además, desde Historias de Instagram impulsaremos tráfico hacia la tienda online, uno de los canales prioritarios para la marca.</p>
+
+                <p class="estrategia-paragraph">Proponemos una combinación de perfiles <strong>Micro</strong>, <strong>UGC</strong> y algunos <strong>Mid Tier</strong>, para lograr un equilibrio entre credibilidad, contenido nativo y alcance. A futuro, los perfiles con mejor desempeño podrán convertirse en creadores recurrentes de la marca, fortaleciendo la comunidad y la conversación alrededor de Shop Gallery.</p>
+            </div>
+
+            <div class="plataformas-block">
+                <h3 class="plataformas-subtitle">Rol de cada plataforma</h3>
+                <div class="plataformas-grid">
+                    <!-- TikTok -->
+                    <div class="plataforma-card">
+                        <div class="plataforma-icon tiktok-icon">
+                            <svg viewBox="0 0 48 48" width="52" height="52">
+                                <path d="M38.4 21.68V16c-2.66 0-4.69-.71-6.24-2.13a9.94 9.94 0 0 1-2.76-5.47h-5.2v23.88a5.6 5.6 0 1 1-3.84-5.32v-5.36a10.84 10.84 0 0 0-1.76-.14 10.96 10.96 0 1 0 10.96 10.96 11.3 11.3 0 0 0-.04-.76V20.44a15.42 15.42 0 0 0 8.88 2.84v-1.6z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h4 class="plataforma-name">TikTok</h4>
+                        <p class="plataforma-desc">Potenciará el alcance y el descubrimiento de la marca con contenidos más espontáneos, dinámicos y alineados a los códigos de la plataforma, conectando con nuevas audiencias de forma natural.</p>
+                    </div>
+                    <!-- Instagram -->
+                    <div class="plataforma-card">
+                        <div class="plataforma-icon instagram-icon">
+                            <svg viewBox="0 0 48 48" width="52" height="52">
+                                <defs>
+                                    <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#feda75"/>
+                                        <stop offset="20%" style="stop-color:#fa7e1e"/>
+                                        <stop offset="45%" style="stop-color:#d62976"/>
+                                        <stop offset="70%" style="stop-color:#962fbf"/>
+                                        <stop offset="100%" style="stop-color:#4f5bd5"/>
+                                    </linearGradient>
+                                </defs>
+                                <rect x="4" y="4" width="40" height="40" rx="12" ry="12" fill="none" stroke="url(#ig-grad)" stroke-width="3"/>
+                                <circle cx="24" cy="24" r="10" fill="none" stroke="url(#ig-grad)" stroke-width="3"/>
+                                <circle cx="35.5" cy="12.5" r="2.5" fill="url(#ig-grad)"/>
+                            </svg>
+                        </div>
+                        <h4 class="plataforma-name">Instagram</h4>
+                        <p class="plataforma-desc">Espacio para mostrar la experiencia, destacando productos, beneficios y opciones de financiación a través de contenidos cercanos. Además, las historias tendrán un rol clave para generar clics y llevar tráfico a la tienda online.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Influencers Spotlight Section -->
+    <section class="influencers-section" id="influencers">
+        <div class="section-header">
+            <span class="section-tag">Flight Crew</span>
+            <h2>Perfiles de Influencers Recomendados</h2>
+            <p>Los 6 perfiles de creadores seleccionados para interactuar y potenciar ambas mecánicas del evento.</p>
+        </div>
+
+        <div class="influencers-grid">
+
+            <!-- Boarding Pass 1: Sofia Anró -->
+            <div class="boarding-pass-card">
+                <div class="pass-header">
+                    <img src="assets/sg-logo.svg" alt="SG Logo" class="pass-logo">
+                    <div class="pass-class">First Class</div>
+                </div>
+                <div class="pass-body">
+                    <div class="pass-profile">
+                        <div class="avatar-container">
+                            <img src="assets/influencer_1.png" alt="Sofia Anró">
+                        </div>
+                        <div class="pass-influencer-info">
+                            <h4>Sofia Anró</h4>
+                            <span class="handle">@sofiaanro</span>
+                        </div>
+                    </div>
+                    <p class="pass-bio">Creadora de contenido especializada en belleza, maquillaje y tendencias
+                        estéticas. Conecta marcas premium con una audiencia apasionada por el mundo beauty.</p>
+                    <div class="pass-stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">FW IG</span>
+                            <span class="stat-value">76K</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">ER</span>
+                            <span class="stat-value gold-txt">2.56%</span>
+                        </div>
+                    </div>
+                    <div class="pass-tags">
+                        <span class="pass-tag">#Beauty</span>
+                        <span class="pass-tag">#Maquillaje</span>
+                        <span class="pass-tag">#Skincare</span>
+                    </div>
+                </div>
+                <div class="pass-stub">
+                    <div class="stub-item">
+                        <span class="stub-label">Flight</span>
+                        <span class="stub-value">SG-2026</span>
+                    </div>
+                    <div class="stub-item">
+                        <span class="stub-label">Seat</span>
+                        <span class="stub-value">08A</span>
+                    </div>
+                    <div class="stub-item">
+                        <span class="stub-label">Gate</span>
+                        <span class="stub-value">B24</span>
+                    </div>
+                    <div class="stub-barcode">
+                        <div class="barcode-lines"></div>
+                        <span class="barcode-text">SOFIAANROSG1</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boarding Pass 2: Marti Piccione -->
+            <div class="boarding-pass-card">
+                <div class="pass-header">
+                    <img src="assets/sg-logo.svg" alt="SG Logo" class="pass-logo">
+                    <div class="pass-class">First Class</div>
+                </div>
+                <div class="pass-body">
+                    <div class="pass-profile">
+                        <div class="avatar-container">
+                            <img src="assets/influencer_2.png" alt="Marti Piccione">
+                        </div>
+                        <div class="pass-influencer-info">
+                            <h4>Marti Piccione</h4>
+                            <span class="handle">@martipiccione</span>
+                        </div>
+                    </div>
+                    <p class="pass-bio">Creadora de contenido sobre lifestyle, rutinas diarias y tendencias. Destaca por
+                        su estilo auténtico y cercano que conecta con una comunidad activa y fiel.</p>
+                    <div class="pass-stats-grid three-cols">
+                        <div class="stat-item">
+                            <span class="stat-label">FW TT</span>
+                            <span class="stat-value">586K</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">FW IG</span>
+                            <span class="stat-value">43K</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">ER</span>
+                            <span class="stat-value gold-txt">3.78%</span>
+                        </div>
+                    </div>
+                    <div class="pass-tags">
+                        <span class="pass-tag">#Lifestyle</span>
+                        <span class="pass-tag">#Trends</span>
+                        <span class="pass-tag">#DayInMyLife</span>
+                    </div>
+                </div>
+                <div class="pass-stub">
+                    <div class="stub-item">
+                        <span class="stub-label">Flight</span>
+                        <span class="stub-value">SG-2026</span>
+                    </div>
+                    <div class="stub-item">
+                        <span class="stub-label">Seat</span>
+                        <span class="stub-value">08B</span>
+                    </div>
+                    <div class="stub-item">
+                        <span class="stub-label">Gate</span>
+                        <span class="stub-value">B24</span>
+                    </div>
+                    <div class="stub-barcode">
+                        <div class="barcode-lines"></div>
+                        <span class="barcode-text">MARTIPICCSG2</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boarding Pass 3: Nicolás Villafañe -->
+            <div class="boarding-pass-card">
+                <div class="pass-header">
+                    <img src="assets/sg-logo.svg" alt="SG Logo" class="pass-logo">
+                    <div class="pass-class">Premium Biz</div>
+                </div>
+                <div class="pass-body">
+                    <div class="pass-profile">
+                        <div class="avatar-container">
+                            <img src="assets/influencer_3.png" alt="Nicolás Villafañe">
+                        </div>
+                        <div class="pass-influencer-info">
+                            <h4>Nicolás Villafañe</h4>
+                            <span class="handle">@nicolasvillafane</span>
+                        </div>
+                    </div>
+                    <p class="pass-bio">Creador de contenido de viajes y aventuras. Con una audiencia masiva en YouTube,
+                        lleva a su comunidad a descubrir destinos y experiencias únicas alrededor del mundo.</p>
+                    <div class="pass-stats-grid three-cols">
+                        <div class="stat-item">
+                            <span class="stat-label">FW YT</span>
+                            <span class="stat-value">830K</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">FW IG</span>
+                            <span class="stat-value">74K</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">ER</span>
+                            <span class="stat-value gold-txt">4.75%</span>
+                        </div>
+                    </div>
+                    <div class="pass-tags">
+                        <span class="pass-tag">#Travel</span>
+                        <span class="pass-tag">#Aventura</span>
+                        <span class="pass-tag">#Destinos</span>
+                    </div>
+                </div>
+                <div class="pass-stub">
+                    <div class="stub-item">
+                        <span class="stub-label">Flight</span>
+                        <span class="stub-value">SG-2026</span>
+                    </div>
+                    <div class="stub-item">
+                        <span class="stub-label">Seat</span>
+                        <span class="stub-value">12A</span>
+                    </div>
+                    <div class="stub-item">
+                        <span class="stub-label">Gate</span>
+                        <span class="stub-value">B24</span>
+                    </div>
+                    <div class="stub-barcode">
+                        <div class="barcode-lines"></div>
+                        <span class="barcode-text">NICOLASVILLSG</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boarding Pass 4: Vale Martinez -->
+            <div class="boarding-pass-card">
+                <div class="pass-header">
+                    <img src="assets/sg-logo.svg" alt="SG Logo" class="pass-logo">
+                    <div class="pass-class">Premium Biz</div>
+                </div>
+                <div class="pass-body">
+                    <div class="pass-profile">
+                        <div class="avatar-container">
+                            <img src="assets/influencer_4.png" alt="Vale Martinez">
+                        </div>
+                        <div class="pass-influencer-info">
+                            <h4>Vale Martinez</h4>
+                            <span class="handle">@valemartinez</span>
+                        </div>
+                    </div>
+                    <p class="pass-bio">Especialista en creación de contenido UGC. Genera piezas auténticas y orgánicas
+                        que potencian la presencia de marcas en redes sociales con gran engagement.</p>
+                    <div class="pass-stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">FW TT</span>
+                            <span class="stat-value">86K</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">ER</span>
+                            <span class="stat-value gold-txt">2.82%</span>
+                        </div>
+                    </div>
+                    <div class="pass-tags">
+                        <span class="pass-tag">#UGC</span>
+                        <span class="pass-tag">#ContentCreator</span>
+                        <span class="pass-tag">#Authentic</span>
+                    </div>
+                </div>
+                <div class="pass-stub">
+                    <div class="stub-item">
+                        <span class="stub-label">Flight</span>
+                        <span class="stub-value">SG-2026</span>
+                    </div>
+                    <div class="stub-item">
+                        <span class="stub-label">Seat</span>
+                        <span class="stub-value">12B</span>
+                    </div>
+                    <div class="stub-item">
+                        <span class="stub-label">Gate</span>
+                        <span class="stub-value">B24</span>
+                    </div>
+                    <div class="stub-barcode">
+                        <div class="barcode-lines"></div>
+                        <span class="barcode-text">VALEMARTINEZSG</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boarding Pass 5: Tati Cuba -->
+            <div class="boarding-pass-card">
+                <div class="pass-header">
+                    <img src="assets/sg-logo.svg" alt="SG Logo" class="pass-logo">
+                    <div class="pass-class">Business</div>
+                </div>
+                <div class="pass-body">
+                    <div class="pass-profile">
+                        <div class="avatar-container">
+                            <img src="assets/influencer_5.png" alt="Tati Cuba">
+                        </div>
+                        <div class="pass-influencer-info">
+                            <h4>Tati Cuba</h4>
+                            <span class="handle">@taticuba</span>
+                        </div>
+                    </div>
+                    <p class="pass-bio">Creadora UGC con gran alcance en TikTok. Produce contenido orgánico y viral que
+                        conecta marcas con audiencias jóvenes de manera natural y efectiva.</p>
+                    <div class="pass-stats-grid three-cols">
+                        <div class="stat-item">
+                            <span class="stat-label">FW TT</span>
+                            <span class="stat-value">234K</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">FW IG</span>
+                            <span class="stat-value">45K</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">ER</span>
+                            <span class="stat-value gold-txt">4.53%</span>
+                        </div>
+                    </div>
+                    <div class="pass-tags">
+                        <span class="pass-tag">#UGC</span>
+                        <span class="pass-tag">#Viral</span>
+                        <span class="pass-tag">#TikTok</span>
+                    </div>
+                </div>
+                <div class="pass-stub">
+                    <div class="stub-item">
+                        <span class="stub-label">Flight</span>
+                        <span class="stub-value">SG-2026</span>
+                    </div>
+                    <div class="stub-item">
+                        <span class="stub-label">Seat</span>
+                        <span class="stub-value">18A</span>
+                    </div>
+                    <div class="stub-item">
+                        <span class="stub-label">Gate</span>
+                        <span class="stub-value">B24</span>
+                    </div>
+                    <div class="stub-barcode">
+                        <div class="barcode-lines"></div>
+                        <span class="barcode-text">TATICUBASG</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boarding Pass 6: Anita Vidal -->
+            <div class="boarding-pass-card">
+                <div class="pass-header">
+                    <img src="assets/sg-logo.svg" alt="SG Logo" class="pass-logo">
+                    <div class="pass-class">Business</div>
+                </div>
+                <div class="pass-body">
+                    <div class="pass-profile">
+                        <div class="avatar-container">
+                            <img src="assets/influencer_6.png" alt="Anita Vidal">
+                        </div>
+                        <div class="pass-influencer-info">
+                            <h4>Anita Vidal</h4>
+                            <span class="handle">@anitavidal</span>
+                        </div>
+                    </div>
+                    <p class="pass-bio">Creadora UGC enfocada en moda, belleza y lifestyle. Crea contenido estético y dinámico para conectar con su comunidad.</p>
+                    <div class="pass-stats-grid three-cols">
+                        <div class="stat-item">
+                            <span class="stat-label">FW TT</span>
+                            <span class="stat-value">75K</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">FW IG</span>
+                            <span class="stat-value">34K</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">ER</span>
+                            <span class="stat-value gold-txt">2.46%</span>
+                        </div>
+                    </div>
+                    <div class="pass-tags">
+                        <span class="pass-tag">#UGC</span>
+                        <span class="pass-tag">#Moda</span>
+                        <span class="pass-tag">#Lifestyle</span>
+                    </div>
+                </div>
+                <div class="pass-stub">
+                    <div class="stub-item">
+                        <span class="stub-label">Flight</span>
+                        <span class="stub-value">SG-2026</span>
+                    </div>
+                    <div class="stub-item">
+                        <span class="stub-label">Seat</span>
+                        <span class="stub-value">18B</span>
+                    </div>
+                    <div class="stub-item">
+                        <span class="stub-label">Gate</span>
+                        <span class="stub-value">B24</span>
+                    </div>
+                    <div class="stub-barcode">
+                        <div class="barcode-lines"></div>
+                        <span class="barcode-text">ANITAVIDALSG</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Campaign KPIs / Proyección Block -->
+        <div class="kpi-projection-container">
+            <div class="kpi-info-block">
+                <h3 class="kpi-title">Proyección - KPI Campaña</h3>
+                <p class="kpi-subtitle"><strong>19 contenidos totales</strong> (10 Stories, 3 Reels y 4 TikToks + Presencia de 2 hs en evento)</p>
+            </div>
+            <div class="kpi-stats-badge">
+                <div class="kpi-stat-item">
+                    <span class="kpi-stat-label">Alcance potencial:</span>
+                    <span class="kpi-stat-value">+200.000</span>
+                </div>
+                <div class="kpi-stat-item">
+                    <span class="kpi-stat-label">ER potencial:</span>
+                    <span class="kpi-stat-value">3.5%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/sg-logo.svg" alt="Shop Gallery Logo">
+            </div>
+            <div class="footer-links">
+                <a href="#hero">Inicio</a>
+                <a href="#propuestas">Propuestas</a>
+                <a href="#estrategia">Estrategia</a>
+                <a href="#influencers">Influencers</a>
+                <a href="https://www.shopgallery.com/" target="_blank">Web Oficial</a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            www.joygroup.agency &copy; Todos los derechos reservados 2026
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+
+</html>
