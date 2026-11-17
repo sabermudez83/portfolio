@@ -6,12 +6,12 @@
 const translations = {
   es: {
     metaTitle: "Santiago Bermúdez — Director Creativo & Estratega de Marca",
-    metaDescription: "Portfolio y dirección creativa de Santiago Bermúdez. Articulando marcas de consumo masivo, cultura contemporánea y experiencias transformadoras.",
+    metaDescription: "Portfolio y dirección creativa de Santiago Bermúdez. Dirección de Arte, Estrategia Interna, Liderazgo de Equipos y Optimización con IA.",
     header: {
       role: "Director Creativo & Estratega de Marca",
       status: "Disponible para proyectos & consultoría",
-      navCases: "Casos",
       navProcess: "Metodología",
+      navCases: "Casos",
       navRepo: "Repositorio",
       navBehance: "Behance",
       navFaq: "FAQ",
@@ -19,16 +19,20 @@ const translations = {
     },
     hero: {
       tag: "Dirección Creativa & Estrategia de Marca",
-      headline: "Estrategia rigurosa y dirección de arte para marcas de gran escala.",
-      subheadline: "Más de diez años articulando diagnóstico de negocio, cultura contemporánea y craft visual para transformar consumo masivo, retail y experiencias.",
+      headline: "Dirección de Arte | Estrategia Interna | Liderazgo de Equipos | Optimización con IA.",
+      subheadline: "+15 años liderando equipos multifuncionales y creado campañas memorables.",
       primaryCta: "Iniciar conversación",
-      secondaryCta: "Explorar casos seleccionados",
-      proofLabel: "Marcas articuladas en proyectos y campañas regionales"
+      secondaryCta: "Explorar casos seleccionados"
     },
-    taglineReveal: {
-      tag: "Tesis Directiva",
-      line1: "La creatividad sin rigor de negocio es solo decoración.",
-      line2: "La estrategia sin craft visual es completamente invisible."
+    process: {
+      tag: "Metodología de trabajo",
+      headline: "3 etapas desde el diagnóstico hasta la realidad",
+      step1Tag: "01 // DIAGNÓSTICO",
+      step1Desc: "Conocimiento de marca, oportunidades, objetivos.",
+      step2Tag: "02 // CONCEPTUALIZACIÓN",
+      step2Desc: "Insights, conceptos, ideas, tono, diferenciación.",
+      step3Tag: "03 // CRAFT & REALIDAD",
+      step3Desc: "Acompañamiento en producciónnes y creación de assets digitales."
     },
     cases: {
       tag: "Casos seleccionados",
@@ -52,24 +56,11 @@ const translations = {
       c4Desc: "Conexión cósmica en el Planetario de Buenos Aires: sincronizando el calendario lunar con las fases de cuidado capilar.",
       c4Role: "Rol: Dirección Creativa & Ideación de Eventos",
       repoTitle: "Repositorio ejecutivo",
-      repoSubtitle: "11 Presentaciones documentadas · Click para desplegar ficha",
+      repoSubtitle: "04 Presentaciones documentadas · Click para desplegar ficha",
       thProject: "Proyecto / Campaña",
       thClient: "Cliente",
       thCategory: "Disciplina & Categoría",
       thYear: "Año & Ficha ↗"
-    },
-    process: {
-      tag: "Metodología de trabajo",
-      headline: "Tres etapas claras desde el diagnóstico hasta el despliegue.",
-      step1Tag: "01 // Diagnóstico",
-      step1Title: "Oportunidad & Posicionamiento",
-      step1Desc: "Auditoría de percepción, matrices de oportunidad y plataformas de comunicación ancladas en métricas tangibles de negocio.",
-      step2Tag: "02 // Conceptualización",
-      step2Title: "Dirección Creativa & Narrativa",
-      step2Desc: "Idea paraguas, tono de voz y directrices visuales con foco en relevancia cultural y diferenciación categórica real.",
-      step3Tag: "03 // Craft & Despliegue",
-      step3Title: "Supervisión Integral Omnicanal",
-      step3Desc: "Acompañamiento en rodajes, activaciones inmersivas, retail y assets digitales para asegurar un craft impecable."
     },
     repertoire: {
       tag: "Repertorio visual & craft",
@@ -140,12 +131,12 @@ const translations = {
   },
   en: {
     metaTitle: "Santiago Bermúdez — Creative Director & Brand Strategist",
-    metaDescription: "Portfolio and creative direction of Santiago Bermúdez. Articulating consumer goods brands, contemporary culture, and transformative experiences.",
+    metaDescription: "Portfolio and creative direction of Santiago Bermúdez. Art Direction, Internal Strategy, Team Leadership, and AI Optimization.",
     header: {
       role: "Creative Director & Brand Strategist",
       status: "Available for projects & consulting",
-      navCases: "Cases",
       navProcess: "Methodology",
+      navCases: "Cases",
       navRepo: "Repository",
       navBehance: "Behance",
       navFaq: "FAQ",
@@ -153,16 +144,20 @@ const translations = {
     },
     hero: {
       tag: "Creative Direction & Brand Strategy",
-      headline: "Rigorous strategy and visual art direction for category leaders.",
-      subheadline: "Over a decade connecting business diagnosis, contemporary culture, and regional visual craft to transform mass consumption, retail, and experiential platforms.",
+      headline: "Art Direction | Internal Strategy | Team Leadership | AI Optimization.",
+      subheadline: "+15 years leading cross functional teams and creating memorable campaigns.",
       primaryCta: "Start a conversation",
-      secondaryCta: "Explore selected cases",
-      proofLabel: "Brands articulated across regional projects and campaigns"
+      secondaryCta: "Explore selected cases"
     },
-    taglineReveal: {
-      tag: "Strategic Thesis",
-      line1: "Creativity without business rigor is merely decoration.",
-      line2: "Strategy without visual craft is completely invisible."
+    process: {
+      tag: "Working methodology",
+      headline: "3 stages from diagnosis to reality",
+      step1Tag: "01 // DIAGNOSIS",
+      step1Desc: "Brand knowledge, opportunities, objectives.",
+      step2Tag: "02 // CONCEPTUALIZATION",
+      step2Desc: "Insights, concepts, ideas, tone, differentiation.",
+      step3Tag: "03 // CRAFT & REALITY",
+      step3Desc: "Production accompaniment and creation of digital assets."
     },
     cases: {
       tag: "Selected cases",
@@ -186,24 +181,11 @@ const translations = {
       c4Desc: "Cosmic connection at the Buenos Aires Planetarium: syncing the lunar calendar with hair care and coloring phases.",
       c4Role: "Role: Creative Direction & Event Ideation",
       repoTitle: "Executive repository",
-      repoSubtitle: "11 Documented presentations · Click to expand case file",
+      repoSubtitle: "04 Documented presentations · Click to expand case file",
       thProject: "Project / Campaign",
       thClient: "Client",
       thCategory: "Discipline & Category",
       thYear: "Year & File ↗"
-    },
-    process: {
-      tag: "Working methodology",
-      headline: "Three clear stages from strategic diagnosis to omnichannel delivery.",
-      step1Tag: "01 // Diagnosis",
-      step1Title: "Opportunity & Positioning",
-      step1Desc: "Perception audits, opportunity matrices, and communication platforms anchored in tangible business metrics.",
-      step2Tag: "02 // Conceptualization",
-      step2Title: "Creative Direction & Narrative",
-      step2Desc: "Master concept, brand voice, and art direction rules focused on cultural relevance and genuine category differentiation.",
-      step3Tag: "03 // Craft & Delivery",
-      step3Title: "Integral Omnichannel Supervision",
-      step3Desc: "Direct supervision across shoots, immersive activations, retail environments, and digital assets ensuring high caliber craft."
     },
     repertoire: {
       tag: "Visual repertoire & craft",
