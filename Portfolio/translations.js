@@ -14,7 +14,6 @@ const translations = {
       navCases: "Casos",
       navRepo: "Repositorio",
       navBehance: "Behance",
-      navFaq: "FAQ",
       navContact: "Iniciar conversación"
     },
     hero: {
@@ -74,22 +73,6 @@ const translations = {
       footerNote: "Archivo con más de 30 proyectos y exploraciones en Behance.",
       footerLink: "Ver perfil completo en Behance ↗"
     },
-    faq: {
-      tag: "Preguntas frecuentes",
-      headline: "Detalles sobre contratación, alcance y colaboración.",
-      q1: "¿Cuál es el formato de contratación habitual?",
-      a1: "Trabajo bajo tres modalidades: dirección creativa por proyecto cerrado, consultoría estratégica mensual continua o liderazgo de sprints específicos con equipos internos y agencias.",
-      q2: "¿Trabajas con marcas de forma directa o a través de agencias?",
-      a2: "Ambas modalidades son habituales. Colaboro como director creativo externo para marcas corporativas y también como partner estratégico para agencias de red y productoras.",
-      q3: "¿Cuál es tu disponibilidad actual?",
-      a3: "Actualmente disponible para proyectos estratégicos y consultoría directiva. Para compromisos de gran escala se coordinan fechas de inicio con anticipación.",
-      q4: "¿Cómo se coordinan los entregables y el seguimiento?",
-      a4: "Mediante sprints estructurados con reuniones semanales de alineación, tableros de avance y presentaciones ejecutivas documentadas listas para directorios.",
-      q5: "¿Qué incluye una ficha de caso documentada?",
-      a5: "Cada caso incluye el diagnóstico del desafío, el insight cultural de base, la arquitectura conceptual, el desglose de piezas clave y la galería visual de alta definición.",
-      q6: "¿Trabajas con proyectos remotos o presenciales?",
-      a6: "Tengo base en Buenos Aires y opero de forma remota con alcance global. Para rodajes, eventos o workshops clave me traslado según los requerimientos del proyecto."
-    },
     contact: {
       tag: "Iniciar conversación",
       headline: "¿Tenés un desafío estratégico de marca o una campaña de escala en puerta?",
@@ -139,7 +122,6 @@ const translations = {
       navCases: "Cases",
       navRepo: "Repository",
       navBehance: "Behance",
-      navFaq: "FAQ",
       navContact: "Start a conversation"
     },
     hero: {
@@ -198,22 +180,6 @@ const translations = {
       thLink: "Year & Link ↗",
       footerNote: "Archive with over 30 projects and explorations on Behance.",
       footerLink: "View full Behance profile ↗"
-    },
-    faq: {
-      tag: "Frequently asked questions",
-      headline: "Details regarding engagement formats, scope, and collaboration.",
-      q1: "What is your standard engagement model?",
-      a1: "I work across three flexible formats: fixed scope creative direction, ongoing monthly strategic consulting, or embedded sprint leadership for internal brand and agency teams.",
-      q2: "Do you collaborate directly with brands or through agencies?",
-      a2: "Both models are standard. I serve as an external creative director for enterprise brands and as a senior strategic partner for network agencies and production companies.",
-      q3: "What is your current availability?",
-      a3: "Currently taking on select strategic projects and high level consulting engagements. Larger rollouts are scheduled with advance planning.",
-      q4: "How are deliverables and milestones coordinated?",
-      a4: "Through structured weekly sprints, transparent progress boards, and comprehensive executive presentations ready for board review.",
-      q5: "What does a documented case file contain?",
-      a5: "Each file includes the core business challenge, cultural insight, conceptual architecture, key deliverables breakdown, and high resolution visual galleries.",
-      q6: "Do you handle remote and on site engagements?",
-      a6: "Based in Buenos Aires with global remote coverage. For key production shoots, live activations, or executive workshops, regional travel is arranged as required."
     },
     contact: {
       tag: "Start a conversation",
