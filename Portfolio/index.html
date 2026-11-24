@@ -568,27 +568,6 @@
       transform: translate(-50%, -50%) scale(1);
     }
 
-    /* Baglietto Minimalist Form Underline Inputs */
-    .baglietto-input {
-      width: 100%;
-      background-color: transparent;
-      border: none;
-      border-bottom: 1px solid var(--border-main);
-      padding: 12px 0;
-      font-family: 'Geist Mono', monospace;
-      font-size: 0.875rem;
-      line-height: 1.25rem;
-      color: var(--text-primary);
-      transition: border-color 300ms cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .baglietto-input::placeholder {
-      color: var(--text-muted);
-    }
-    .baglietto-input:focus {
-      outline: none;
-      border-bottom-color: var(--accent-terra);
-    }
-
     /* =========================================================================
        REDUCED MOTION SUPPORT (B7 & B11)
        ========================================================================= */
@@ -734,10 +713,12 @@
             santiago<br class="sm:hidden" /> bermúdez
           </h1>
 
-          <!-- Baglietto Vertical Hairline Scroll Indicator -->
-          <a href="#perfil" class="inline-flex flex-col items-start gap-3 mt-16 sm:mt-20 group focus:outline-none focus-visible:ring-2 focus-visible:ring-terra rounded-sm" aria-label="Bajar a perfil">
-            <span class="block w-px h-12 bg-mint group-hover:bg-terra transition-colors duration-300"></span>
-            <span data-i18n="hero.scroll" class="font-mono text-xs text-ink-muted group-hover:text-ink transition-colors duration-300">scroll</span>
+          <!-- Minimal Downward Arrow Indicator -->
+          <a href="#perfil" class="inline-flex items-center justify-center mt-14 sm:mt-16 text-mint hover:text-terra transition-all duration-300 ease-base hover:translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-terra rounded-full p-1" aria-label="Bajar a perfil">
+            <svg class="w-5 h-10" viewBox="0 0 20 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="10" y1="2" x2="10" y2="35"></line>
+              <polyline points="4 29 10 35 16 29"></polyline>
+            </svg>
           </a>
 
         </div>
@@ -1086,12 +1067,12 @@
     </section>
 
     <!-- =========================================================================
-         SECCIÓN 06: CONTACTO (ESTRUCTURA EXACTA BAGLIETTO 2 COLUMNAS + FORM)
+         SECCIÓN 06: CONTACTO (INFORMACIÓN DE CONTACTO & LINKS DIRECTOS)
          ========================================================================= -->
     <section id="contacto" class="bg-surface border-t border-line py-24 md:py-32 px-6 sm:px-12 lg:px-20 reveal-item">
       <div class="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
 
-        <!-- Left Column: Baglietto Editorial Copy + Direct Links -->
+        <!-- Left Column: Editorial Headline + Direct Email CTA -->
         <div class="md:col-span-5">
           <span data-i18n="contact.tag" class="font-mono text-xs text-ink-muted block mb-4">
             / contacto
@@ -1103,57 +1084,50 @@
             Contame qué tenés en mente. Conversemos sobre los objetivos de tu marca y cómo abordarlos con criterio creativo.
           </p>
 
-          <!-- Live Status & Location -->
-          <div class="space-y-2 mb-8 font-mono text-xs">
-            <div class="flex items-center gap-2 text-mint">
-              <span class="w-2 h-2 rounded-full bg-mint animate-pulse"></span>
-              <span data-i18n="contact.availability">Disponible para Dirección Creativa & Consultoría</span>
-            </div>
-            <div data-i18n="contact.location" class="text-ink-muted">
-              Buenos Aires, Argentina (Alcance Global)
-            </div>
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="mailto:sabermudez@gmail.com" data-i18n="contact.primaryCta" class="btn-pill">
+              escribir a sabermudez@gmail.com ↗
+            </a>
+            <button id="copy-email-btn" type="button" data-i18n="contact.copyEmailBtn" class="font-mono text-xs text-ink-muted hover:text-mint transition-colors duration-300 py-2 px-2 focus:outline-none focus-visible:underline">
+              copiar correo
+            </button>
           </div>
-
-          <!-- Minimal Direct Links -->
-          <div class="flex flex-wrap items-center gap-6 font-mono text-xs text-ink">
-            <a href="mailto:sabermudez@gmail.com" class="hover:text-terra transition-colors duration-300">sabermudez@gmail.com ↗</a>
-            <a href="https://www.linkedin.com/in/santiagobermudez/" target="_blank" rel="noopener noreferrer" class="hover:text-terra transition-colors duration-300">linkedin ↗</a>
-            <a href="https://www.behance.net/sabermudez" target="_blank" rel="noopener noreferrer" class="hover:text-terra transition-colors duration-300">behance ↗</a>
-          </div>
+          <p id="contact-feedback" class="hidden font-mono text-xs text-mint mt-3" role="status" aria-live="polite"></p>
         </div>
 
-        <!-- Right Column: Baglietto Minimalist Underline Form -->
+        <!-- Right Column: Structured Contact Info & Direct Links -->
         <div class="md:col-span-7 md:pt-8">
-          <form id="contact-form" novalidate class="space-y-6">
-            <div>
-              <label for="contact-name" class="sr-only">Nombre</label>
-              <input id="contact-name" name="name" type="text" required data-i18n-placeholder="contact.namePlaceholder" placeholder="tu nombre" class="baglietto-input" />
-              <p id="err-name" class="hidden font-mono text-xs text-terra mt-2"></p>
+          <div class="border-t border-line divide-y divide-line font-mono text-xs">
+
+            <a href="mailto:sabermudez@gmail.com" class="group py-5 flex items-center justify-between gap-4 hover:text-terra transition-colors duration-300">
+              <span data-i18n="contact.emailLabel" class="text-ink-muted">correo directo</span>
+              <span class="text-ink group-hover:text-terra transition-colors text-sm font-medium">sabermudez@gmail.com ↗</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/santiagobermudez/" target="_blank" rel="noopener noreferrer" class="group py-5 flex items-center justify-between gap-4 hover:text-terra transition-colors duration-300">
+              <span data-i18n="contact.linkedinLabel" class="text-ink-muted">linkedin</span>
+              <span class="text-ink group-hover:text-terra transition-colors text-sm font-medium">/in/santiagobermudez ↗</span>
+            </a>
+
+            <a href="https://www.behance.net/sabermudez" target="_blank" rel="noopener noreferrer" class="group py-5 flex items-center justify-between gap-4 hover:text-terra transition-colors duration-300">
+              <span data-i18n="contact.behanceLabel" class="text-ink-muted">behance</span>
+              <span class="text-ink group-hover:text-terra transition-colors text-sm font-medium">behance.net/sabermudez ↗</span>
+            </a>
+
+            <div class="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <span data-i18n="contact.locationLabel" class="text-ink-muted">base operativa</span>
+              <span data-i18n="contact.location" class="text-ink text-sm">Buenos Aires, Argentina (Alcance Global)</span>
             </div>
 
-            <div>
-              <label for="contact-email" class="sr-only">Email</label>
-              <input id="contact-email" name="email" type="email" required data-i18n-placeholder="contact.emailPlaceholder" placeholder="tu email" class="baglietto-input" />
-              <p id="err-email" class="hidden font-mono text-xs text-terra mt-2"></p>
+            <div class="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <span data-i18n="contact.availabilityLabel" class="text-ink-muted">estado actual</span>
+              <span class="inline-flex items-center gap-2 text-mint text-sm">
+                <span class="w-2 h-2 rounded-full bg-mint animate-pulse"></span>
+                <span data-i18n="contact.availability">Disponible para Dirección Creativa & Consultoría</span>
+              </span>
             </div>
 
-            <div>
-              <label for="contact-message" class="sr-only">Mensaje</label>
-              <textarea id="contact-message" name="message" rows="3" required data-i18n-placeholder="contact.messagePlaceholder" placeholder="contame sobre tu proyecto o desafío" class="baglietto-input resize-none"></textarea>
-              <p id="err-message" class="hidden font-mono text-xs text-terra mt-2"></p>
-            </div>
-
-            <div class="pt-4 flex flex-wrap items-center gap-4">
-              <button type="submit" data-i18n="contact.submitBtn" class="btn-pill">
-                enviar mensaje →
-              </button>
-              <button id="copy-email-btn" type="button" data-i18n="contact.copyEmailBtn" class="font-mono text-xs text-ink-muted hover:text-mint transition-colors duration-300 py-2 px-2 focus:outline-none focus-visible:underline">
-                copiar correo
-              </button>
-            </div>
-
-            <p id="contact-feedback" class="hidden font-mono text-xs text-mint pt-2" role="status" aria-live="polite"></p>
-          </form>
+          </div>
         </div>
 
       </div>
@@ -1974,60 +1948,10 @@
       });
 
       // -----------------------------------------------------------------------
-      // 9. Contact Form Validation & Copy Email (B9 & B10: Inline Feedback Only)
+      // 9. Copy Email Helper (Inline Feedback)
       // -----------------------------------------------------------------------
-      const contactForm = document.getElementById('contact-form');
-      const nameInput = document.getElementById('contact-name');
-      const emailInput = document.getElementById('contact-email');
-      const messageInput = document.getElementById('contact-message');
-      const errName = document.getElementById('err-name');
-      const errEmail = document.getElementById('err-email');
-      const errMessage = document.getElementById('err-message');
       const contactFeedback = document.getElementById('contact-feedback');
       const copyEmailBtn = document.getElementById('copy-email-btn');
-
-      if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const dict = window.portfolioTranslations[currentLang].contact;
-          let valid = true;
-
-          [errName, errEmail, errMessage].forEach((el) => {
-            el.textContent = '';
-            el.classList.add('hidden');
-          });
-          contactFeedback.classList.add('hidden');
-
-          const nameVal = nameInput.value.trim();
-          const emailVal = emailInput.value.trim();
-          const msgVal = messageInput.value.trim();
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-          if (!nameVal) {
-            errName.textContent = dict.errName;
-            errName.classList.remove('hidden');
-            valid = false;
-          }
-          if (!emailRegex.test(emailVal)) {
-            errEmail.textContent = dict.errEmail;
-            errEmail.classList.remove('hidden');
-            valid = false;
-          }
-          if (!msgVal) {
-            errMessage.textContent = dict.errMessage;
-            errMessage.classList.remove('hidden');
-            valid = false;
-          }
-
-          if (!valid) return;
-
-          const subject = encodeURIComponent(`Contacto Portfolio — ${nameVal}`);
-          const body = encodeURIComponent(`Nombre: ${nameVal}\nEmail: ${emailVal}\n\n${msgVal}`);
-          contactFeedback.textContent = dict.successMsg;
-          contactFeedback.classList.remove('hidden');
-          window.location.href = `mailto:sabermudez@gmail.com?subject=${subject}&body=${body}`;
-        });
-      }
 
       if (copyEmailBtn) {
         copyEmailBtn.addEventListener('click', () => {
